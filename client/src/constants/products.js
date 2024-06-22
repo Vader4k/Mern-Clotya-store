@@ -355,3 +355,3656 @@ import zipper1 from '../assets/zipper1.jpeg'
 import zipper2 from '../assets/zipper2.jpeg'
 import zipper3 from '../assets/zipper3.jpeg'
 import zipper4 from '../assets/zipper4.jpeg'
+
+export const all_products = [
+    {
+        id:1,
+        name: 'Basic colored sweatpants with elastic hems'
+        old_price: '25.90',
+        new_price: '19.90',
+        reviews: '2',
+        img1: highNeck,
+        img2: highNeck2,
+        img3: highNeck3,
+        img4: highNeck4,
+        tag: 'TRENDING',
+        category: [{
+                id: 1,
+                name: 'Jackets & coats'
+            },
+            {
+                id: 2,
+                name: 'WOMEN'
+            },
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        colors: [
+            {
+                id:1,
+                name:'Red'
+            },
+            {
+                id:2,
+                name:'Blue'
+            },
+            {
+                id:3,
+                name:'Orange'
+            },
+            {
+                id:4,
+                name:'Green'
+            },
+            {
+                id:5,
+                name:'Pink'
+            },
+            {
+                id:6,
+                name:'Black'
+            },
+            {
+                id:7,
+                name:'White'
+            }
+        ],
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: 'BE45VGRT'
+    },
+    {
+        id:2,
+        name: 'Basic High-Neck Puff jacket'
+        new_price: '89.00',
+        reviews: '1',
+        img1: basic1,
+        img2: basic2,
+        img3: basic3,
+        img4: basic4,
+        tag: '24%',
+        category: [{
+                id: 1,
+                name: ' jackets & coats'
+            },
+            {
+                id: 2,
+                name: 'WOMEN'
+            },
+            {
+                id:3,
+                name: 'outerwear'
+            }
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        colors: [
+            {
+                id:1,
+                name:'Red'
+            },
+            {
+                id:2,
+                name:'Blue'
+            },
+            {
+                id:3,
+                name:'Orange'
+            },
+            {
+                id:4,
+                name:'Green'
+            },
+            {
+                id:5,
+                name:'Pink'
+            },
+            {
+                id:6,
+                name:'Black'
+            },
+            {
+                id:7,
+                name:'White'
+            }
+        ],
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: 'SUAJK74' 
+    },
+    {
+        id:3,
+        name: 'Basic Relax Fit Leggins',
+        old_price: '29.90',
+        new_price: '24.90',
+        reviews: '1',
+        img1: leggins1,
+        img2: leggins2,
+        img3: leggins3,
+        img4: leggins4,
+        tag: '24%',
+        category: [{
+                id: 1,
+                name: 'dresses'
+            },
+            {
+                id: 2,
+                name: 'WOMEN'
+            },
+            {
+                id:3,
+                name: 'tops & bodysuits'
+            }
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        colors: [
+            {
+                id:1,
+                name:'Red'
+            },
+            {
+                id:2,
+                name:'Blue'
+            },
+            {
+                id:3,
+                name:'Orange'
+            },
+            {
+                id:4,
+                name:'Green'
+            },
+            {
+                id:5,
+                name:'Pink'
+            },
+            {
+                id:6,
+                name:'Black'
+            },
+            {
+                id:7,
+                name:'White'
+            }
+        ],
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: 'BE45O8T' 
+    },
+    {
+        id:4,
+        name: 'Check with pocket detail',
+        old_price: '129.90',
+        new_price: '112.00',
+        reviews: '1',
+        img1: overshirt1,
+        img2: overshirt2,
+        img3: overshirt3,
+        img4: overshirt4,
+        tag: '14%',
+        category: [{
+                id: 1,
+                name: 'MEN'
+            },
+            {
+                id: 2,
+                name: 'Shirts'
+            },
+            {
+                id:3,
+                name: 'T-shirt'
+            }
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        size: [
+            {
+                id:1,
+                name: 'XS'
+            },
+            {
+                id:2,
+                name: 'S'
+            },
+            {
+                id:3,
+                name: 'M'
+            },
+            {
+                id:4,
+                name: 'L'
+            },
+            {
+                id:5,
+                name: 'XL'
+            },
+        ],
+        SKU: 'BE45G8T' 
+    },
+    {
+        id:5,
+        name: 'Ros Printed Hoodie',
+        new_price: '110.99',
+        reviews: '1',
+        img1: printedh1,
+        img2: printedh2,
+        img3: printedh3,
+        img4: printedh4,
+        category: [{
+                id: 1,
+                name: 'Women'
+            },
+            {
+                id: 2,
+                name: 'Hoodie'
+            },
+            {
+                id:3,
+                name: 'T-shirt'
+            }
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        size: [
+            {
+                id:1,
+                name: 'M'
+            },
+            {
+                id:2,
+                name: 'L'
+            },
+            {
+                id:3,
+                name: 'XL'
+            },
+        ],
+        SKU: 'BE45A8T' 
+    },
+    {
+        id:6,
+        name: 'World Wide Cup Print T-shirt',
+        old_price: '29.99',
+        new_price: '23.90',
+        reviews: '1',
+        img1: cup1,
+        img2: cup2,
+        img3: cup3,
+        img4: cup3,
+        tag: '21%',
+        category: [{
+                id: 1,
+                name: 'sweatshirts'
+            },
+            {
+                id: 2,
+                name: 'MEN'
+            },
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        colors: [
+            {
+                id:1,
+                name:'Red'
+            },
+            {
+                id:2,
+                name:'Blue'
+            },
+            {
+                id:3,
+                name:'Pink'
+            },
+            {
+                id:4,
+                name:'Black'
+            },
+            {
+                id:5,
+                name:'White'
+            }
+        ],
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: 'AS45VGRT'
+    },
+    {
+        id:7,
+        name: 'Sleeveless Ribbed Short Dress Black',
+        old_price: '19.99',
+        new_price: '14.99',
+        reviews: '1',
+        img1: blackdress1,
+        img2: blackdress2,
+        img3: blackdress3,
+        img4: blackdress4,
+        tag: '26%',
+        category: [{
+                id: 1,
+                name: 'Gown'
+            },
+            {
+                id: 2,
+                name: 'WOMEN'
+            },
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: 'EE43RG8T'
+    },
+    {
+        id:8,
+        name: 'SLogan hoodie With Label Detail',
+        old_price: '18.99',
+        new_price: '11.99',
+        reviews: '1',
+        img1: slogan1,
+        img2: slogan2,
+        img3: slogan3,
+        img4: slogan4,
+        tag: '37%',
+        category: [{
+                id: 1,
+                name: 'Jackets & coats'
+            },
+            {
+                id: 2,
+                name: 'WOMEN'
+            },
+            {
+                id:3,
+                name: 'Hoodies'
+            }
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        colors: [
+            {
+                id:1,
+                name:'Red'
+            },
+            {
+                id:2,
+                name:'Blue'
+            },
+            {
+                id:3,
+                name:'Orange'
+            },
+            {
+                id:4,
+                name:'Green'
+            },
+            {
+                id:5,
+                name:'Pink'
+            },
+            {
+                id:6,
+                name:'Black'
+            },
+            {
+                id:7,
+                name:'White'
+            }
+        ],
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: '00B5VGRT'
+    },
+    {
+        id:9,
+        name: 'short nylon-effect puffer jacket',
+        old_price: '25.90',
+        new_price: '19.90',
+        reviews: '2',
+        img1: nilon1,
+        img2: nilon2,
+        img3: nilon3,
+        img4: nilon4,
+        tag: '26%',
+        category: [{
+                id: 1,
+                name: 'Jackets & coats'
+            },
+            {
+                id: 2,
+                name: 'WOMEN'
+            },
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        colors: [
+            {
+                id:1,
+                name:'Red'
+            },
+            {
+                id:2,
+                name:'Blue'
+            },
+            {
+                id:3,
+                name:'Orange'
+            },
+            {
+                id:4,
+                name:'Green'
+            },
+            {
+                id:5,
+                name:'Pink'
+            },
+            {
+                id:6,
+                name:'Black'
+            },
+            {
+                id:7,
+                name:'White'
+            }
+        ],
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: 'C4S5VG3T'
+    },
+    {
+        id:10,
+        name: 'Pouch pocket hoodie orange',
+        old_price: '37.50',
+        new_price: '29.50',
+        reviews: '1',
+        img1: pocket1,
+        img2: pocket2,
+        img3: pocket3,
+        img4: pocket4,
+        tag: '22%',
+        category: [{
+                id: 1,
+                name: 'hoodie'
+            },
+            {
+                id: 2,
+                name: 'Men'
+            },
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: 'CO4IV22T'
+    },
+    {
+        id:11,
+        name: 'sleeveless ribbed short dress',
+        old_price: '19.99',
+        new_price: '14.99',
+        reviews: '1',
+        img1: sleev1,
+        img2: sleev2,
+        img3: sleev3,
+        img4: sleev4,
+        tag: '26%',
+        category: [{
+                id: 1,
+                name: 'Gown'
+            },
+            {
+                id: 2,
+                name: 'WOMEN'
+            },
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        colors: [
+            {
+                id:1,
+                name:'Red'
+            },
+            {
+                id:2,
+                name:'Blue'
+            },
+            {
+                id:3,
+                name:'Orange'
+            },
+            {
+                id:4,
+                name:'Green'
+            },
+            {
+                id:5,
+                name:'Pink'
+            },
+            {
+                id:6,
+                name:'Black'
+            },
+            {
+                id:7,
+                name:'White'
+            }
+        ],
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: '5DF25V3RT'
+    },
+    {
+        id:12,
+        name: 'shoer sleeve t-shirt with landscape graphic',
+        old_price: '48.90',
+        new_price: '34.90',
+        reviews: '1',
+        img1: graphic1,
+        img2: graphic2,
+        img3: graphic3,
+        img4: graphic4,
+        tag: '21%',
+        category: [{
+                id: 1,
+                name: 'T-shirt'
+            },
+            {
+                id: 2,
+                name: 'WOMEN'
+            },
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        colors: [
+            {
+                id:1,
+                name:'Red'
+            },
+            {
+                id:2,
+                name:'Blue'
+            },
+            {
+                id:3,
+                name:'Orange'
+            },
+            {
+                id:4,
+                name:'Green'
+            },
+            {
+                id:5,
+                name:'Pink'
+            },
+            {
+                id:6,
+                name:'Black'
+            },
+            {
+                id:7,
+                name:'White'
+            }
+        ],
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: 'ZDF25V3RT'
+    },
+    {
+        id:13,
+        name: 'short dress with knotted skirt',
+        old_price: '85.90',
+        new_price: '45.90',
+        reviews: '1',
+        img1: knotted1,
+        img2: knotted2,
+        img3: knotted3,
+        img4: knotted4,
+        tag: '47%',
+        category: [{
+                id: 1,
+                name: 'Gown'
+            },
+            {
+                id: 2,
+                name: 'WOMEN'
+            },
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        colors: [
+            {
+                id:1,
+                name:'Red'
+            },
+            {
+                id:2,
+                name:'Blue'
+            },
+            {
+                id:3,
+                name:'Orange'
+            },
+            {
+                id:4,
+                name:'Green'
+            },
+            {
+                id:5,
+                name:'Pink'
+            },
+            {
+                id:6,
+                name:'Black'
+            },
+            {
+                id:7,
+                name:'White'
+            }
+        ],
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+        ],
+        SKU: 'AW35V3OT'
+    },
+    {
+        id:14,
+        name: 'ripstop cargo trousers with pockets',
+        old_price: '69.99',
+        new_price: '49.99',
+        reviews: '1',
+        img1: trousers1,
+        img2: trousers2,
+        img3: trousers3,
+        img4: trousers4,
+        tag: '29%',
+        category: [{
+                id: 1,
+                name: 'Trouser'
+            },
+            {
+                id: 2,
+                name: 'MEN'
+            },
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        colors: [
+            {
+                id:1,
+                name:'Red'
+            },
+            {
+                id:2,
+                name:'Blue'
+            },
+            {
+                id:3,
+                name:'Orange'
+            },
+            {
+                id:4,
+                name:'Green'
+            },
+            {
+                id:5,
+                name:'Pink'
+            },
+            {
+                id:6,
+                name:'Black'
+            },
+            {
+                id:7,
+                name:'White'
+            }
+        ],
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: '12R25V3RT'
+    },
+    {
+        id:15,
+        name: 'Ripped Wide-Leg 90s jeans',
+        old_price: '45.90',
+        new_price: '38.90',
+        reviews: '1',
+        img1: wideleg1,
+        img2: wideleg2,
+        img3: wideleg3,
+        img4: wideleg4,
+        tag: '16%',
+        category: [{
+                id: 1,
+                name: 'Jeans'
+            },
+            {
+                id: 2,
+                name: 'WOMEN'
+            },
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        colors: [
+            {
+                id:1,
+                name:'Red'
+            },
+            {
+                id:2,
+                name:'Blue'
+            },
+            {
+                id:3,
+                name:'Orange'
+            },
+            {
+                id:4,
+                name:'Green'
+            },
+            {
+                id:5,
+                name:'Pink'
+            },
+            {
+                id:6,
+                name:'Black'
+            },
+            {
+                id:7,
+                name:'White'
+            }
+        ],
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+        ],
+        SKU: 'VCF15V3RT'
+    },
+    {
+        id:16,
+        name: 'ripped mom jeans - contains recycled cotton',
+        old_price: '59.90',
+        new_price: '37.90',
+        reviews: '1',
+        img1: mom1,
+        img2: mom2,
+        img3: mom3,
+        img4: mom4,
+        tag: '37%',
+        category: [{
+                id: 1,
+                name: 'Jeans'
+            },
+            {
+                id: 2,
+                name: 'WOMEN'
+            },
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        colors: [
+            {
+                id:1,
+                name:'Red'
+            },
+            {
+                id:2,
+                name:'Blue'
+            },
+            {
+                id:3,
+                name:'Orange'
+            },
+            {
+                id:4,
+                name:'Green'
+            },
+            {
+                id:5,
+                name:'Pink'
+            },
+            {
+                id:6,
+                name:'Black'
+            },
+            {
+                id:7,
+                name:'White'
+            }
+        ],
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: 'DD225V3RT'
+    },
+    {
+        id:17,
+        name: 'Ripped Flared Vintage jeans',
+        old_price: '45.90',
+        new_price: '39.90',
+        reviews: '1',
+        img1: flared1,
+        img2: flared2,
+        img3: flared3,
+        img4: flared4,
+        tag: '14%',
+        category: [{
+                id: 1,
+                name: 'Jeans'
+            },
+            {
+                id: 2,
+                name: 'WOMEN'
+            },
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        colors: [
+            {
+                id:1,
+                name:'Red'
+            },
+            {
+                id:2,
+                name:'Blue'
+            },
+            
+            {
+                id:3,
+                name:'Black'
+            },
+            {
+                id:4,
+                name:'White'
+            }
+        ],
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: 'X2F21V3RT'
+    },
+    {
+        id:18,
+        name: 'ribbed v-neck cardigan with rhinestone detail',
+        new_price: '28.00',
+        reviews: '1',
+        img1: ribbed1,
+        img2: ribbed2,
+        img3: ribbed3,
+        img4: ribbed4,
+        category: [{
+                id: 1,
+                name: 'Cardigan'
+            },
+            {
+                id: 2,
+                name: 'WOMEN'
+            },
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        colors: [
+            {
+                id:1,
+                name:'Red'
+            },
+            {
+                id:2,
+                name:'Blue'
+            },
+            {
+                id:3,
+                name:'Orange'
+            },
+            {
+                id:4,
+                name:'Green'
+            },
+            {
+                id:5,
+                name:'Pink'
+            },
+            {
+                id:6,
+                name:'Black'
+            },
+            {
+                id:7,
+                name:'White'
+            }
+        ],
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: 'CBF25V3RT'
+    },
+    {
+        id:19,
+        name: 'Ribbed cropped t-shirt with buttons'
+        old_price: '23.99',
+        new_price: '18.70',
+        reviews: '1',
+        img1: buttons1,
+        img2: buttons2,
+        img3: buttons3,
+        img4: buttons4,
+        tag: '23%',
+        category: [
+            {
+                id: 1,
+                name: 'WOMEN'
+            },
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        colors: [
+            {
+                id:1,
+                name:'Red'
+            },
+            {
+                id:2,
+                name:'Blue'
+            },
+            {
+                id:3,
+                name:'Orange'
+            },
+            {
+                id:4,
+                name:'Black'
+            },
+            {
+                id:5,
+                name:'White'
+            }
+        ],
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: '53S25XXRT'
+    },
+    {
+        id:20,
+        name: 'Relaxed fit plaid flannel shirt',
+        new_price: '34.99',
+        reviews: '1',
+        img1: shirt1,
+        img2: shirt2,
+        img3: shirt3,
+        img4: shirt4,
+        category: [{
+                id: 1,
+                name: 'T-shirt'
+            },
+            {
+                id: 2,
+                name: 'MEN'
+            },
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        colors: [
+            {
+                id:1,
+                name:'Red'
+            },
+            {
+                id:2,
+                name:'Blue'
+            },
+            {
+                id:3,
+                name:'Orange'
+            },
+            {
+                id:4,
+                name:'Green'
+            },
+            {
+                id:5,
+                name:'Pink'
+            },
+            {
+                id:6,
+                name:'Black'
+            },
+            {
+                id:7,
+                name:'White'
+            }
+        ],
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: '0DFX5V3QT'
+    },
+    {
+        id:21,
+        name: 'Quilted bomber jacket with ribbed trims',
+        old_price: '69.48',
+        new_price: '47.58',
+        reviews: '1',
+        img1: bomber1,
+        img2: bomber2,
+        img3: bomber3,
+        img4: bomber4,
+        tag: '32%',
+        category: [{
+                id: 1,
+                name: 'men'
+            },
+            {
+                id: 2,
+                name: 'hoodie'
+            },
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        colors: [
+            {
+                id:1,
+                name:'Red'
+            },
+            {
+                id:2,
+                name:'Blue'
+            },
+            {
+                id:3,
+                name:'Orange'
+            },
+            {
+                id:4,
+                name:'Green'
+            },
+            {
+                id:5,
+                name:'Pink'
+            },
+            {
+                id:6,
+                name:'Black'
+            },
+            {
+                id:7,
+                name:'White'
+            }
+        ],
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: 'S6F25V3RT'
+    },
+    {
+        id:22,
+        name: 'pouch pocket hoodie'
+        old_price: '32.40',
+        new_price: '27.40',
+        reviews: '1',
+        img1: pocket1,
+        img2: pocket2,
+        img3: pocket3,
+        img4: pocket4,
+        tag: '26%',
+        category: [{
+                id: 1,
+                name: 'Hoodie'
+            },
+            {
+                id: 2,
+                name: 'WOMEN'
+            },
+            {
+                id:3,
+                name: "MEN"
+            }
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        colors: [
+            {
+                id:1,
+                name:'Red'
+            },
+            {
+                id:2,
+                name:'Blue'
+            },
+            {
+                id:3,
+                name:'Orange'
+            },
+            {
+                id:4,
+                name:'Green'
+            },
+            {
+                id:5,
+                name:'Pink'
+            },
+            {
+                id:6,
+                name:'Black'
+            },
+            {
+                id:7,
+                name:'White'
+            }
+        ],
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: '3EF25V3RT'
+    },
+    {
+        id:23,
+        name: 'plush bermunda sweat shorts'
+        old_price: '17.80',
+        new_price: '14.80',
+        reviews: '1',
+        img1: plush1,
+        img2: plush2,
+        img3: plush3,
+        img4: plush4,
+        tag: '17%',
+        category: [{
+                id: 1,
+                name: 'SHORTS'
+            },
+            {
+                id: 2,
+                name: 'MEN'
+            },
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        colors: [
+            {
+                id:1,
+                name:'Red'
+            },
+            {
+                id:2,
+                name:'Blue'
+            },
+            {
+                id:3,
+                name:'Orange'
+            },
+            {
+                id:4,
+                name:'Green'
+            },
+            {
+                id:5,
+                name:'Pink'
+            },
+            {
+                id:6,
+                name:'Black'
+            },
+            {
+                id:7,
+                name:'White'
+            }
+        ],
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: 'AAF25V3RT'
+    },
+    {
+        id:24,
+        name: 'Blue starter logo t-shirt',
+        old_price: '22.70',
+        new_price: '18.70',
+        reviews: '1',
+        img1: starter1,
+        img2: starter2,
+        img3: starter3,
+        img4: starter4,
+        tag: '18%',
+        category: [{
+                id: 1,
+                name: 'T-shirt'
+            },
+            {
+                id: 2,
+                name: 'WOMEN'
+            },
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        colors: [
+            {
+                id:1,
+                name:'Red'
+            },
+            {
+                id:2,
+                name:'Blue'
+            },
+            {
+                id:3,
+                name:'Orange'
+            },
+            {
+                id:4,
+                name:'Green'
+            },
+            {
+                id:5,
+                name:'Pink'
+            },
+            {
+                id:6,
+                name:'Black'
+            },
+            {
+                id:7,
+                name:'White'
+            }
+        ],
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: 'R5v25V3RT'
+    },
+    {
+        id:25,
+        name: 'Oversized v-neck t-shirt',
+        new_price: '64.00',
+        reviews: '1',
+        img1: vneck1,
+        img2: vneck2,
+        img3: vneck3,
+        img4: vneck4,
+        category: [
+            {
+                id: 1,
+                name: 'WOMEN'
+            },
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        colors: [
+            {
+                id:1,
+                name:'Red'
+            },
+            {
+                id:2,
+                name:'Blue'
+            },
+            {
+                id:3,
+                name:'Orange'
+            },
+            {
+                id:4,
+                name:'Green'
+            },
+            {
+                id:5,
+                name:'Pink'
+            },
+            {
+                id:6,
+                name:'Black'
+            },
+            {
+                id:7,
+                name:'White'
+            }
+        ],
+        size: [
+            {
+                id:1,
+                name: 'M'
+            },
+            {
+                id:2,
+                name: 'L'
+            },
+            {
+                id:3,
+                name: 'XL'
+            },
+            {
+                id:4,
+                name: 'XXL'
+            },
+        ],
+        SKU: '5DF25V3RT'
+    },
+    {
+        id:26,
+        name: 'Oversized denim jacket',
+        old_price: '78.90',
+        new_price: '68.90',
+        reviews: '1',
+        img1: denim1,
+        img2: denim2,
+        img3: denim3,
+        img4: denim4,
+        tag: '13%',
+        category: [{
+                id: 1,
+                name: 'Jacket'
+            },
+            {
+                id: 2,
+                name: 'Men'
+            },
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: 'CQF25V3RT'
+    },
+    {
+        id:27,
+        name: 'Oversized corduroy shirt',
+        new_price: '24.99',
+        reviews: '1',
+        img1: corduroy1,
+        img2: corduroy2,
+        img3: corduroy3,
+        img4: corduroy4,
+        category: [{
+                id: 1,
+                name: 'T-shirt'
+            },
+            {
+                id: 2,
+                name: 'WOMEN'
+            },
+            {
+                id: 3,
+                name: 'MEN'
+            }
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: '5GL25V3RT'
+    },
+    {
+        id:28,
+        name: 'oversize varsity hoodie',
+        old_price: '57.99',
+        new_price: '27.99',
+        reviews: '1',
+        img1: varsity1,
+        img2: varsity2,
+        img3: varsity3,
+        img4: varsity4,
+        tag: '52%',
+        category: [{
+                id: 1,
+                name: 'MEN'
+            },
+            {
+                id: 2,
+                name: 'WOMEN'
+            },
+            {
+                id: 3,
+                name: 'hoodie'
+            }
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        colors: [
+            {
+                id:1,
+                name:'Red'
+            },
+            {
+                id:2,
+                name:'Blue'
+            },
+            {
+                id:3,
+                name:'Orange'
+            },
+            {
+                id:4,
+                name:'Green'
+            },
+            {
+                id:5,
+                name:'Pink'
+            },
+            {
+                id:6,
+                name:'Black'
+            },
+            {
+                id:7,
+                name:'White'
+            }
+        ],
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: '11F25X3RT'
+    },
+    {
+        id:29,
+        name: 'Oversize hoodie with zipper',
+        new_price: '124.00',
+        reviews: '1',
+        img1: zipper1,
+        img2: zipper2,
+        img3: zipper3,
+        img4: zipper4,
+        tag: '26%',
+        category: [{
+                id: 1,
+                name: 'hoodie'
+            },
+            {
+                id: 2,
+                name: 'Men'
+            },
+            {
+                id: 3,
+                name: 'WOMEN'
+            }
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        colors: [
+            {
+                id:1,
+                name:'Red'
+            },
+            {
+                id:2,
+                name:'Blue'
+            },
+            {
+                id:3,
+                name:'Orange'
+            },
+            {
+                id:4,
+                name:'Green'
+            },
+            {
+                id:5,
+                name:'Pink'
+            },
+            {
+                id:6,
+                name:'Black'
+            },
+            {
+                id:7,
+                name:'White'
+            }
+        ],
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: 'GKF25V3RT'
+    },
+    {
+        id:30,
+        name: 'Oversize faux leather biker jacket',
+        old_price: '78.00',
+        new_price: '45.99',
+        reviews: '1',
+        img1: faux1,
+        img2: faux2,
+        img3: faux3,
+        img4: faux4,
+        tag: '42%',
+        category: [{
+                id: 1,
+                name: 'Jacket'
+            },
+            {
+                id: 2,
+                name: 'WOMEN'
+            },
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: '80F25V3RT'
+    },
+    {
+        id:31,
+        name: 'Nylon puffer gilet',
+        old_price: '1399.00',
+        new_price: '1299.00',
+        reviews: '1',
+        img1: nylon1,
+        img2: nylon2,
+        img3: nylon3,
+        img4: nylon4,
+        tag: '8%',
+        category: [{
+                id: 1,
+                name: 'Jacket'
+            },
+            {
+                id: 2,
+                name: 'WOMEN'
+            },
+            {
+                id: 3,
+                name: 'Men'
+            }
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: '9DF25V3RT'
+    },
+    {
+        id:32,
+        name: 'Naruto itachi print t-shirt',
+        old_price: '23.90',
+        new_price: '17.90',
+        reviews: '1',
+        img1: naruto1,
+        img2: naruto2,
+        img3: naruto3,
+        img4: naruto4,
+        tag: '26%',
+        category: [{
+                id: 1,
+                name: 'T-shirt'
+            },
+            {
+                id: 2,
+                name: 'WOMEN'
+            },
+            {
+                id: 3,
+                name: 'Men'
+            }
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        colors: [
+            {
+                id:1,
+                name:'Green'
+            },
+        ],
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: '5TT25V3RT'
+    },
+    {
+        id:33,
+        name: 'Multicored Open-knit crewneck',
+        old_price: '65.90',
+        new_price: '49.90',
+        reviews: '1',
+        img1: colored1,
+        img2: colored2,
+        img3: colored3,
+        img4: colored4,
+        tag: '25%',
+        category: [{
+                id: 1,
+                name: 'Sweater'
+            },
+            {
+                id: 2,
+                name: 'WOMEN'
+            },
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: '8LF25V3RT'
+    },
+    {
+        id:34,
+        name: 'Loose-fit jeans',
+        old_price: '38.99',
+        new_price: '28.99',
+        reviews: '1',
+        img1: loose1,
+        img2: loose2,
+        img3: loose3,
+        img4: loose4,
+        tag: '26%',
+        category: [{
+                id: 1,
+                name: 'jeans'
+            },
+            {
+                id: 2,
+                name: 'MEN'
+            },
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: 'HJF25V3RT'
+    },
+    {
+        id:35,
+        name: 'Long sleeve sweatshirt dress',
+        old_price: '29.90',
+        new_price: '24.90',
+        reviews: '1',
+        img1: dress1,
+        img2: dress2,
+        img3: dress3,
+        img4: dress4,
+        tag: '17%',
+        category: [{
+                id: 1,
+                name: 'Sweatshirt'
+            },
+            {
+                id: 2,
+                name: 'WOMEN'
+            },
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        colors: [
+            {
+                id:1,
+                name:'Red'
+            },
+            {
+                id:2,
+                name:'Blue'
+            },
+            {
+                id:3,
+                name:'Orange'
+            },
+            {
+                id:4,
+                name:'Green'
+            },
+            {
+                id:5,
+                name:'Pink'
+            },
+            {
+                id:6,
+                name:'Black'
+            },
+            {
+                id:7,
+                name:'White'
+            }
+        ],
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: 'HKF25V3RT'
+    },
+    {
+        id:36,
+        name: 'Long sleeve graphic t-shirt'
+        new_price: '19.90',
+        reviews: '1',
+        img1: sleeve1,
+        img2: sleeve2,
+        img3: sleeve3,
+        img4: sleeve4,
+        category: [{
+                id: 1,
+                name: 'T-shrt'
+            },
+            {
+                id: 2,
+                name: 'WOMEN'
+            },
+            {
+                id:3,
+                name: 'Men'
+            }
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        colors: [
+            {
+                id:1,
+                name:'Red'
+            },
+            {
+                id:2,
+                name:'Blue'
+            },
+            {
+                id:3,
+                name:'Orange'
+            },
+            {
+                id:4,
+                name:'Green'
+            },
+            {
+                id:5,
+                name:'Pink'
+            },
+            {
+                id:6,
+                name:'Black'
+            },
+            {
+                id:7,
+                name:'White'
+            }
+        ],
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: '00R25V3RT'
+    },
+    {
+        id:37,
+        name: 'lightweight zipped bomber jacket'
+        old_price: '30.99',
+        new_price: '27.99',
+        reviews: '1',
+        img1: zipped1,
+        img2: zipped2,
+        img3: zipped3,
+        img4: zipped4,
+        tag: '10%',
+        category: [{
+                id: 1,
+                name: 'Jacket'
+            },
+            {
+                id: 2,
+                name: 'Men'
+            },
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        colors: [
+            {
+                id:1,
+                name:'Red'
+            },
+            {
+                id:2,
+                name:'Blue'
+            },
+            {
+                id:3,
+                name:'Orange'
+            },
+            {
+                id:4,
+                name:'Green'
+            },
+            {
+                id:5,
+                name:'Pink'
+            },
+            {
+                id:6,
+                name:'Black'
+            },
+            {
+                id:7,
+                name:'White'
+            }
+        ],
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: 'LLF2503M1'
+    },
+    {
+        id:38,
+        name: 'Knee-High heeled boots'
+        old_price: '69.00',
+        new_price: '49.00',
+        reviews: '1',
+        img1: boots1,
+        img2: boots2,
+        img3: boots3,
+        img4: boots4,
+        tag: '29%',
+        category: [{
+                id: 1,
+                name: 'Shoe'
+            },
+            {
+                id: 2,
+                name: 'WOMEN'
+            },
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        SKU: '87B2UHB1T'
+    },
+    {
+        id:39,
+        name: 'Hot stuff hoodie',
+        old_price: '89.00',
+        new_price: '49.00',
+        reviews: '1',
+        img1: stuff1,
+        img2: stuff2,
+        img3: stuff3,
+        img4: stuff4,
+        tag: '26%',
+        category: [{
+                id: 1,
+                name: 'Hoodie'
+            },
+            {
+                id: 2,
+                name: 'WOMEN'
+            },
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        colors: [
+            {
+                id:1,
+                name:'Red'
+            },
+            {
+                id:2,
+                name:'Blue'
+            },
+            {
+                id:3,
+                name:'Orange'
+            },
+            {
+                id:4,
+                name:'Green'
+            },
+            {
+                id:5,
+                name:'Pink'
+            },
+            {
+                id:6,
+                name:'Black'
+            },
+            {
+                id:7,
+                name:'White'
+            }
+        ],
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: 'FDF25V3RT'
+    },
+    {
+        id:40,
+        name: 'High-Rise comfort slim-Fit straight-fit jeans',
+        old_price: '55.90',
+        new_price: '45.90',
+        reviews: '1',
+        img1: rise1,
+        img2: rise2,
+        img3: rise3,
+        img4: rise4,
+        tag: '18%',
+        category: [{
+                id: 1,
+                name: 'Jeans'
+            },
+            {
+                id: 2,
+                name: 'WOMEN'
+            },
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        colors: [
+            {
+                id:1,
+                name:'Red'
+            },
+            {
+                id:2,
+                name:'Blue'
+            },
+            {
+                id:3,
+                name:'Orange'
+            },
+            {
+                id:4,
+                name:'Green'
+            },
+            {
+                id:5,
+                name:'Pink'
+            },
+            {
+                id:6,
+                name:'Black'
+            },
+            {
+                id:7,
+                name:'White'
+            }
+        ],
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: '39K25V3RT'
+    },
+    {
+        id:41,
+        name: 'fuzzy button-up cardigan',
+        new_price: '59.00',
+        reviews: '1',
+        img1: ribbed1,
+        img2: ribbed2,
+        img3: ribbed3,
+        img4: ribbed4,
+        tag: '26%',
+        category: [{
+                id: 1,
+                name: 'Sweater'
+            },
+            {
+                id: 2,
+                name: 'WOMEN'
+            },
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        colors: [
+            {
+                id:1,
+                name:'Red'
+            },
+            {
+                id:2,
+                name:'Blue'
+            },
+            {
+                id:3,
+                name:'Orange'
+            },
+            {
+                id:4,
+                name:'Green'
+            },
+            {
+                id:5,
+                name:'Pink'
+            },
+            {
+                id:6,
+                name:'Black'
+            },
+            {
+                id:7,
+                name:'White'
+            }
+        ],
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: 'C3F25V3RT'
+    },
+    {
+        id:42,
+        name: 'fluffy-Knit sweater',
+        old_price: '59.90',
+        new_price: '34.90',
+        reviews: '1',
+        img1: flufy1,
+        img2: flufy2,
+        img3: flufy3,
+        tag: '34%',
+        category: [{
+                id: 1,
+                name: 'Sweater'
+            },
+            {
+                id: 2,
+                name: 'WOMEN'
+            },
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        colors: [
+            {
+                id:1,
+                name:'Red'
+            },
+            {
+                id:2,
+                name:'Blue'
+            },
+            {
+                id:3,
+                name:'Orange'
+            },
+            {
+                id:4,
+                name:'Green'
+            },
+            {
+                id:5,
+                name:'Pink'
+            },
+            {
+                id:6,
+                name:'Black'
+            },
+            {
+                id:7,
+                name:'White'
+            }
+        ],
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: 'AWF25V3RT'
+    },
+    {
+        id:43,
+        name: 'Feminine-cut Blazer',
+        old_price: '69.90',
+        new_price: '49.90',
+        reviews: '1',
+        img1: ,blazer1
+        img2: blazer2,
+        img3: blazer3,
+        img4: blazer4,
+        tag: '29%',
+        category: [{
+                id: 1,
+                name: 'Suit'
+            },
+            {
+                id: 2,
+                name: 'WOMEN'
+            },
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        colors: [
+            {
+                id:1,
+                name:'Red'
+            },
+            {
+                id:2,
+                name:'Blue'
+            },
+            {
+                id:3,
+                name:'Orange'
+            },
+            {
+                id:4,
+                name:'Green'
+            },
+            {
+                id:5,
+                name:'Pink'
+            },
+            {
+                id:6,
+                name:'Black'
+            },
+            {
+                id:7,
+                name:'White'
+            }
+        ],
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: 'FI235V3RT'
+    },
+    {
+        id:44,
+        name: 'Faux suede jacket with pockets',
+        old_price: '19.99',
+        new_price: '14.99',
+        reviews: '1',
+        img1: suede1,
+        img2: suede2,
+        img3: suede3,
+        img4: suede4,
+        tag: '34%',
+        category: [{
+                id: 1,
+                name: 'Jacket'
+            },
+            {
+                id: 2,
+                name: 'MEN'
+            },
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: 'H8F25V3F3'
+    },
+    {
+        id:45,
+        name: 'faux leather overshirt with pocket',
+        old_price: '89.90',
+        new_price: '49.90',
+        reviews: '1',
+        img1: leather1,
+        img2: leather2,
+        img3: leather3,
+        img4: leather4,
+        tag: '26%',
+        category: [{
+                id: 1,
+                name: 'Jacket'
+            },
+            {
+                id: 2,
+                name: 'WOMEN'
+            },
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        colors: [
+            {
+                id:1,
+                name:'Red'
+            },
+            {
+                id:2,
+                name:'Blue'
+            },
+            {
+                id:3,
+                name:'Orange'
+            },
+            {
+                id:4,
+                name:'Green'
+            },
+            {
+                id:5,
+                name:'Pink'
+            },
+            {
+                id:6,
+                name:'Black'
+            },
+            {
+                id:7,
+                name:'White'
+            }
+        ],
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: '99F25V3RT'
+    },
+    {
+        id:46,
+        name: 'Faux Leather Blazer',
+        new_price: '139.00',
+        reviews: '1',
+        img1: ribbed1,
+        img2: ribbed2,
+        img3: ribbed3,
+        img4: ribbed4,
+        tag: '26%',
+        category: [{
+                id: 1,
+                name: 'Gown'
+            },
+            {
+                id: 2,
+                name: 'WOMEN'
+            },
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        colors: [
+            {
+                id:1,
+                name:'Red'
+            },
+            {
+                id:2,
+                name:'Blue'
+            },
+            {
+                id:3,
+                name:'Orange'
+            },
+            {
+                id:4,
+                name:'Green'
+            },
+            {
+                id:5,
+                name:'Pink'
+            },
+            {
+                id:6,
+                name:'Black'
+            },
+            {
+                id:7,
+                name:'White'
+            }
+        ],
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: '3KF25V3RT'
+    },
+    {
+        id:47,
+        name: 'Dress with cut-out and ring detail',
+        old_price: '49.00',
+        new_price: '39.00',
+        reviews: '1',
+        img1: cutout1,
+        img2: cutout2,
+        img3: cutout3,
+        img4: cutout4,
+        tag: '26%',
+        category: [{
+                id: 1,
+                name: 'Gown'
+            },
+            {
+                id: 2,
+                name: 'WOMEN'
+            },
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        colors: [
+            {
+                id:1,
+                name:'Red'
+            },
+            {
+                id:2,
+                name:'Blue'
+            },
+            {
+                id:3,
+                name:'Orange'
+            },
+            {
+                id:4,
+                name:'Green'
+            },
+            {
+                id:5,
+                name:'Pink'
+            },
+            {
+                id:6,
+                name:'Black'
+            },
+            {
+                id:7,
+                name:'White'
+            }
+        ],
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: '3SF25V3RT'
+    },
+    {
+        id:48,
+        name: 'Double-Breasted coat',
+        old_price: '779.00',
+        new_price: '659.00',
+        reviews: '1',
+        img1: breasted1,
+        img2: breasted2,
+        img3: breasted3,
+        img4: breasted4,
+        tag: '16%',
+        category: [{
+                id: 1,
+                name: 'Coat'
+            },
+            {
+                id: 2,
+                name: 'WOMEN'
+            },
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        colors: [
+            {
+                id:1,
+                name:'Red'
+            },
+            {
+                id:2,
+                name:'Blue'
+            },
+            {
+                id:3,
+                name:'Orange'
+            },
+            {
+                id:4,
+                name:'Green'
+            },
+            {
+                id:5,
+                name:'Pink'
+            },
+            {
+                id:6,
+                name:'Black'
+            },
+            {
+                id:7,
+                name:'White'
+            }
+        ],
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: '5DF25V3RT'
+    },
+    {
+        id:49,
+        name: 'Daisy jacquard knit cardigan',
+        new_price: '29.99',
+        reviews: '1',
+        img1: cardigan1,
+        img2: cardigan2,
+        img3: cardigan3,
+        img4: cardigan4,
+        category: [{
+                id: 1,
+                name: 'Sweater'
+            },
+            {
+                id: 2,
+                name: 'WOMEN'
+            },
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: '5DF25V3RT'
+    },
+    {
+        id:50,
+        name: 'Cropped short sleeve t-shirt with embroidered detail'
+        old_price: '69.99',
+        new_price: '49.99',
+        reviews: '1',
+        img1: cropped1,
+        img2: cropped2,
+        img3: cropped3,
+        img4: cropped4,
+        tag: '29%',
+        category: [{
+                id: 1,
+                name: 't-shirt'
+            },
+            {
+                id: 2,
+                name: 'WOMEN'
+            },
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        colors: [
+            {
+                id:1,
+                name:'Red'
+            },
+            {
+                id:2,
+                name:'Blue'
+            },
+            {
+                id:3,
+                name:'Orange'
+            },
+            {
+                id:4,
+                name:'Green'
+            },
+            {
+                id:5,
+                name:'Pink'
+            },
+            {
+                id:6,
+                name:'Black'
+            },
+            {
+                id:7,
+                name:'White'
+            }
+        ],
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: 'VCF25V3RT'
+    },
+]
