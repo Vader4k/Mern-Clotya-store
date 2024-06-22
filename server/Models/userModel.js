@@ -8,11 +8,12 @@ const userSchema = new mongoose.Schema({
         trim: true,
         match: [/.+@.+\..+/, 'Please enter a valid email address'] 
     },
-    Username: {
+    username: {
         type: String,
         trim: true,
         minlength: 3,
         unique: true,
+        required: true,
     },
     password: {
         type: String,
@@ -58,7 +59,13 @@ const userSchema = new mongoose.Schema({
     wishlist: [{
         type: Object,
         default:{}
-    }]
+    }],
+    resetPasswordToken: { 
+        type: String 
+    },
+    resetPasswordExpires: { 
+        type: Date 
+    }
 
 })
 
