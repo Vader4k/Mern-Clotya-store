@@ -40,10 +40,10 @@ export const register = async (req, res) => {
 
     const token = Jwt.sign(data, process.env.JWT_SECRET_kEY)
 
-    res.status(200).json({success:true, message: "registration successful", token})
+    res.status(200).json({ success:true, message: "registration successful", token })
 
    } catch (error) {
-    res.status(500).json({success:false, message:error.message})
+    res.status(500).json({ success:false, message:error.message })
    }
 }
 

@@ -44,10 +44,10 @@ const userSchema = new mongoose.Schema({
         enum: ['customer', 'admin'],
         default: 'customer'
     },
-    cart: [{
+    cart: {
         type: Object,
         default: {}
-    }],
+    },
     createdAt: {
         type: Date,
         default: Date.now()
@@ -56,10 +56,10 @@ const userSchema = new mongoose.Schema({
         type: Date,
         default: Date.now()
     },
-    wishlist: [{
+    wishlist: {
         type: Object,
         default:{}
-    }],
+    },
     resetPasswordToken: { 
         type: String 
     },
