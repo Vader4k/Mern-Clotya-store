@@ -14,7 +14,8 @@ module.exports = {
       // },
       fontFamily : {
         poppins: ["Poppins", "sans-serif"],
-        roboto : ["Roboto", "sans-serif"]
+        roboto : ["Roboto", "sans-serif"],
+        jost : ["Jost", "sans-serif"]
       },
       wordSpacing: {
         'tight': '-0.05em',

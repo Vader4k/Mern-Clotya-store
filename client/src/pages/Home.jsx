@@ -1,8 +1,11 @@
-
+import { Headtags } from '../components'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <main>
+      <Headtags pageTitle="Home"/>
+      Home
+    </main>
   )
 }
 

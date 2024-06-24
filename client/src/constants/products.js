@@ -1,3 +1,9 @@
+import { BsSearch, BsShop } from "react-icons/bs";
+import { IoPersonOutline } from "react-icons/io5";
+import { CiMenuBurger } from "react-icons/ci";
+import { TfiHeart } from "react-icons/tfi";
+
+
 import basic1 from '../assets/1.jpeg'
 import basic2 from '../assets/2.jpeg'
 import basic3 from '../assets/3.jpeg'
@@ -90,7 +96,7 @@ import colored4 from '../assets/colored4.jpg'
 import corduroy1 from '../assets/corduroy1.jpeg'
 import corduroy2 from '../assets/corduroy2.jpeg'
 import corduroy3 from '../assets/corduroy3.jpeg'
-import corduroy4 from '../assets/corduroy4.jpeg'
+
 
 import corset1 from '../assets/corset1.jpeg'
 import corset2 from '../assets/corset2.jpeg'
@@ -107,10 +113,10 @@ import cup2 from '../assets/cup2.jpeg'
 import cup3 from '../assets/cup3.jpeg'
 import cup4 from '../assets/cup4.jpeg'
 
-import cutout1 from '../assets/cutout1.jpeg'
+import cutout1 from '../assets/cutout.jpeg'
 import cutout2 from '../assets/cutout2.jpeg'
 import cutout3 from '../assets/cutout3.jpeg'
-import cutout4 from '../assets/cutout4.jpeg'
+
 
 import denim1 from '../assets/denim1.jpg'
 import denim2 from '../assets/denim2.jpg'
@@ -133,9 +139,9 @@ import faux3 from '../assets/faux3.jpg'
 import faux4 from '../assets/faux4.jpg'
 
 import fauxx1 from '../assets/faux1-1.jpg'
-import fauxx2 from '../assets/faux1-2.jpg'
-import fauxx3 from '../assets/faux1-3.jpg'
-import fauxx4 from '../assets/faux1-4.jpg'
+import fauxx2 from '../assets/faux2-1.jpg'
+import fauxx3 from '../assets/faux3-3.jpg'
+import fauxx4 from '../assets/faux4-4.jpg'
 
 import flared1 from '../assets/flared1.jpg'
 import flared2 from '../assets/flared2.jpg'
@@ -234,17 +240,17 @@ import overshirt4 from '../assets/overshirt4.jpg'
 import plush1 from '../assets/plush1.jpg'
 import plush2 from '../assets/plush2.jpg'
 import plush3 from '../assets/plush3.jpg'
-import plush4 from '../assets/plush4.jpg'
 
-import pocket1 from '../assets/pucket1.jpeg'
-import pocket2 from '../assets/pucket2.jpeg'
-import pocket3 from '../assets/pucket3.jpeg'
-import pocket4 from '../assets/pucket4.jpeg'
 
-import pocketmen1 from '../assets/pucketmen1.jpeg'
-import pocketmen2 from '../assets/pucketmen2.jpeg'
-import pocketmen3 from '../assets/pucketmen3.jpeg'
-import pocketmen4 from '../assets/pucketmen4.jpeg'
+import pocket1 from '../assets/pocket1.jpeg'
+import pocket2 from '../assets/pocket2.jpeg'
+import pocket3 from '../assets/pocket3.jpeg'
+import pocket4 from '../assets/pocket4.jpeg'
+
+import pocketmen1 from '../assets/pocketmen1.jpeg'
+import pocketmen2 from '../assets/pocketmen2.jpeg'
+import pocketmen3 from '../assets/pocketmen3.jpeg'
+import pocketmen4 from '../assets/pocketmen4.jpeg'
 
 import printedh1 from '../assets/printedh1.jpg'
 import printedh2 from '../assets/printedh2.jpg'
@@ -326,7 +332,7 @@ import trousers2 from '../assets/trousers2.jpeg'
 import trousers3 from '../assets/trousers3.jpeg'
 import trousers4 from '../assets/trousers4.jpeg'
 
-import tupac1 from '../assets/tupac1.jpeg'
+import tupac1 from '../assets/tupac1.jpg'
 import tupac2 from '../assets/tupac2.jpeg'
 import tupac3 from '../assets/tupac3.jpeg'
 import tupac4 from '../assets/tupac4.jpeg'
@@ -336,7 +342,7 @@ import varsity2 from '../assets/varsity2.jpeg'
 import varsity3 from '../assets/varsity3.jpeg'
 import varsity4 from '../assets/varsity4.jpeg'
 
-import vneck1 from '../assets/vneck1.jpeg'
+import vneck1 from '../assets/vneck1.jpg'
 import vneck2 from '../assets/vneck2.jpeg'
 import vneck3 from '../assets/vneck3.jpeg'
 import vneck4 from '../assets/vneck4.jpeg'
@@ -359,7 +365,7 @@ import zipper4 from '../assets/zipper4.jpeg'
 export const all_products = [
     {
         id:1,
-        name: 'Basic colored sweatpants with elastic hems'
+        name: 'Basic colored sweatpants with elastic hems',
         old_price: '25.90',
         new_price: '19.90',
         reviews: '2',
@@ -442,7 +448,7 @@ export const all_products = [
     },
     {
         id:2,
-        name: 'Basic High-Neck Puff jacket'
+        name: 'Basic High-Neck Puff jacket',
         new_price: '89.00',
         reviews: '1',
         img1: basic1,
@@ -1689,7 +1695,7 @@ export const all_products = [
     },
     {
         id:19,
-        name: 'Ribbed cropped t-shirt with buttons'
+        name: 'Ribbed cropped t-shirt with buttons',
         old_price: '23.99',
         new_price: '18.70',
         reviews: '1',
@@ -1925,7 +1931,7 @@ export const all_products = [
     },
     {
         id:22,
-        name: 'pouch pocket hoodie'
+        name: 'pouch pocket hoodie',
         old_price: '32.40',
         new_price: '27.40',
         reviews: '1',
@@ -2012,14 +2018,13 @@ export const all_products = [
     },
     {
         id:23,
-        name: 'plush bermunda sweat shorts'
+        name: 'plush bermunda sweat shorts',
         old_price: '17.80',
         new_price: '14.80',
         reviews: '1',
         img1: plush1,
         img2: plush2,
         img3: plush3,
-        img4: plush4,
         tag: '17%',
         category: [{
                 id: 1,
@@ -2303,7 +2308,6 @@ export const all_products = [
         img1: corduroy1,
         img2: corduroy2,
         img3: corduroy3,
-        img4: corduroy4,
         category: [{
                 id: 1,
                 name: 'T-shirt'
@@ -2887,7 +2891,7 @@ export const all_products = [
     },
     {
         id:36,
-        name: 'Long sleeve graphic t-shirt'
+        name: 'Long sleeve graphic t-shirt',
         new_price: '19.90',
         reviews: '1',
         img1: sleeve1,
@@ -2972,7 +2976,7 @@ export const all_products = [
     },
     {
         id:37,
-        name: 'lightweight zipped bomber jacket'
+        name: 'lightweight zipped bomber jacket',
         old_price: '30.99',
         new_price: '27.99',
         reviews: '1',
@@ -3055,7 +3059,7 @@ export const all_products = [
     },
     {
         id:38,
-        name: 'Knee-High heeled boots'
+        name: 'Knee-High heeled boots',
         old_price: '69.00',
         new_price: '49.00',
         reviews: '1',
@@ -3412,7 +3416,7 @@ export const all_products = [
         old_price: '69.90',
         new_price: '49.90',
         reviews: '1',
-        img1: ,blazer1
+        img1: blazer1,
         img2: blazer2,
         img3: blazer3,
         img4: blazer4,
@@ -3716,7 +3720,6 @@ export const all_products = [
         img1: cutout1,
         img2: cutout2,
         img3: cutout3,
-        img4: cutout4,
         tag: '26%',
         category: [{
                 id: 1,
@@ -3926,7 +3929,7 @@ export const all_products = [
     },
     {
         id:50,
-        name: 'Cropped short sleeve t-shirt with embroidered detail'
+        name: 'Cropped short sleeve t-shirt with embroidered detail',
         old_price: '69.99',
         new_price: '49.99',
         reviews: '1',
@@ -4007,4 +4010,50 @@ export const all_products = [
         ],
         SKU: 'VCF25V3RT'
     },
+]
+
+export const navLinks = [
+    {
+        id: 1,
+        name: 'Home',
+        link: '/'
+    },
+    {
+        id: 2,
+        name: 'Shop',
+        link: '/shop'
+    },
+    {
+        id: 3,
+        name: 'Women',
+        link: '/'
+    }
+]
+
+export const menuLinks = [
+    {
+        id:1,
+        name: 'Store',
+        img: BsShop
+    },
+    {
+        id:2,
+        name: 'Search',
+        img: BsSearch
+    },
+    {
+        id:3,
+        name: 'Wishlist',
+        img: TfiHeart
+    },
+    {
+        id:4,
+        name: 'Account',
+        img: IoPersonOutline
+    },
+    {
+        id:5,
+        name: 'Categories',
+        img: CiMenuBurger
+    }
 ]
