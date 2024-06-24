@@ -9,7 +9,7 @@ const Layout = () => {
         <div className='mb-[80px]'>
         <Footer />
         </div>
-        <div className='w-full block lg:hidden fixed bottom-0 max-h-[60px] h-full border-t border-gray-200 py-3'>
+        <div className='bg-white w-full block lg:hidden fixed bottom-0 max-h-[60px] h-full border-t border-gray-200 py-3'>
           <Menubar />
         </div>
     </section>

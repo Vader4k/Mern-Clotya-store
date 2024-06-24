@@ -1,6 +1,8 @@
 import { BsSearch, BsShop } from "react-icons/bs";
 import { IoPersonOutline } from "react-icons/io5";
 import { TfiHeart } from "react-icons/tfi";
+import { CiDeliveryTruck } from "react-icons/ci";
+import { PiMoneyWavyThin, PiPhoneLight, PiCreditCardThin } from "react-icons/pi";
 
 
 import basic1 from '../assets/1.jpeg'
@@ -4054,4 +4056,32 @@ export const menuLinks = [
         img: IoPersonOutline,
         url: '/profile'
     },
+]
+
+export const heroItems = [
+    {
+        id:1,
+        title: "Free shipping",
+        text: "Free shipping for orders over $130.",
+        img: CiDeliveryTruck
+    },
+    {
+        id:2,
+        title: "Money Guarantee",
+        text: "Within 30 days for an exchange.",
+        img: PiMoneyWavyThin
+    },
+    {
+        id:3,
+        title: "Online Support",
+        text: "Around the clock customer care.",
+        img: PiPhoneLight
+    },
+    {
+        id:4,
+        title: "Flexible Payment",
+        text: "Pay with multiple credit cards.",
+        img: PiCreditCardThin
+    }
+
 ]

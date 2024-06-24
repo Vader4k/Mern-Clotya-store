@@ -3,6 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    font-family: "Jost", sans-serif;
+}
 .carousel {
     transition: all 0.8s ease-in-out;
 }
