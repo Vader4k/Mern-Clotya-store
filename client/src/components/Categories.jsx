@@ -1,7 +1,7 @@
 
 const Categories = () => {
   return (
-    <section className='w-full min-h-[85vh] px-6 flex flex-col gap-6 lg:flex-row items-center justify-between lg:gap-8'>
+    <section className='w-full lg:h-[84vh] px-6 flex flex-col gap-6 lg:flex-row items-center justify-between lg:gap-8'>
       <div className='w-full h-[400px] md:h-full lg:h-[84vh] bg-women bg-cover cursor-pointer'>
         <div className="p-6 md:p-10 flex flex-col">
           <h3 className="text-[0.85rem]">54 products</h3>
@@ -31,17 +31,17 @@ const Categories = () => {
             </ul>
           </div>
         </div>
-        <div className='w-full h-full flex items-center justify-between gap-8'>
-          <div className='w-full min-h-[300px] max-h-full bg-shoes bg-contain bg-no-repeat sm:bg-cover cursor-pointer'>
+        <div className='w-full h-full flex flex-col sm:flex-row  items-center justify-between gap-8'>
+          <div className='w-full min-h-[300px] max-h-full bg-shoes bg-cover cursor-pointer'>
           <div className="p-10 flex flex-col">
             <h3 className="text-[0.85rem]">1 product</h3>
             <h1 className="text-[2rem]">Shoes</h1>
           </div>
           </div>
-          <div className='w-full min-h-[300px] max-h-full bg-accessories bg-contain bg-no-repeat sm:bg-cover cursor-pointer'>
+          <div className='w-full min-h-[300px] max-h-full bg-accessories bg-cover cursor-pointer'>
             <div className="p-10 flex flex-col">
               <h3 className="text-[0.85rem]">3 products</h3>
-              <h1 className="md:text-[2rem]">Accessories</h1>
+              <h1 className="text-[2rem]">Accessories</h1>
             </div>
           </div>
         </div>
