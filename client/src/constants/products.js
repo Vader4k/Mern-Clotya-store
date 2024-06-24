@@ -1,6 +1,5 @@
 import { BsSearch, BsShop } from "react-icons/bs";
 import { IoPersonOutline } from "react-icons/io5";
-import { CiMenuBurger } from "react-icons/ci";
 import { TfiHeart } from "react-icons/tfi";
 
 
@@ -4034,26 +4033,25 @@ export const menuLinks = [
     {
         id:1,
         name: 'Store',
-        img: BsShop
+        img: BsShop,
+        url: '/shop'
     },
     {
         id:2,
         name: 'Search',
-        img: BsSearch
+        img: BsSearch,
+        url: '/search'
     },
     {
         id:3,
         name: 'Wishlist',
-        img: TfiHeart
+        img: TfiHeart,
+        url: '/favorites'
     },
     {
         id:4,
         name: 'Account',
-        img: IoPersonOutline
+        img: IoPersonOutline,
+        url: '/profile'
     },
-    {
-        id:5,
-        name: 'Categories',
-        img: CiMenuBurger
-    }
 ]
