@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 
-export const AppHeadTag = ({ pageTitle }) => {
+ const AppHeadTag = ({ pageTitle }) => {
     return (
       <Helmet>
         <title>{pageTitle} | Clotya</title>
@@ -29,3 +29,4 @@ export const AppHeadTag = ({ pageTitle }) => {
     );
   };
   
+  export default AppHeadTag
