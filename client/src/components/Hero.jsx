@@ -1,7 +1,10 @@
+import HeroSlider from "./HeroSlider"
 
 const Hero = () => {
   return (
-    <div>Hero</div>
+    <section>
+      <HeroSlider />
+    </section>
   )
 }
 

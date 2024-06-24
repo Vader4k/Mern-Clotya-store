@@ -3,3 +3,14 @@
 @tailwind components;
 @tailwind utilities;
 
+.carousel {
+    transition: all 0.8s ease-in-out;
+}
+
+.direction {
+    visibility: hidden;
+}
+
+.slider:hover .direction {
+    visibility: visible;
+}
