@@ -16,7 +16,7 @@ const FeaturedProducts = () => {
 
 
   return (
-    <section className="px-3">
+    <section className="px-3 z-0">
       <div className="flex flex-col md:flex-row items-start justify-between ">
         <h1 className="text-[1.5rem] md:text-[2rem] font-medium w-full">Featured Products</h1>
         <p className="text-gray-500 font-light text-[0.9rem] md:text-[1.1rem]">
