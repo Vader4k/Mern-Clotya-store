@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { IoStar } from "react-icons/io5";
 
 const Card = ({props}) => {
 
@@ -26,19 +27,26 @@ const Card = ({props}) => {
   
   return (
     <div
-      onMouseOver={(event) => handleHover(props.id, event)}
+      className="relative w-[350px]"
     >
       <Link to={`product/${props.id}`}>
-        <img 
+        <img
+          onMouseOver={(event) => handleHover(props.id, event)}
+          className="w-[350px]" 
           src={props[`img${activeImageIndices[props.id] || 1}`]} 
           alt={`product-${props.name}`} 
         />
       </Link>
-      <div>
-        <h3>{props.name}</h3>
-        <p>{props.old_price}</p>
-        <p>{props.new_price}</p>
-        <p>{props.tag}</p>
+      <div className="py-2 flex flex-col gap-3">
+        <div className="flex items-center gap-2 text-[0.85rem]">
+          <IoStar className="text-yellow-500"/>
+          <span>{props.reviews} review</span>
+        </div>
+        <p>{props.name}</p>
+        <div className="flex items-center gap-2">
+          { props.old_price && <span className="line-through text-gray-400">${props.old_price}</span>}
+          <span>${props.new_price}</span>
+        </div>
       </div>
     </div>
   )

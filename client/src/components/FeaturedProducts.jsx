@@ -1,28 +1,64 @@
-import { ShopContext } from '../context/ShopContext'
-import { useContext } from 'react'
-import { useParams } from 'react-router-dom'
-import Card from './Card'
+import { useContext } from 'react';
+import { ShopContext } from '../context/ShopContext';
+import FeaturedCard from './FeaturedCard';
+import { Swiper, SwiperSlide } from 'swiper/react'
+
+import 'swiper/css'
+import 'swiper/css/pagination'
+
+
+
+import { Pagination } from 'swiper/modules'
 
 const FeaturedProducts = () => {
+  const { allProducts } = useContext(ShopContext); // handles all products fetching
+  const featured = allProducts.slice(0, 9);
 
-  const { allProducts } = useContext(ShopContext)
-  const {id} = useParams()
-
-  const featured = allProducts.slice(0,9)
-  console.log(featured)
 
   return (
-    <section>
-      <div className="flex items-start justify-between px-6">
+    <section className="px-6">
+      <div className="flex items-start justify-between ">
         <h1 className="text-[2rem] font-medium w-full">Featured Products</h1>
-        <p className="text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint impedit a, quia assumenda unde fugit consequatur ad. Sit, esse tenetur? Harum a culpa vitae totam quaerat recusandae ratione, consequuntur temporibus.</p>
+        <p className="text-gray-500 font-light text-[1.1rem]">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint impedit a, quia assumenda unde fugit consequatur ad. Sit, esse tenetur? Harum a culpa vitae totam quaerat recusandae ratione, consequuntur temporibus.
+        </p>
       </div>
-
-      {featured.map((item) => (
-        <Card props={item}/>
-      ))}
+      <div className=' relative'>
+          <Swiper
+            slidesPerView={1}
+            spaceBetween={30}
+            loop={true}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Pagination]}
+            className="mySwiper"
+          >
+            <SwiperSlide>
+              <div className='w-full flex gap-8'>
+                {featured.slice(0, 3).map((item) => (
+                  <FeaturedCard key={item.id} props={item} />
+                ))}
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className='w-full flex gap-8'>
+                {featured.slice(3, 6).map((item) => (
+                  <FeaturedCard key={item.id} props={item} />
+                ))}
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className='w-full flex gap-8'>
+                {featured.slice(6, 9).map((item) => (
+                  <FeaturedCard key={item.id} props={item} />
+                ))}
+              </div>
+            </SwiperSlide>
+          </Swiper>
+        </div>
     </section>
-  )
-}
+  );
+};
 
-export default FeaturedProducts
+export default FeaturedProducts;

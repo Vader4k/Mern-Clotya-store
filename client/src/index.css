@@ -17,3 +17,11 @@ body {
 .slider:hover .direction {
     visibility: visible;
 }
+
+.mySwiper .swiper-pagination-bullet {
+    background: rgb(51, 50, 50);
+}
+
+.mySwiper .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background: gray;
+}
