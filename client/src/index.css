@@ -25,3 +25,7 @@ body {
 .mySwiper .swiper-pagination-bullet.swiper-pagination-bullet-active {
     background: gray;
 }
+
+.card:hover .activities {
+    display: block;
+}

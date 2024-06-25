@@ -374,7 +374,7 @@ export const all_products = [
         img2: basic2,
         img3: basic3,
         img4: basic4,
-        tag: 'TRENDING',
+        tag: '24%',
         category: [{
                 id: 1,
                 name: 'Jackets & coats'
@@ -456,7 +456,7 @@ export const all_products = [
         img2: highNeck2,
         img3: highNeck3,
         img4: highNeck4,
-        tag: '24%',
+        tag: 'TRENDING',
         category: [{
                 id: 1,
                 name: ' jackets & coats'
