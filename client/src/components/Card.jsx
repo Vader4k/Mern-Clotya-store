@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { IoStar } from "react-icons/io5";
+import { CiHeart } from "react-icons/ci";
+import { MdOutlineZoomInMap } from "react-icons/md";
+import { PiSwapLight } from "react-icons/pi";
+import { IoBagOutline } from "react-icons/io5";
 
 const Card = ({props}) => {
 
@@ -27,25 +31,46 @@ const Card = ({props}) => {
   
   return (
     <div
-      className="relative w-[350px]"
+      className="relative w-full max-w-[500px] mt-10 mb-10 card z-0"
     >
       <Link to={`product/${props.id}`}>
         <img
           onMouseOver={(event) => handleHover(props.id, event)}
-          className="w-[350px]" 
+          className="w-full max-w-[500px]" 
           src={props[`img${activeImageIndices[props.id] || 1}`]} 
           alt={`product-${props.name}`} 
         />
       </Link>
-      <div className="py-2 flex flex-col gap-3">
+      <div className="py-4 flex flex-col gap-2 lg:gap-3">
         <div className="flex items-center gap-2 text-[0.85rem]">
           <IoStar className="text-yellow-500"/>
           <span>{props.reviews} review</span>
         </div>
-        <p>{props.name}</p>
-        <div className="flex items-center gap-2">
+        <p className="text-[0.9rem] md:text-[1rem] capitalize">{props.name}</p>
+        <div className="text-[0.85rem] md:text-[1rem] flex items-center gap-2">
           { props.old_price && <span className="line-through text-gray-400">${props.old_price}</span>}
           <span>${props.new_price}</span>
+        </div>
+      </div>
+      {props.tag && (
+        <div className={`absolute left-2 top-2 text-[0.8rem] px-3 py-1 bg-white ${props.tag.length < 5 ? 'text-green-500 md:font-bold' : 'text-gray-500'}`}>
+          {props.tag}
+        </div>)
+      }
+      <div className="absolute top-2 right-2 md:hidden activities">
+        <div className="flex flex-col gap-3 md:text-[1.2rem] text-gray-600">
+          <div onClick={()=> handleLiked(props.id)} className="p-2 rounded-full bg-white hover:bg-red-400 hover:text-white transition-all">
+            <CiHeart />
+          </div>
+          <div onClick={()=> handlezoom(props.id)} className="p-2 rounded-full bg-white hover:bg-red-400 hover:text-white transition-all">
+            <MdOutlineZoomInMap />
+          </div>
+          <div onClick={()=> handleCompare(props.id)} className="p-2 rounded-full bg-white hover:bg-red-400 hover:text-white transition-all">
+            <PiSwapLight />
+          </div>
+          <div onClick={()=> handleAddToCart(props.id)} className="p-2 rounded-full bg-white hover:bg-red-400 hover:text-white transition-all">
+            <IoBagOutline />
+          </div>
         </div>
       </div>
     </div>

@@ -3,7 +3,8 @@ import {
   Headtags, 
   Hero,
   FeaturedProducts, 
-  Seasons
+  Seasons,
+  TopBrands
 } from '../components'
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
         <Categories />
         <FeaturedProducts />
         <Seasons />
+        <TopBrands />
       </section>
     </main>
   )

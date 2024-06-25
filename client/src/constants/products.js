@@ -377,11 +377,11 @@ export const all_products = [
         tag: '24%',
         category: [{
                 id: 1,
-                name: 'Jackets & coats'
+                name: 'jackets & coats'
             },
             {
                 id: 2,
-                name: 'WOMEN'
+                name: 'women'
             },
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -463,7 +463,7 @@ export const all_products = [
             },
             {
                 id: 2,
-                name: 'WOMEN'
+                name: 'women'
             },
             {
                 id:3,
@@ -550,7 +550,7 @@ export const all_products = [
             },
             {
                 id: 2,
-                name: 'WOMEN'
+                name: 'women'
             },
             {
                 id:3,
@@ -633,15 +633,15 @@ export const all_products = [
         tag: '14%',
         category: [{
                 id: 1,
-                name: 'MEN'
+                name: 'men'
             },
             {
                 id: 2,
-                name: 'Shirts'
+                name: 'shirts'
             },
             {
                 id:3,
-                name: 'T-shirt'
+                name: 'Outerwear'
             }
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -680,15 +680,15 @@ export const all_products = [
         img4: printedh4,
         category: [{
                 id: 1,
-                name: 'Women'
+                name: 'women'
             },
             {
                 id: 2,
-                name: 'Hoodie'
+                name: 'hoodie'
             },
             {
                 id:3,
-                name: 'T-shirt'
+                name: 't-shirt'
             }
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -725,7 +725,7 @@ export const all_products = [
             },
             {
                 id: 2,
-                name: 'MEN'
+                name: 'men'
             },
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -796,11 +796,11 @@ export const all_products = [
         tag: '26%',
         category: [{
                 id: 1,
-                name: 'Gown'
+                name: 'gown'
             },
             {
                 id: 2,
-                name: 'WOMEN'
+                name: 'women'
             },
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -849,15 +849,15 @@ export const all_products = [
         tag: '37%',
         category: [{
                 id: 1,
-                name: 'Jackets & coats'
+                name: 'jackets & coats'
             },
             {
                 id: 2,
-                name: 'WOMEN'
+                name: 'women'
             },
             {
                 id:3,
-                name: 'Hoodies'
+                name: 'hoodies'
             }
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -936,11 +936,11 @@ export const all_products = [
         tag: '26%',
         category: [{
                 id: 1,
-                name: 'Jackets & coats'
+                name: 'jackets & coats'
             },
             {
                 id: 2,
-                name: 'WOMEN'
+                name: 'women'
             },
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -1019,11 +1019,11 @@ export const all_products = [
         tag: '22%',
         category: [{
                 id: 1,
-                name: 'hoodie'
+                name: 'outerwear'
             },
             {
                 id: 2,
-                name: 'Men'
+                name: 'men'
             },
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -1072,12 +1072,16 @@ export const all_products = [
         tag: '26%',
         category: [{
                 id: 1,
-                name: 'Gown'
+                name: 'gown'
             },
             {
                 id: 2,
-                name: 'WOMEN'
+                name: 'women'
             },
+            {
+                id:3,
+                name: 'blouses & shirts'
+            }
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         colors: [
@@ -1155,11 +1159,11 @@ export const all_products = [
         tag: '21%',
         category: [{
                 id: 1,
-                name: 'T-shirt'
+                name: 'blouses & shirts'
             },
             {
                 id: 2,
-                name: 'WOMEN'
+                name: 'women'
             },
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -1238,11 +1242,11 @@ export const all_products = [
         tag: '47%',
         category: [{
                 id: 1,
-                name: 'Gown'
+                name: 'gown'
             },
             {
                 id: 2,
-                name: 'WOMEN'
+                name: 'women'
             },
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -1313,12 +1317,16 @@ export const all_products = [
         tag: '29%',
         category: [{
                 id: 1,
-                name: 'Trouser'
+                name: 'trouser'
             },
             {
                 id: 2,
-                name: 'MEN'
+                name: 'men'
             },
+            {
+                id:3,
+                name: 'outerwear'
+            }
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         colors: [
@@ -1396,11 +1404,11 @@ export const all_products = [
         tag: '16%',
         category: [{
                 id: 1,
-                name: 'Jeans'
+                name: 'jeans'
             },
             {
                 id: 2,
-                name: 'WOMEN'
+                name: 'women'
             },
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -1471,12 +1479,16 @@ export const all_products = [
         tag: '37%',
         category: [{
                 id: 1,
-                name: 'Jeans'
+                name: 'jeans'
             },
             {
                 id: 2,
-                name: 'WOMEN'
+                name: 'women'
             },
+            {
+                id:3,
+                name: 'outerwear'
+            }
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         colors: [
@@ -1554,11 +1566,11 @@ export const all_products = [
         tag: '14%',
         category: [{
                 id: 1,
-                name: 'Jeans'
+                name: 'jeans'
             },
             {
                 id: 2,
-                name: 'WOMEN'
+                name: 'women'
             },
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -1624,12 +1636,16 @@ export const all_products = [
         img4: ribbed4,
         category: [{
                 id: 1,
-                name: 'Cardigan'
+                name: 'cardigan'
             },
             {
                 id: 2,
-                name: 'WOMEN'
+                name: 'women'
             },
+            {
+                id:3,
+                name: 'outerwear'
+            }
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         colors: [
@@ -1708,7 +1724,7 @@ export const all_products = [
         category: [
             {
                 id: 1,
-                name: 'WOMEN'
+                name: 'women'
             },
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -1777,11 +1793,11 @@ export const all_products = [
         img4: shirt4,
         category: [{
                 id: 1,
-                name: 'T-shirt'
+                name: 't-shirt'
             },
             {
                 id: 2,
-                name: 'MEN'
+                name: 'men'
             },
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -1866,6 +1882,10 @@ export const all_products = [
                 id: 2,
                 name: 'hoodie'
             },
+            {
+                id:3,
+                name: 'outerwear'
+            }
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         colors: [
@@ -1943,15 +1963,19 @@ export const all_products = [
         tag: '26%',
         category: [{
                 id: 1,
-                name: 'Hoodie'
+                name: 'hoodie'
             },
             {
                 id: 2,
-                name: 'WOMEN'
+                name: 'women'
             },
             {
                 id:3,
-                name: "MEN"
+                name: "men"
+            },
+            {
+                id:4,
+                name: 'outerwear'
             }
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -2029,11 +2053,11 @@ export const all_products = [
         tag: '17%',
         category: [{
                 id: 1,
-                name: 'SHORTS'
+                name: 'shorts'
             },
             {
                 id: 2,
-                name: 'MEN'
+                name: 'men'
             },
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -2112,11 +2136,11 @@ export const all_products = [
         tag: '18%',
         category: [{
                 id: 1,
-                name: 'T-shirt'
+                name: 't-shirt'
             },
             {
                 id: 2,
-                name: 'WOMEN'
+                name: 'women'
             },
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -2194,7 +2218,7 @@ export const all_products = [
         category: [
             {
                 id: 1,
-                name: 'WOMEN'
+                name: 'women'
             },
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -2261,12 +2285,16 @@ export const all_products = [
         tag: '13%',
         category: [{
                 id: 1,
-                name: 'Jacket'
+                name: 'jacket'
             },
             {
                 id: 2,
-                name: 'Men'
+                name: 'men'
             },
+            {
+                id:3,
+                name: "outerwear"
+            }
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         size: [
@@ -2311,15 +2339,15 @@ export const all_products = [
         img3: corduroy3,
         category: [{
                 id: 1,
-                name: 'T-shirt'
+                name: 't-shirt'
             },
             {
                 id: 2,
-                name: 'WOMEN'
+                name: 'women'
             },
             {
                 id: 3,
-                name: 'MEN'
+                name: 'men'
             }
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -2368,15 +2396,19 @@ export const all_products = [
         tag: '52%',
         category: [{
                 id: 1,
-                name: 'MEN'
+                name: 'men'
             },
             {
                 id: 2,
-                name: 'WOMEN'
+                name: 'women'
             },
             {
                 id: 3,
                 name: 'hoodie'
+            },
+            {
+                id: 4,
+                name: 'outerwear'
             }
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -2458,11 +2490,15 @@ export const all_products = [
             },
             {
                 id: 2,
-                name: 'Men'
+                name: 'men'
             },
             {
                 id: 3,
-                name: 'WOMEN'
+                name: 'women'
+            },
+            {
+                id: 4,
+                name: 'outerwear'
             }
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -2541,12 +2577,16 @@ export const all_products = [
         tag: '42%',
         category: [{
                 id: 1,
-                name: 'Jacket'
+                name: 'jacket'
             },
             {
                 id: 2,
-                name: 'WOMEN'
+                name: 'women'
             },
+            {
+                id: 3,
+                name: 'outerwear'
+            }
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         size: [
@@ -2594,15 +2634,19 @@ export const all_products = [
         tag: '8%',
         category: [{
                 id: 1,
-                name: 'Jacket'
+                name: 'jacket'
             },
             {
                 id: 2,
-                name: 'WOMEN'
+                name: 'women'
             },
             {
                 id: 3,
-                name: 'Men'
+                name: 'men'
+            },
+            {
+                id: 4,
+                name: 'outerwear'
             }
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -2651,15 +2695,15 @@ export const all_products = [
         tag: '26%',
         category: [{
                 id: 1,
-                name: 'T-shirt'
+                name: 'blouse & shirts'
             },
             {
                 id: 2,
-                name: 'WOMEN'
+                name: 'women'
             },
             {
                 id: 3,
-                name: 'Men'
+                name: 'men'
             }
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -2714,11 +2758,11 @@ export const all_products = [
         tag: '25%',
         category: [{
                 id: 1,
-                name: 'Sweater'
+                name: 'sweater'
             },
             {
                 id: 2,
-                name: 'WOMEN'
+                name: 'women'
             },
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -2771,7 +2815,7 @@ export const all_products = [
             },
             {
                 id: 2,
-                name: 'MEN'
+                name: 'men'
             },
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -2820,12 +2864,16 @@ export const all_products = [
         tag: '17%',
         category: [{
                 id: 1,
-                name: 'Sweatshirt'
+                name: 'sweatshirt'
             },
             {
                 id: 2,
-                name: 'WOMEN'
+                name: 'women'
             },
+            {
+                id: 3,
+                name:'blouse & shirts'
+            }
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         colors: [
@@ -2901,15 +2949,19 @@ export const all_products = [
         img4: sleeve4,
         category: [{
                 id: 1,
-                name: 'T-shrt'
+                name: 't-shrt'
             },
             {
                 id: 2,
-                name: 'WOMEN'
+                name: 'women'
             },
             {
                 id:3,
-                name: 'Men'
+                name: 'men'
+            },
+            {
+                id:4,
+                name: 'blouses & shirts'
             }
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -2988,12 +3040,16 @@ export const all_products = [
         tag: '10%',
         category: [{
                 id: 1,
-                name: 'Jacket'
+                name: 'jacket'
             },
             {
                 id: 2,
-                name: 'Men'
+                name: 'men'
             },
+            {
+                id: 3,
+                name: 'outerwear'
+            }
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         colors: [
@@ -3071,11 +3127,11 @@ export const all_products = [
         tag: '29%',
         category: [{
                 id: 1,
-                name: 'Shoe'
+                name: 'shoe'
             },
             {
                 id: 2,
-                name: 'WOMEN'
+                name: 'women'
             },
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -3094,12 +3150,16 @@ export const all_products = [
         tag: '26%',
         category: [{
                 id: 1,
-                name: 'Hoodie'
+                name: 'hoodie'
             },
             {
                 id: 2,
-                name: 'WOMEN'
+                name: 'women'
             },
+            {
+                id: 3,
+                name: 'outerwear'
+            }
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         colors: [
@@ -3177,11 +3237,11 @@ export const all_products = [
         tag: '18%',
         category: [{
                 id: 1,
-                name: 'Jeans'
+                name: 'jeans'
             },
             {
                 id: 2,
-                name: 'WOMEN'
+                name: 'women'
             },
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -3259,12 +3319,16 @@ export const all_products = [
         tag: '26%',
         category: [{
                 id: 1,
-                name: 'Sweater'
+                name: 'sweater'
             },
             {
                 id: 2,
-                name: 'WOMEN'
+                name: 'women'
             },
+            {
+                id: 3,
+                name: 'outerwear'
+            }
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         colors: [
@@ -3341,12 +3405,16 @@ export const all_products = [
         tag: '34%',
         category: [{
                 id: 1,
-                name: 'Sweater'
+                name: 'sweater'
             },
             {
                 id: 2,
-                name: 'WOMEN'
+                name: 'women'
             },
+            {
+                id: 3,
+                name: 'outerwear'
+            }
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         colors: [
@@ -3424,11 +3492,11 @@ export const all_products = [
         tag: '29%',
         category: [{
                 id: 1,
-                name: 'Suit'
+                name: 'suit'
             },
             {
                 id: 2,
-                name: 'WOMEN'
+                name: 'women'
             },
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -3507,11 +3575,11 @@ export const all_products = [
         tag: '34%',
         category: [{
                 id: 1,
-                name: 'Jacket'
+                name: 'jacket'
             },
             {
                 id: 2,
-                name: 'MEN'
+                name: 'men'
             },
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -3560,12 +3628,16 @@ export const all_products = [
         tag: '26%',
         category: [{
                 id: 1,
-                name: 'Jacket'
+                name: 'jacket'
             },
             {
                 id: 2,
-                name: 'WOMEN'
+                name: 'women'
             },
+            {
+                id: 3,
+                name: 'blouses & shirts'
+            }
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         colors: [
@@ -3642,12 +3714,16 @@ export const all_products = [
         tag: '26%',
         category: [{
                 id: 1,
-                name: 'Gown'
+                name: 'gown'
             },
             {
                 id: 2,
-                name: 'WOMEN'
+                name: 'women'
             },
+            {
+                id: 3,
+                name: 'blouses & shirts'
+            }
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         colors: [
@@ -3724,11 +3800,11 @@ export const all_products = [
         tag: '26%',
         category: [{
                 id: 1,
-                name: 'Gown'
+                name: 'gown'
             },
             {
                 id: 2,
-                name: 'WOMEN'
+                name: 'women'
             },
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -3807,12 +3883,16 @@ export const all_products = [
         tag: '16%',
         category: [{
                 id: 1,
-                name: 'Coat'
+                name: 'coat'
             },
             {
                 id: 2,
-                name: 'WOMEN'
+                name: 'women'
             },
+            {
+                id: 3,
+                name: 'blouses & shirts'
+            }
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         colors: [
@@ -3945,8 +4025,103 @@ export const all_products = [
             },
             {
                 id: 2,
-                name: 'WOMEN'
+                name: 'women'
             },
+            {
+                id: 3,
+                name: 'blouses & shirts'
+            }
+        ],
+        info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        colors: [
+            {
+                id:1,
+                name:'Red'
+            },
+            {
+                id:2,
+                name:'Blue'
+            },
+            {
+                id:3,
+                name:'Orange'
+            },
+            {
+                id:4,
+                name:'Green'
+            },
+            {
+                id:5,
+                name:'Pink'
+            },
+            {
+                id:6,
+                name:'Black'
+            },
+            {
+                id:7,
+                name:'White'
+            }
+        ],
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            },
+            {
+                id:2,
+                name: 'XS'
+            },
+            {
+                id:3,
+                name: 'S'
+            },
+            {
+                id:4,
+                name: 'M'
+            },
+            {
+                id:5,
+                name: 'L'
+            },
+            {
+                id:6,
+                name: 'XL'
+            },
+            {
+                id:7,
+                name: 'XXL'
+            },
+        ],
+        SKU: 'VCF25V3RT'
+    },
+    {
+        id:51,
+        name: 'Tupac Califonia Love T-Shirt',
+        old_price: '19.99',
+        new_price: '9.99',
+        reviews: '1',
+        img1: tupac1,
+        img2: tupac2,
+        img3: tupac3,
+        img4: tupac4,
+        tag: '10%',
+        category: [{
+                id: 1,
+                name: 't-shirt'
+            },
+            {
+                id: 2,
+                name: 'women'
+            },
+            {
+                id: 3,
+                name: 'blouses & shirts'
+            },
+            {
+                id: 4,
+                name: 'men'
+            }
         ],
         info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         colors: [
