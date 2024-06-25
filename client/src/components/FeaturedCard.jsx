@@ -45,7 +45,7 @@ const FeaturedCard = ({props}) => {
 
   return (
     <div
-      className="relative w-full max-w-[500px] mt-10 mb-10 lg:mb-24 card"
+      className="relative w-full max-w-[500px] mt-10 mb-10 lg:mb-20 card"
     >
       <Link to={`product/${props.id}`}>
         <img

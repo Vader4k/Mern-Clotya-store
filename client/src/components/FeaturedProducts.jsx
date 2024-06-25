@@ -16,7 +16,7 @@ const FeaturedProducts = () => {
 
 
   return (
-    <section className="px-6">
+    <section className="px-3">
       <div className="flex flex-col md:flex-row items-start justify-between ">
         <h1 className="text-[1.5rem] md:text-[2rem] font-medium w-full">Featured Products</h1>
         <p className="text-gray-500 font-light text-[0.9rem] md:text-[1.1rem]">
@@ -27,7 +27,6 @@ const FeaturedProducts = () => {
           <Swiper
             slidesPerView={1}
             spaceBetween={30}
-            loop={true}
             pagination={{
               clickable: true,
             }}
@@ -62,7 +61,6 @@ const FeaturedProducts = () => {
           <Swiper
             slidesPerView={1}
             spaceBetween={30}
-            loop={true}
             pagination={{
               clickable: true,
             }}

@@ -4,8 +4,6 @@ module.exports = {
   theme: {
     extend: {
       fontFamily : {
-        poppins: ["Poppins", "sans-serif"],
-        roboto : ["Roboto", "sans-serif"],
         jost : ["Jost", "sans-serif"]
       },
       wordSpacing: {
@@ -18,7 +16,8 @@ module.exports = {
         'men': "url('./assets/banner-2.jpg')",
         "shoes": "url('./assets/banner-3.jpg')",
         "accessories": "url('./assets/banner-4.jpg')",
-
+        'jewellery': "url('./assets/banner-22.jpg')",
+        'fashion': "url('./assets/banner-23.jpg')",
       }
     },
   },

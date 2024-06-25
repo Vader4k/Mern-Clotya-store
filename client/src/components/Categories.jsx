@@ -1,7 +1,7 @@
 
 const Categories = () => {
   return (
-    <section className='w-full lg:h-[84vh] px-6 flex flex-col gap-6 lg:flex-row items-center justify-between lg:gap-8'>
+    <section className='w-full lg:h-[84vh] px-3 flex flex-col gap-6 lg:flex-row items-center justify-between lg:gap-8'>
       <div className='w-full h-[400px] md:h-full lg:h-[84vh] bg-women bg-cover cursor-pointer'>
         <div className="p-6 md:p-10 flex flex-col">
           <h3 className="text-[0.85rem]">54 products</h3>

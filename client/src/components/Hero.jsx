@@ -6,7 +6,7 @@ const Hero = () => {
     <section>
       <HeroSlider />
       <div className="w-full flex items-center justify-between max-w-[1300px] mx-auto">
-        <div className="flex items-center justify-between w-full py-10 px-6 flex-wrap gap-8">
+        <div className="flex items-center justify-between w-full py-10 px-3 flex-wrap gap-8">
           {heroItems.map((item) => (
             <div key={item.id} className="flex items-center gap-6">
               <item.img className="md:text-[2.5rem] text-[2rem] font-jost"/>

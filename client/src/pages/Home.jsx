@@ -2,7 +2,8 @@ import {
   Categories, 
   Headtags, 
   Hero,
-  FeaturedProducts 
+  FeaturedProducts, 
+  Seasons
 } from '../components'
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
       <section className='max-w-[1300px] mx-auto flex flex-col gap-10 lg:gap-20'>
         <Categories />
         <FeaturedProducts />
+        <Seasons />
       </section>
     </main>
   )
