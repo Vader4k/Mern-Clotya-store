@@ -17,6 +17,7 @@ import TopBrands from './TopBrands'
 import WinterSlider from './WinterSlider'
 import Breadcrums from './Breadcrums'
 
+
 export {
     BestSeller,
     Blog,
@@ -35,5 +36,5 @@ export {
     ShopButton,
     TopBrands,
     WinterSlider,
-    Breadcrums
+    Breadcrums,
 }

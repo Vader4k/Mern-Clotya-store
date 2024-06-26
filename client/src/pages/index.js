@@ -7,6 +7,7 @@ import ProductDetail from './ProductDetails';
 import Profile from './Profile';
 import Search from './Search'
 import Shop from './Shop'
+import NotFound from './NotFound'
 
 export {
     Auth,
@@ -17,5 +18,6 @@ export {
     ProductDetail,
     Profile,
     Search,
-    Shop
+    Shop,
+    NotFound
 }

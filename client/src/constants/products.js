@@ -367,6 +367,8 @@ import blog4 from '../assets/blog-4.jpg'
 import blog5 from '../assets/blog-5.jpg'
 import blog6 from '../assets/blog-6.jpg'
 
+import logo from '../assets/logo.png'
+
 export const all_products = [
     {
         id:1,
@@ -4307,5 +4309,138 @@ export const blogItems = [
         paragraph4: 'Vivamus libero leo, tincidunt eget lectus rhoncus, finibus interdum neque. Curabitur aliquet dolor purus, id molestie purus elementum vitae. Sed quis aliquet eros. Morbi condimentum ornare nibh, et tincidunt ante interdum facilisis. Praesent sagittis tortor et felis finibus vestibulum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus dapibus turpis sit amet turpis tincidunt, sit amet mollis turpis suscipit. Proin arcu diam, pretium nec tempus eu, feugiat non ex.',
         paragraph5: 'Nulla id nibh ligula. Etiam finibus elit nec nisl faucibus, vel auctor tortor iaculis. Vivamus aliquet ipsum purus, vel auctor felis interdum at. Praesent quis fringilla justo. Ut non dui at mi laoreet gravida vitae eu elit. Aliquam in elit eget purus scelerisque efficitur vel ac sem. Etiam ante magna, vehicula et vulputate in, aliquam sit amet metus. Donec mauris eros, aliquet in nibh quis, semper suscipit nunc. Phasellus ornare nibh vitae dapibus tempor.',
         paragraph6: 'Donec feugiat tincidunt eros, ac aliquam purus egestas condimentum. Curabitur imperdiet at leo pellentesque mattis. Fusce a dignissim est. In enim nisi, hendrerit placerat nunc quis, porttitor lobortis neque. Donec nec nulla arcu. Proin felis augue, volutpat ac nunc a, semper egestas dolor. Sed varius magna non lacus viverra, at dapibus sem interdum. Proin urna nibh, maximus nec interdum ut, hendrerit et arcu. Nunc venenatis eget nulla at tempor. Duis sed tellus placerat, bibendum felis quis, efficitur nisi. Morbi porta placerat urna et pharetra. Proin condimentum, libero ac feugiat efficitur, est orci consectetur sapien, a pretium leo leo in elit. Quisque fringilla finibus arcu, pretium posuere urna posuere sit amet. Nullam quis sapien a augue aliquet accumsan eget eu risus. Ut at mi sed velit condimentum porta. Proin vestibulum congue ullamcorper.'
+    }
+]
+
+export const footerItems = [
+    {
+        id:1,
+        img: logo,
+        text: 'Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis in termapol.',
+        number: '(+800) 1234 5678 90 – info@example.com'
+    },
+    {
+        id: 2,
+        title: 'Information',
+        links: [
+            {
+                id: 1,
+                text: 'About Us',
+                url: '/about'
+            },
+            {
+                id: 2,
+                text: 'Privacy Policy',
+                url: '/privacy'
+            },
+            {
+                id: 3,
+                text: 'Returns Policy',
+                url: '/returns'
+            },
+            {
+                id: 4,
+                text: 'Shipping Policy',
+                url: '/'
+            },
+            {
+                id: 5,
+                text: 'Dropshipping',
+                url: '/'
+            },
+        ] 
+    },
+    {
+        id: 3,
+        title: 'Account',
+        links: [
+            {
+                id: 1,
+                text: 'Dashboard',
+                url: '/profile'
+            },
+            {
+                id: 2,
+                text: 'My Orders',
+                url: '/orders'
+            },
+            {
+                id: 3,
+                text: 'My Wishlist',
+                url: '/favorites'
+            },
+            {
+                id: 4,
+                text: 'Account Details',
+                url: '/'
+            },
+            {
+                id: 5,
+                text: 'Track My Orders',
+                url: '/'
+            },
+        ] 
+    },
+    {
+        id: 4,
+        title: 'Shop',
+        links: [
+            {
+                id: 1,
+                text: 'Affiliate',
+                url: '/contact'
+            },
+            {
+                id: 2,
+                text: 'Bestsellers',
+                url: '/shop'
+            },
+            {
+                id: 3,
+                text: 'Discount',
+                url: '/shop'
+            },
+            {
+                id: 4,
+                text: 'Latest Products',
+                url: '/'
+            },
+            {
+                id: 5,
+                text: 'Sale Products',
+                url: '/'
+            },
+        ] 
+    },
+    {
+        id: 5,
+        title: 'Categories',
+        links: [
+            {
+                id: 1,
+                text: 'Women',
+                url: '/shop'
+            },
+            {
+                id: 2,
+                text: 'Men',
+                url: '/shop'
+            },
+            {
+                id: 3,
+                text: 'Bags',
+                url: '/shop'
+            },
+            {
+                id: 4,
+                text: 'Outerwear',
+                url: '/shop'
+            },
+            {
+                id: 5,
+                text: 'Shoes',
+                url: '/shop'
+            },
+        ] 
     }
 ]

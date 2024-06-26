@@ -8,8 +8,10 @@ import {
     ProductDetail,
     Profile,
     Search,
-    Shop
+    Shop,
+    NotFound
 } from '../pages'
+
 
 const Router = () => {
   return (
@@ -24,6 +26,7 @@ const Router = () => {
             <Route path="/profile" element={<Profile />} />
             <Route path="/search" element={<Search />} />
             <Route path="/shop" element={<Shop />} />
+            <Route path="*" element={<NotFound />} />
         </Routes>
     </section>
   )
