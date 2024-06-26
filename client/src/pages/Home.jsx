@@ -7,7 +7,8 @@ import {
   TopBrands,
   WinterSlider,
   BestSeller,
-  Blog
+  Blog,
+  Newsletter
 } from '../components'
 
 const Home = () => {
@@ -24,6 +25,7 @@ const Home = () => {
         <BestSeller />
         <Blog />
       </section>
+      <Newsletter />
     </main>
   )
 }
