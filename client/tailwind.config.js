@@ -18,6 +18,8 @@ module.exports = {
         "accessories": "url('./assets/banner-4.jpg')",
         'jewellery': "url('./assets/banner-22.jpg')",
         'fashion': "url('./assets/banner-23.jpg')",
+        'winter1': "url('./assets/slider-13.jpg')",
+        'winter2': "url('./assets/slider-14.jpg')",
       }
     },
   },

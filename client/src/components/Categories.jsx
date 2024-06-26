@@ -32,13 +32,13 @@ const Categories = () => {
           </div>
         </div>
         <div className='w-full h-full flex flex-col sm:flex-row  items-center justify-between gap-8'>
-          <div className='w-full min-h-[300px] max-h-full bg-shoes bg-cover cursor-pointer'>
+          <div className='w-full min-h-[320px] max-h-full bg-shoes bg-cover cursor-pointer'>
           <div className="p-10 flex flex-col">
             <h3 className="text-[0.85rem]">1 product</h3>
             <h1 className="text-[2rem]">Shoes</h1>
           </div>
           </div>
-          <div className='w-full min-h-[300px] max-h-full bg-accessories bg-cover cursor-pointer'>
+          <div className='w-full min-h-[320px] max-h-full bg-accessories bg-cover cursor-pointer'>
             <div className="p-10 flex flex-col">
               <h3 className="text-[0.85rem]">3 products</h3>
               <h1 className="text-[2rem]">Accessories</h1>

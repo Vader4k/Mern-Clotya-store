@@ -4,7 +4,8 @@ import {
   Hero,
   FeaturedProducts, 
   Seasons,
-  TopBrands
+  TopBrands,
+  WinterSlider
 } from '../components'
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
         <FeaturedProducts />
         <Seasons />
         <TopBrands />
+        <WinterSlider />
       </section>
     </main>
   )

@@ -1,10 +1,11 @@
-import { useContext, useState } from "react"
+import { useContext, useState, useEffect } from "react"
 import { ShopContext } from "../context/ShopContext"
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import { Pagination } from 'swiper/modules'
 import Card from "./Card"
+import CategoryButton from './CategoryButton'
 
 
 const TopBrands = () => {
@@ -12,7 +13,16 @@ const TopBrands = () => {
   const {allProducts} = useContext(ShopContext)
   const [active, setActive] = useState("men")
   //filters the products array to get the product whose active name exists in its category array
-  const [brands, setBrands] = useState(allProducts.filter(item => item.category.some(cat => cat.name.toLowerCase() === active)))
+  const [brands, setBrands] = useState([])
+
+  useEffect(() => {
+    setBrands(allProducts.filter(item => item.category.some(cat => cat.name.toLowerCase() === active)))
+  }, [active, allProducts])
+
+  const filterProducts = (categoryName) => {
+    setBrands(allProducts.filter(item => item.category.some(cat => cat.name.toLowerCase() === categoryName)));
+  };
+
 
   const products = brands.slice(0,8)
 
@@ -30,15 +40,12 @@ const TopBrands = () => {
           {data.map((items) => (
             <ul key={items.id}>
               <li>
-                <button 
-                  className={active === items.name? "text-black capitalize" : "text-gray-400 hover:text-black transition-all capitalize"} 
-                  onClick={() => {
-                    setActive(items.name)
-                    setBrands(allProducts.filter(item => item.category.some(cat => cat.name.toLowerCase() === items.name)))
-                  }}
-                >
-                  {items.name}
-                </button>
+                <CategoryButton
+                  name={items.name}
+                  active={active}
+                  setActive={setActive}
+                  filterProducts={filterProducts} 
+                />
               </li>
             </ul>
           ))}
@@ -105,7 +112,7 @@ const TopBrands = () => {
             </SwiperSlide>
           </Swiper>
       </div>
-
+      {/* {small screens} */}
       <div className='block md:hidden relative'>
           <Swiper
             slidesPerView={1}
