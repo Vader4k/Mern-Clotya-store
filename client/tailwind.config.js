@@ -20,6 +20,9 @@ module.exports = {
         'fashion': "url('./assets/banner-23.jpg')",
         'winter1': "url('./assets/slider-13.jpg')",
         'winter2': "url('./assets/slider-14.jpg')",
+        'winter3': "url('./assets/banner-24.jpg')",
+        'winter4': "url('./assets/banner-25.jpg')",
+        'summer': "url('./assets/image-09.jpg')",
       }
     },
   },

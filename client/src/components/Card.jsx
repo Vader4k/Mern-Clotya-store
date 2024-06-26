@@ -31,7 +31,7 @@ const Card = ({props}) => {
   
   return (
     <div
-      className="relative w-full max-w-[500px] mt-10 mb-10 card z-0"
+      className="relative w-full max-w-[500px] mt-10 mb-4 sm:mb-10 card z-0"
     >
       <Link to={`product/${props.id}`}>
         <img
@@ -41,7 +41,7 @@ const Card = ({props}) => {
           alt={`product-${props.name}`} 
         />
       </Link>
-      <div className="py-4 flex flex-col gap-2 lg:gap-3">
+      <div className="py-4 flex flex-col gap-2">
         <div className="flex items-center gap-2 text-[0.85rem]">
           <IoStar className="text-yellow-500"/>
           <span>{props.reviews} review</span>

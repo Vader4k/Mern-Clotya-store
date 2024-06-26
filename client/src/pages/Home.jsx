@@ -5,7 +5,8 @@ import {
   FeaturedProducts, 
   Seasons,
   TopBrands,
-  WinterSlider
+  WinterSlider,
+  BestSeller
 } from '../components'
 
 const Home = () => {
@@ -19,6 +20,7 @@ const Home = () => {
         <Seasons />
         <TopBrands />
         <WinterSlider />
+        <BestSeller />
       </section>
     </main>
   )

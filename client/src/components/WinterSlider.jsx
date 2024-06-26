@@ -41,15 +41,6 @@ const WinterSlider = () => {
           </div>
         ))}
       </div>
-
-      <div className="direction absolute right-0 md:top-[50%] top-[30%] py-3 px-1 bg-gray-200 cursor-pointer xs:block hidden">
-        <img width="25" height="30" src="https://img.icons8.com/ios/50/forward--v1.png" alt="forward--v1" onClick={next}/>
-      </div>
-
-      <div className="direction absolute left-0 md:top-[50%] top-[30%] py-3 px-1 bg-gray-200 cursor-pointer xs:block hidden">
-        <img width="25" height="30" src="https://img.icons8.com/ios/100/back--v1.png" alt="back--v1" onClick={prev}/>
-      </div>
-
       <div className="absolute flex md:bottom-[2%] xs:bottom-[3%] bottom-[5%] left-[50%] transform -translate-x-1/2 text-[1rem] md:text-gray-500 text-gray-400">
         {data.map((_, index) => (
           <GoDotFill
