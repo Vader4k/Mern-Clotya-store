@@ -2,7 +2,9 @@
 
 const Reviews = ({props}) => {
   return (
-    <div>Reviews</div>
+    <div className="md:text-[1.2rem]">
+      <span>{props.reviews} Review for {props.name}</span>
+    </div>
   )
 }
 

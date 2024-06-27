@@ -22,7 +22,7 @@ const Details = ({ props }) => {
 
   return (
     <div className="w-full">
-      <div className="flex items-start gap-8">
+      <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8">
         <div className="flex flex-col gap-4"> 
           <div>
             <img className="h-[700px] object-cover w-[500px]" src={activeImage} alt={props.name} />
@@ -51,7 +51,7 @@ const Details = ({ props }) => {
             <span className="text-[0.9rem]">{props.reviews} review</span>
           </div>
           <div className="flex gap-2 items-center">
-            <span className="line-through text-gray-400 text-[1.3rem]">${props.old_price}</span>
+            {props.old_price && <span className="line-through text-gray-400 text-[1.3rem]">${props.old_price}</span>}
             <span className="font-medium text-[1.3rem]">${props.new_price}</span>
           </div>
           <p className="text-[0.85rem]">{props.info}</p>

@@ -34,7 +34,7 @@ const ProductDetails = () => {
       <Headtags pageTitle={`${product.name}`} />
       <Breadcrums props={product} />
       <Details props={product} />
-      <div className='w-full flex items-center gap-4 mt-8 pb-5 text-[1.3rem] border-b'>
+      <div className='w-full flex items-center gap-4 mt-8 pb-5 md:text-[1.3rem] border-b'>
         <h1
           className={`cursor-pointer ${active === 'desc' ? 'text-black' : 'text-gray-400'}`}
           onClick={() => setActive('desc')}
