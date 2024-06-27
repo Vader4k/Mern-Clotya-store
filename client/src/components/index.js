@@ -16,6 +16,11 @@ import ShopButton from './ShopButton'
 import TopBrands from './TopBrands'
 import WinterSlider from './WinterSlider'
 import Breadcrums from './Breadcrums'
+import AddInfo from './AddInfo'
+import Description from './Description'
+import RelatedProducts from './RelatedProducts'
+import Reviews from './Reviews'
+import Details from './Details'
 
 
 export {
@@ -37,4 +42,9 @@ export {
     TopBrands,
     WinterSlider,
     Breadcrums,
+    AddInfo,
+    Description,
+    RelatedProducts,
+    Reviews,
+    Details
 }

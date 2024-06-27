@@ -33,7 +33,7 @@ const Card = ({props}) => {
     <div
       className="relative w-full max-w-[500px] mt-10 mb-4 sm:mb-10 card z-0"
     >
-      <Link to={`product/${props.id}`}>
+      <Link to={`/product/${props.id}`}>
         <img
           onMouseOver={(event) => handleHover(props.id, event)}
           className="w-full max-w-[500px]" 

@@ -9,8 +9,6 @@ const BestSeller = () => {
   const gowns = allProducts.filter(item => item.category.some(cat=> cat.name === 'gown'))
   const shirt = allProducts.filter(item => item.category.some(cat=> cat.name === 't-shirt'))
 
-  console.log(gowns)
-
   return (
     <section className="px-3">
       <div className="flex flex-col gap-3 items-center text-center">

@@ -1,11 +1,12 @@
 import Router from '../route/Router'
-import { Navbar, Footer, Menubar } from '../components'
+import { Navbar, Footer, Menubar, Newsletter } from '../components'
 
 const Layout = () => {
   return (
     <section className='relative w-full'>
         <Navbar />
         <Router />
+        <Newsletter />
         <div className='mb-[80px]'>
         <Footer />
         </div>

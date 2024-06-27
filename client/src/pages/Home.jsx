@@ -8,7 +8,6 @@ import {
   WinterSlider,
   BestSeller,
   Blog,
-  Newsletter
 } from '../components'
 
 const Home = () => {
@@ -25,7 +24,6 @@ const Home = () => {
         <BestSeller />
         <Blog />
       </section>
-      <Newsletter />
     </main>
   )
 }
