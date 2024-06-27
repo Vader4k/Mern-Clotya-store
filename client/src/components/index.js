@@ -21,6 +21,7 @@ import Description from './Description'
 import RelatedProducts from './RelatedProducts'
 import Reviews from './Reviews'
 import Details from './Details'
+import ScrollToTop from './ScrollToTop'
 
 
 export {
@@ -46,5 +47,6 @@ export {
     Description,
     RelatedProducts,
     Reviews,
-    Details
+    Details,
+    ScrollToTop
 }

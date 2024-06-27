@@ -9,13 +9,16 @@ import {
     Profile,
     Search,
     Shop,
-    NotFound
+    NotFound,
 } from '../pages'
+
+import { ScrollToTop } from '../components'
 
 
 const Router = () => {
   return (
-    <section>
+    <>
+      <ScrollToTop />
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/auth" element={<Auth />} />
@@ -30,7 +33,7 @@ const Router = () => {
             <Route path="/shop" element={<Shop />} />
             <Route path="*" element={<NotFound />} />
         </Routes>
-    </section>
+    </>
   )
 }
 

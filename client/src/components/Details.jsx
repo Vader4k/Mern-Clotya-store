@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { IoStar } from "react-icons/io5";
 import { TfiWorld } from "react-icons/tfi";
 import { GoHeart } from "react-icons/go";
 import { CiShare1 } from "react-icons/ci";
+
 
 const Details = ({ props }) => {
   const [activeImage, setActiveImage] = useState(props.img1);
@@ -19,6 +20,10 @@ const Details = ({ props }) => {
   const subtract = () => {
     setamount( amount === 0 ? 0 : amount - 1 )
   }
+
+  useEffect(() => {
+    setActiveImage(props.img1);
+  }, [props]);
 
   return (
     <div className="w-full">

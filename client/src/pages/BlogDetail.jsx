@@ -40,9 +40,9 @@ const BlogDetail = () => {
   ]
 
   return (
-    <section className='w-full max-w-[1300px] mx-auto my-20 px-3'>
+    <section className='w-full max-w-[1300px] mx-auto my-20 px-3 md:px-20 lg:px-3 '>
       <Headtags pageTitle={`Blog - ${blogDetails.name}`}/>
-      <div className='w-full flex items-start relative gap-8'>
+      <div className='w-full flex flex-col lg:flex-row items-start relative gap-8'>
         { activeTab === 'blog' && (
           <div className='flex-[3] flex flex-col gap-3 w-full border-b pb-20'>
             <img className='w-full' src={blogDetails.image} alt={blogDetails.name} />
@@ -66,8 +66,8 @@ const BlogDetail = () => {
         {/* stickly side actions */}
         <div className='sticky top-1 flex-1 w-full'>
           <div className='w-full'>
-            <div className='relative mb-4'>
-              <form>
+            <div className=' mb-4'>
+              <form className='relative w-full'>
                 <input 
                   type="text"
                   placeholder='Search...'
@@ -80,7 +80,7 @@ const BlogDetail = () => {
             <div className='flex flex-col gap-8 my-6'>
               {blogs.map((items) => (
                 <div key={items.id}>
-                  <Link to={`/blog/${items.id}`}>
+                  <Link to={`blog/${items.id}`}>
                     <div className='flex items-start gap-6'>
                       <img className='h-[80px] w-[80px] object-cover' src={items.image} alt={items.name} />
                       <div className='flex flex-col gap-2'>
@@ -128,7 +128,7 @@ const BlogDetail = () => {
                       <h1>{comment.name}</h1>
                       <span className='text-[0.8rem]'>{comment.date}</span>
                     </div>
-                    <p className='py-3'>{comment.text}</p>
+                    <p className='py-3 text-[0.9rem] md:text-[1rem]'>{comment.text}</p>
                   </div>
                 </div>
               ))}
