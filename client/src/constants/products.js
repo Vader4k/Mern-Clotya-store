@@ -4444,3 +4444,26 @@ export const footerItems = [
         ] 
     }
 ]
+
+export const blogComments = [
+    {
+        id: 1,
+        name: 'Elliot Alderson',
+        date: 'june 9, 2023',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.',
+        replies: [
+            {
+                id: 1,
+                name: 'admin',
+                date: 'june 9, 2023',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.'
+            },
+        ]
+    },
+    {
+        id: 2,
+        name: 'admin',
+        date: 'june 9, 2023',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.'
+    }
+]
