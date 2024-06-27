@@ -23,6 +23,7 @@ module.exports = {
         'winter3': "url('./assets/banner-24.jpg')",
         'winter4': "url('./assets/banner-25.jpg')",
         'summer': "url('./assets/image-09.jpg')",
+        'shop': "url('./assets/banner-26.jpg')",
       }
     },
   },

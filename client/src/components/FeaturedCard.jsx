@@ -27,22 +27,6 @@ const FeaturedCard = ({props}) => {
       setActiveImageIndices((prev) => ({ ...prev, [id]: newIndex }));
     };
 
-    const handleLiked = (id) => {
-      console.log('liked', id)
-    }
-
-    const handlezoom = (id) => {
-      console.log('zoom', id)
-    }
-
-    const handleCompare = (id) => {
-      console.log('compare', id)
-    }
-
-    const handleAddToCart = (id) => {
-      console.log('add to cart', id)
-    }
-
   return (
     <div
       className="relative w-full max-w-[500px] mt-10 mb-10 lg:mb-20 card"
@@ -73,16 +57,16 @@ const FeaturedCard = ({props}) => {
       }
       <div className="absolute top-2 right-2 md:hidden activities">
         <div className="flex flex-col gap-3 md:text-[1.2rem] text-gray-600">
-          <div onClick={()=> handleLiked(props.id)} className="p-2 rounded-full bg-white hover:bg-red-400 hover:text-white transition-all">
+          <div className="p-2 rounded-full bg-white hover:bg-red-400 hover:text-white transition-all">
             <CiHeart />
           </div>
-          <div onClick={()=> handlezoom(props.id)} className="p-2 rounded-full bg-white hover:bg-red-400 hover:text-white transition-all">
+          <div className="p-2 rounded-full bg-white hover:bg-red-400 hover:text-white transition-all">
             <MdOutlineZoomInMap />
           </div>
-          <div onClick={()=> handleCompare(props.id)} className="p-2 rounded-full bg-white hover:bg-red-400 hover:text-white transition-all">
+          <div className="p-2 rounded-full bg-white hover:bg-red-400 hover:text-white transition-all">
             <PiSwapLight />
           </div>
-          <div onClick={()=> handleAddToCart(props.id)} className="p-2 rounded-full bg-white hover:bg-red-400 hover:text-white transition-all">
+          <div className="p-2 rounded-full bg-white hover:bg-red-400 hover:text-white transition-all">
             <IoBagOutline />
           </div>
         </div>

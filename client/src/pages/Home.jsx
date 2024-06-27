@@ -10,9 +10,11 @@ import {
   Blog,
 } from '../components'
 
+
+
 const Home = () => {
   return (
-    <main>
+    <main className=''>
       <Headtags pageTitle="Home"/>
       <Hero />
       <section className='max-w-[1300px] mx-auto flex flex-col gap-10 lg:gap-20'>
