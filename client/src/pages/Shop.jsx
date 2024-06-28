@@ -3,6 +3,7 @@ import SIdeControls from '../components/SideControls';
 import { IoGridOutline } from "react-icons/io5";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { CiBoxList } from "react-icons/ci";
+import { IoFilter } from "react-icons/io5";
 import { useState, useContext, useEffect } from 'react';
 import { ShopContext } from '../context/ShopContext';
 import { Card } from '../components';
@@ -53,22 +54,26 @@ const Shop = () => {
     <section className="py-10 px-3 w-full max-w-[1300px] mx-auto">
       <Headtags pageTitle="Shop" />
       <div className='flex items-start gap-14'>
-        <div className='flex-1 flex flex-col sticky top-2 w-full'>
+        <div className='flex-1 lg:flex flex-col sticky top-2 w-full hidden'>
           <SIdeControls products={products}/>
         </div>
         <div className='flex-[3] flex-col gap-6 w-full'>
-          <div className='bg-shop h-[350px] w-full bg-contain bg-no-repeat'>
-            <div className='p-16 w-full max-w-[500px]'>
-              <h1 className='text-[2.5rem] leading-[3rem]'>Plus-Size Style for Every Season</h1>
+          <div className='bg-shop h-[250px] md:h-[350px] w-full bg-center lg:bg-contain bg-no-repeat'>
+            <div className='p-4 md:p-8 lg:p-16 w-full max-w-[500px]'>
+              <h1 className='text-[2rem] md:text-[2.5rem] leading-[3rem]'>Plus-Size Style for Every Season</h1>
               <p className='text-gray-500 text-[0.9rem] mt-6'>Quis ipsum suspendisse ultrice grvida. Risus commodo viverra maecenas</p>
             </div>
           </div>
-          <div className='w-full flex items-center justify-between'>
-            <div className='flex items-center gap-3 text-gray-600'>
+          <div className='w-full flex items-center justify-between my-2'>
+            <div className='hidden lg:flex items-center gap-3 text-gray-600'>
               <IoGridOutline onClick={() => setView('grid')} className={`cursor-pointer ${view === 'grid'? 'text-black' : 'text-gray-500'}`} />
               <CiBoxList onClick={() => setView("list")} className={`cursor-pointer ${view === 'list'? 'text-black' : 'text-gray-500'}`} />
               <span className='ml-5 text-[0.85rem]'>showing {indexOfFirstProduct + 1} -- {Math.min(indexOfLastProduct, products.length)} of {products.length} results</span>
             </div>
+            <button className='flex lg:hidden items-center gap-1 text-[0.9rem]'>
+              <IoFilter className='text-[1.1rem]'/>
+              <span>Filter</span>
+            </button>
             <div>
               <div className='flex items-center'>
                 <span className='text-gray-400 text-[0.85rem]'>Show:</span>
@@ -95,7 +100,7 @@ const Shop = () => {
           ) : (
             <div>
               {view === 'grid' && (
-                <div className='grid grid-cols-4 gap-x-8'>
+                <div className='grid grid-cols-2 lg:grid-cols-4 gap-x-8'>
                   {currentProducts.map((product) => (
                     <Card shop key={product.id} props={product} />
                   ))}
