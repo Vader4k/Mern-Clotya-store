@@ -105,12 +105,12 @@ const Details = ({ props }) => {
             </button>
           </div>
           <div className="uppercase text-[0.9rem]"><span className="text-gray-400">SKU: </span>{props.SKU}</div>
-            <div className="flex items-center gap-1 text-[0.9rem]">
-              <span className="text-gray-400">Categories: </span>
+          <div className="flex items-center gap-1 text-[0.9rem]">
+            <span className="text-gray-400">Categories: </span>
               {props.category.map((cat) => (
                 <span className="text-[0.8rem] font-medium uppercase flex gap-2" key={cat.id}>{cat.name},</span>
-              ))}
-            </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

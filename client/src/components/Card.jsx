@@ -6,7 +6,7 @@ import { MdOutlineZoomInMap } from "react-icons/md";
 import { PiSwapLight } from "react-icons/pi";
 import { IoBagOutline } from "react-icons/io5";
 
-const Card = ({props}) => {
+const Card = ({props, shop}) => {
 
   
   const [activeImageIndices, setActiveImageIndices] = useState({});
@@ -34,7 +34,7 @@ const Card = ({props}) => {
   return (
     <section>
         <div
-          className="relative w-full max-w-[500px] mt-10 mb-4 sm:mb-10 card z-0"
+          className={`relative w-full max-w-[500px] mt-10 mb-4 ${shop ? 'sm:mb-0' : 'sm:mb-10' } card z-0`}
         >
           <Link to={`/product/${props.id}`}>
             <img
@@ -49,8 +49,8 @@ const Card = ({props}) => {
               <IoStar className="text-yellow-500"/>
               <span>{props.reviews} review</span>
             </div>
-            <p className="text-[0.9rem] md:text-[1rem] capitalize">{props.name}</p>
-            <div className="text-[0.85rem] md:text-[1rem] flex items-center gap-2">
+            <p className="text-[0.85rem] md:text-[0.95rem] capitalize">{props.name}</p>
+            <div className="text-[0.85rem] md:text-[0.9rem] flex items-center gap-2">
               { props.old_price && <span className="line-through text-gray-400">${props.old_price}</span>}
               <span>${props.new_price}</span>
             </div>
