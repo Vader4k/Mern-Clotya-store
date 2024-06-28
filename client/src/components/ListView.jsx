@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { MdOutlineStarPurple500 } from "react-icons/md";
+import { CiHeart } from "react-icons/ci";
+import { MdOutlineZoomInMap } from "react-icons/md";
+import { PiSwapLight } from "react-icons/pi";
+import { IoBagOutline } from "react-icons/io5";
 
 const ListView = ({ props }) => {
 
@@ -27,11 +31,11 @@ const ListView = ({ props }) => {
 
   return (
     <section className="w-full">
-        <div className="relative gap-8 flex items-start w-full border-b pb-4">
+        <div className="relative gap-8 flex items-start w-full border-b pb-4 my-4 card">
             <Link to={`/product/${props.id}`}>
                 <img
                 onMouseOver={(event) => handleHover(props.id, event)}
-                className="w-full max-w-[450px]" 
+                className="w-full max-w-[350px]" 
                 src={props[`img${activeImageIndices[props.id] || 1}`]} 
                 alt={`product-${props.name}`} 
                 />
@@ -39,7 +43,7 @@ const ListView = ({ props }) => {
             <div className="w-full flex flex-col gap-4 items-start">
                 <div className="flex items-center gap-1">
                     <MdOutlineStarPurple500 className="text-yellow-400"/>
-                    <span>{props.reviews} reviews</span>
+                    <span className="text-[0.9rem]">{props.reviews} reviews</span>
                 </div>
                 <h1 className="text-[1.3rem] capitalize">{props.name}</h1>
                 <div className="text-[0.9rem] md:text-[1rem] flex items-center gap-2">
@@ -61,6 +65,22 @@ const ListView = ({ props }) => {
                     </div>
                 </div>
             </div>
+            <div className="absolute top-2 left-2 md:hidden activities">
+                <div className="flex flex-col gap-3 md:text-[1.2rem] text-gray-600">
+                <div className="p-2 rounded-full bg-white hover:bg-red-400 hover:text-white transition-all">
+                    <CiHeart />
+                </div>
+                <div className="p-2 rounded-full bg-white hover:bg-red-400 hover:text-white transition-all">
+                    <MdOutlineZoomInMap />
+                </div>
+                <div className="p-2 rounded-full bg-white hover:bg-red-400 hover:text-white transition-all">
+                    <PiSwapLight />
+                </div>
+                <div className="p-2 rounded-full bg-white hover:bg-red-400 hover:text-white transition-all">
+                    <IoBagOutline />
+                </div>
+                </div>
+          </div>
         </div>
     </section>
   )

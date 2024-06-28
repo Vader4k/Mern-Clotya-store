@@ -52,9 +52,9 @@ const Shop = () => {
   return (
     <section className="py-10 px-3 w-full max-w-[1300px] mx-auto">
       <Headtags pageTitle="Shop" />
-      <div className='flex items-start gap-8'>
+      <div className='flex items-start gap-14'>
         <div className='flex-1 flex flex-col sticky top-2 w-full'>
-          <SIdeControls />
+          <SIdeControls products={products}/>
         </div>
         <div className='flex-[3] flex-col gap-6 w-full'>
           <div className='bg-shop h-[350px] w-full bg-contain bg-no-repeat'>
@@ -65,8 +65,8 @@ const Shop = () => {
           </div>
           <div className='w-full flex items-center justify-between'>
             <div className='flex items-center gap-3 text-gray-600'>
-              <IoGridOutline onClick={() => setView('grid')} className='cursor-pointer' />
-              <CiBoxList onClick={() => setView("list")} className='cursor-pointer' />
+              <IoGridOutline onClick={() => setView('grid')} className={`cursor-pointer ${view === 'grid'? 'text-black' : 'text-gray-500'}`} />
+              <CiBoxList onClick={() => setView("list")} className={`cursor-pointer ${view === 'list'? 'text-black' : 'text-gray-500'}`} />
               <span className='ml-5 text-[0.85rem]'>showing {indexOfFirstProduct + 1} -- {Math.min(indexOfLastProduct, products.length)} of {products.length} results</span>
             </div>
             <div>

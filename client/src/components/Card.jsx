@@ -34,11 +34,11 @@ const Card = ({props, shop}) => {
   return (
     <section>
         <div
-          className={`relative w-full max-w-[500px] mt-10 mb-4 ${shop ? 'sm:mb-0' : 'sm:mb-10' } card z-0`}
+          className={`relative w-full max-w-[500px] mb-4 ${shop ? 'sm:mb-0 mt-5' : 'sm:mb-10 mt-10' } card z-0`}
         >
           <Link to={`/product/${props.id}`}>
             <img
-              onMouseOver={(event) => handleHover(props.id, event)}
+              onMouseMove={(event) => handleHover(props.id, event)}
               className="w-full max-w-[500px]" 
               src={props[`img${activeImageIndices[props.id] || 1}`]} 
               alt={`product-${props.name}`} 

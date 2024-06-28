@@ -33,7 +33,7 @@ const FeaturedCard = ({props}) => {
     >
       <Link to={`product/${props.id}`}>
         <img
-          onMouseOver={(event) => handleHover(props.id, event)}
+          onMouseMove={(event) => handleHover(props.id, event)}
           className="w-full max-w-[500px]" 
           src={props[`img${activeImageIndices[props.id] || 1}`]} 
           alt={`product-${props.name}`} 
