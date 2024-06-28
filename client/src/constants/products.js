@@ -5,6 +5,7 @@ import { CiDeliveryTruck } from "react-icons/ci";
 import { PiMoneyWavyThin, PiPhoneLight, PiCreditCardThin } from "react-icons/pi";
 
 
+
 import basic1 from '../assets/1.jpeg'
 import basic2 from '../assets/2.jpeg'
 import basic3 from '../assets/3.jpeg'
@@ -4465,5 +4466,42 @@ export const blogComments = [
         name: 'admin',
         date: 'june 9, 2023',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.'
+    }
+]
+
+export const mainMenu = [
+    {
+        id: 1,
+        text: 'Home',
+        url: '/'
+    },
+    {
+        id: 2,
+        text: 'Shop',
+        url: '/shop'
+    },
+    {
+        id: 3,
+        text: 'Women',
+        url: '/shop'
+    },
+    {
+        id: 4,
+        text: 'Men',
+        url: '/shop'
+    },
+    {
+        id: 5,
+        text: 'Outerwear',
+        url: '/blog'
+    },
+    {
+        id: 6,
+        text: 'Blog',
+        url: '/blog/1'
+    },{
+        id: 7,
+        text: 'Contact',
+        url: '/contact'
     }
 ]
