@@ -32,7 +32,7 @@ const TopBrands = () => {
 
   return (
     <section className="px-3 w-full">
-      <div className="flex flex-col items-center gap-3 md:flex-row items-end justify-between w-full">
+      <div className="flex flex-col items-center gap-3 md:flex-row justify-between w-full">
         <h1 className="flex-1 text-[1.3rem] md:text-[2rem] font-medium">
           Our Top Seller Brands
         </h1>

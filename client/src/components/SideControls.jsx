@@ -100,7 +100,7 @@ const SideControls = ({ onFilterChange }) => {
             </div>
             <button className='uppercase p-2 bg-gray-200 text-[0.8rem]'>filter</button>
           </div>
-          <div className='my-3 w-full max-w-[200px]'>
+          <div className='my-3 w-full'>
             <input
               className='h-[2px] w-full appearance-none bg-red-500 outline-none'
               onChange={handleRangeChange}

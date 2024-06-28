@@ -14,7 +14,7 @@ const Blog = () => {
           {blogItems.map((items) => (
             <div key={items.id} className="flex flex-col gap-2 w-full">
               <Link to={`/blog/${items.id}`}>
-                <img className="min-h-[300px] max-h-[500px] w-full w-full lg:w-[500px] object-cover" src={items.image} alt={items.name + 'image'} />
+                <img className="min-h-[300px] max-h-[500px] w-full lg:w-[500px] object-cover" src={items.image} alt={items.name + 'image'} />
               </Link>
               <div className="flex items-center gap-3">
                 <span className="text-gray-500 font-medium uppercase text-[0.85rem]">{items.tag}</span> --

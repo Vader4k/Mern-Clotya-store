@@ -1,4 +1,4 @@
-import { Headtags } from '../components';
+import { Headtags, FilterModal } from '../components';
 import SIdeControls from '../components/SideControls';
 import { IoGridOutline } from "react-icons/io5";
 import { MdKeyboardArrowDown } from "react-icons/md";
@@ -9,6 +9,7 @@ import { ShopContext } from '../context/ShopContext';
 import { Card } from '../components';
 import { ImSpinner2 } from "react-icons/im";
 import ListView from '../components/ListView';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Shop = () => {
   const [amount, setAmount] = useState(16);
@@ -17,7 +18,7 @@ const Shop = () => {
   const { allProducts } = useContext(ShopContext); // handles all products fetching
   const [view, setView] = useState('grid');
   const [filters, setFilters] = useState({ selectedCategory: [], selectedColor: [], selectedSize: [], range: 0 });
-
+  const [ isFilterOpen, setIsFilterOpen] = useState(false)
   const handleAmountChange = (event) => {
     setAmount(parseInt(event.target.value));
     setCurrentPage(1); // reset to the first page whenever amount changes
@@ -88,6 +89,7 @@ const Shop = () => {
   const currentProducts = filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct);
 
   return (
+    <>
     <section className="py-10 px-3 w-full max-w-[1300px] mx-auto">
       <Headtags pageTitle="Shop" />
       <div className='flex items-start gap-14'>
@@ -107,7 +109,7 @@ const Shop = () => {
               <CiBoxList onClick={() => setView("list")} className={`cursor-pointer ${view === 'list'? 'text-black' : 'text-gray-500'}`} />
               <span className='ml-5 text-[0.85rem]'>showing {indexOfFirstProduct + 1} -- {Math.min(indexOfLastProduct, filteredProducts.length)} of {filteredProducts.length} results</span>
             </div>
-            <button className='flex lg:hidden items-center gap-1 text-[0.9rem]'>
+            <button onClick={()=> setIsFilterOpen(true)} className='flex lg:hidden items-center gap-1 text-[0.9rem]'>
               <IoFilter className='text-[1.1rem]'/>
               <span>Filter</span>
             </button>
@@ -166,6 +168,24 @@ const Shop = () => {
         </div>
       </div>
     </section>
+    <AnimatePresence>
+        {isFilterOpen && (
+          <motion.div
+            initial="closed"
+            animate="open"
+            exit="closed"
+            variants={{
+              closed: { x: '-100%', opacity: 0, transition: { duration: 0.5, ease: 'easeInOut' } },
+              open: { x: 0, opacity: 1, transition: { duration: 0.5, ease: 'easeInOut' } }
+            }}
+            className='fixed top-0 left-0 w-full h-full z-50'
+            style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }} // Adjust opacity here
+          >
+            <FilterModal handleFilterChange={handleFilterChange} onClose={() => setIsFilterOpen(false)} />
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 
