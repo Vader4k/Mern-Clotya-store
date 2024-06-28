@@ -22,7 +22,8 @@ import RelatedProducts from './RelatedProducts'
 import Reviews from './Reviews'
 import Details from './Details'
 import ScrollToTop from './ScrollToTop'
-
+import HomeModal from './HomeModal'
+import FilterModal from './FilterModal'
 
 export {
     BestSeller,
@@ -48,5 +49,7 @@ export {
     RelatedProducts,
     Reviews,
     Details,
-    ScrollToTop
+    ScrollToTop,
+    HomeModal,
+    FilterModal,
 }

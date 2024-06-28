@@ -13,10 +13,10 @@ import ListView from '../components/ListView';
 const Shop = () => {
   const [amount, setAmount] = useState(16);
   const [currentPage, setCurrentPage] = useState(1);
-  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const { allProducts } = useContext(ShopContext); // handles all products fetching
   const [view, setView] = useState('grid');
+  const [filters, setFilters] = useState({ selectedCategory: [], selectedColor: [], selectedSize: [], range: 0 });
 
   const handleAmountChange = (event) => {
     setAmount(parseInt(event.target.value));
@@ -29,11 +29,48 @@ const Shop = () => {
     setCurrentPage(pageNumber);
   };
 
+  const handleFilterChange = (newFilter) => {
+    setFilters(newFilter);
+    setCurrentPage(1); // reset to the first page whenever a filter is applied
+  }
+
+  const filterProducts = () => {
+    let filteredProducts = allProducts;
+
+    if (filters.selectedCategory.length > 0) {
+      const selectedCategoriesLowerCase = filters.selectedCategory.map(cat => cat.toLowerCase());
+      filteredProducts = filteredProducts.filter(product =>
+        product.category.some(cat => selectedCategoriesLowerCase.includes(cat.name.toLowerCase()))
+      );
+    }
+
+    
+    if (filters.selectedColor.length > 0) {
+      filteredProducts = filteredProducts.filter(product =>
+        product.colors && product.colors.some(col => filters.selectedColor.includes(col.name))
+      );
+    }
+
+    if (filters.selectedSize.length > 0) {
+      filteredProducts = filteredProducts.filter(product =>
+        product.size && product.size.some(size => filters.selectedSize.includes(size.name))
+      );
+    }
+
+    if (filters.range > 0) {
+      filteredProducts = filteredProducts.filter(product => product.new_price <= filters.range);
+    }
+
+    return filteredProducts;
+  };
+
+  const filteredProducts = filterProducts()
+
   useEffect(() => {
     // Simulate fetching products
     const fetchProducts = () => {
       setLoading(true);
-      setProducts(allProducts);
+      // setProducts(allProducts);
       setTimeout(() => {
         setLoading(false);
       }, 1000); // Simulate a 1 second fetch time
@@ -43,19 +80,19 @@ const Shop = () => {
   }, [currentPage, amount]);
 
   // Calculate the total number of pages
-  const totalPages = Math.ceil(products.length / amount);
+  const totalPages = Math.ceil(filteredProducts.length / amount);
 
   // Get current products
   const indexOfLastProduct = currentPage * amount;
   const indexOfFirstProduct = indexOfLastProduct - amount;
-  const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
+  const currentProducts = filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct);
 
   return (
     <section className="py-10 px-3 w-full max-w-[1300px] mx-auto">
       <Headtags pageTitle="Shop" />
       <div className='flex items-start gap-14'>
         <div className='flex-1 lg:flex flex-col sticky top-2 w-full hidden'>
-          <SIdeControls products={products}/>
+          <SIdeControls onFilterChange={handleFilterChange}/>
         </div>
         <div className='flex-[3] flex-col gap-6 w-full'>
           <div className='bg-shop h-[250px] md:h-[350px] w-full bg-center lg:bg-contain bg-no-repeat'>
@@ -68,7 +105,7 @@ const Shop = () => {
             <div className='hidden lg:flex items-center gap-3 text-gray-600'>
               <IoGridOutline onClick={() => setView('grid')} className={`cursor-pointer ${view === 'grid'? 'text-black' : 'text-gray-500'}`} />
               <CiBoxList onClick={() => setView("list")} className={`cursor-pointer ${view === 'list'? 'text-black' : 'text-gray-500'}`} />
-              <span className='ml-5 text-[0.85rem]'>showing {indexOfFirstProduct + 1} -- {Math.min(indexOfLastProduct, products.length)} of {products.length} results</span>
+              <span className='ml-5 text-[0.85rem]'>showing {indexOfFirstProduct + 1} -- {Math.min(indexOfLastProduct, filteredProducts.length)} of {filteredProducts.length} results</span>
             </div>
             <button className='flex lg:hidden items-center gap-1 text-[0.9rem]'>
               <IoFilter className='text-[1.1rem]'/>

@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-const SideControls = () => {
-  const [selectedCategory, setSelectedCategory] = useState(null);
-  const [selectedColor, setSelectedColor] = useState(null);
-  const [selectedSize, setSelectedSize] = useState(null);
+const SideControls = ({ onFilterChange }) => {
+  const [selectedCategory, setSelectedCategory] = useState([]);
+  const [selectedColor, setSelectedColor] = useState([]);
+  const [selectedSize, setSelectedSize] = useState([]);
   const [range, setRange] = useState(0);
 
   const categories = [
@@ -37,18 +37,29 @@ const SideControls = () => {
   };
 
   const handleColorChange = (e) => {
-    setSelectedColor(e.target.value);
-    console.log(selectedColor);
+    const value = e.target.value;
+    setSelectedColor((prevColors) =>
+      prevColors.includes(value) ? prevColors.filter((color) => color !== value) : [...prevColors, value]
+    );
   };
 
   const handleCategory = (e) => {
-    setSelectedCategory(e.target.value);
-    console.log(selectedCategory);
+    const value = e.target.value;
+    setSelectedCategory((prevCategories) =>
+      prevCategories.includes(value) ? prevCategories.filter((category) => category !== value) : [...prevCategories, value]
+    );
   }
   const handleSize = (e) => {
-    setSelectedSize(e.target.value);
-    console.log(selectedSize);
+    const value = e.target.value;
+    setSelectedSize((prevSizes) =>
+      prevSizes.includes(value) ? prevSizes.filter((size) => size !== value) : [...prevSizes, value]
+    );
   }
+
+  useEffect(() => {
+    onFilterChange({ selectedCategory, selectedColor, selectedSize, range });
+  }, [selectedCategory, selectedColor, selectedSize, range]);
+
 
   const colorOptions = [
     { id: 1, name: 'Red', color: 'red' },
