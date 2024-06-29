@@ -1,8 +1,9 @@
-
+import { Headtags } from '../components'
 
 const Privacy = () => {
   return (
-    <div className="w-full mx-auto max-w-[1300px] py-20 flex flex-col gap-5 px-3">
+    <div className="w-full mx-auto max-w-[1300px] py-10 md:py-20 flex flex-col gap-5 px-3">
+      <Headtags pageTitle="Privacy Policy" />
         <h1 className="text-[1.5rem] md:text-[2rem] font-medium">Who We are</h1>
         <span>Our website address is: https://kingdanny.vercel.app</span>
         <h1 className="text-[1.5rem] md:text-[2rem] font-medium">Comments</h1>
