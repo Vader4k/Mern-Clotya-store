@@ -12,7 +12,8 @@ import {
     NotFound,
     About,
     Privacy,
-    Returns
+    Returns,
+    Reset
 } from '../pages'
 
 import { ScrollToTop } from '../components'
@@ -31,13 +32,14 @@ const Router = () => {
             <Route path="/product" element={<ProductDetail />}>
               <Route path=":id" element={<ProductDetail/>}/>
             </Route>
-            <Route path="/profile" element={<Profile />} />
+            <Route path="/profile" element={<Auth />} />
             <Route path="/search" element={<Search />} />
             <Route path="/shop" element={<Shop />} />
             <Route path="*" element={<NotFound />} />
             <Route path="/about" element={<About />} />
             <Route path="/privacy" element={<Privacy />} />
-            <Route path="/returns" element={<Returns />} />
+            <Route path="/returns" element={<Returns />} /> 
+            <Route path="/reset" element={<Reset />} />
         </Routes>
     </>
   )

@@ -11,6 +11,7 @@ import NotFound from './NotFound'
 import About from './About';
 import Privacy from './Privacy';
 import Returns from './Returns';
+import Reset from './Reset';
 
 export {
     Auth,
@@ -25,5 +26,6 @@ export {
     NotFound,
     About,
     Privacy,
-    Returns
+    Returns,
+    Reset
 }

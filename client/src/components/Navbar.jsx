@@ -31,17 +31,23 @@ const Navbar = () => {
           </Link>
         </figure>
         <div className='flex items-center gap-4 text-[1.2rem] text-gray-700'>
-          <IoPersonOutline className='hidden lg:block text-[1.3rem]'/>
+          <Link to='/profile'>
+            <IoPersonOutline className='hidden lg:block text-[1.3rem]'/>
+          </Link>
           <BsSearch className='hidden lg:block'/>
-          <div className='relative hidden lg:block'>
-            <TfiHeart />
-            <div className='absolute top-[-8px] right-[-10px] p-1 bg-red-600 h-[15px] w-[15px] text-white flex items-center justify-center rounded-full text-[0.7rem]'>0</div>
-          </div>
+          <Link to='/favorites'>
+            <div className='relative hidden lg:block'>
+              <TfiHeart />
+              <div className='absolute top-[-8px] right-[-10px] p-1 bg-red-600 h-[15px] w-[15px] text-white flex items-center justify-center rounded-full text-[0.7rem]'>0</div>
+            </div>
+          </Link>
           <span className='text-[0.85rem]'>$0.00</span>
-          <div className='relative'>
-            <BsBag />
-            <div className='absolute top-[-8px] right-[-10px] p-1 bg-red-600 h-[15px] w-[15px] text-white flex items-center justify-center rounded-full text-[0.7rem]'>0</div>
-          </div>
+          <Link to='/cart'>
+            <div className='relative'>
+              <BsBag />
+              <div className='absolute top-[-8px] right-[-10px] p-1 bg-red-600 h-[15px] w-[15px] text-white flex items-center justify-center rounded-full text-[0.7rem]'>0</div>
+            </div>
+          </Link>
         </div>
       </div>
     </nav>
