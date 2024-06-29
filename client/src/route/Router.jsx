@@ -10,6 +10,7 @@ import {
     Search,
     Shop,
     NotFound,
+    About
 } from '../pages'
 
 import { ScrollToTop } from '../components'
@@ -32,6 +33,7 @@ const Router = () => {
             <Route path="/search" element={<Search />} />
             <Route path="/shop" element={<Shop />} />
             <Route path="*" element={<NotFound />} />
+            <Route path="/about" element={<About />} />
         </Routes>
     </>
   )
