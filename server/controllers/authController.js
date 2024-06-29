@@ -132,3 +132,12 @@ export const resetPassword = async (req, res) => {
     await user.save()
     res.status(200).json({success:true, message: "Password reset successful"})
 }
+
+export const getUser = async (req, res) => {
+  try {
+    const user = await userModel.findById(req.user.id).select('-password')
+    res.status(200).json({success:true, message: "user found", data: user })
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message })
+  }
+}
