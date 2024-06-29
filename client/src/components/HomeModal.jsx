@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const HomeModal = ({ onClose }) => {
   return (
-    <div className="scrollable relative bg-white z-99 p-4 h-full md:w-[21%] w-[50%] overflow-y-scroll">
+    <div className="scrollable relative bg-white z-99 p-4 h-full md:w-[21%] w-[60%] overflow-y-scroll">
       <div className="px-4">
         <div className='flex items-center justify-between pb-10'>
           <img className='w-[100px]' src={logo} alt="logo" />

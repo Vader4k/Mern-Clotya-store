@@ -7,7 +7,6 @@ import {
     Favorites,
     ProductDetail,
     Profile,
-    Search,
     Shop,
     NotFound,
     About,
@@ -33,7 +32,6 @@ const Router = () => {
               <Route path=":id" element={<ProductDetail/>}/>
             </Route>
             <Route path="/profile" element={<Auth />} />
-            <Route path="/search" element={<Search />} />
             <Route path="/shop" element={<Shop />} />
             <Route path="*" element={<NotFound />} />
             <Route path="/about" element={<About />} />

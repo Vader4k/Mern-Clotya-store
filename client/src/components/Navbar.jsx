@@ -3,15 +3,18 @@ import { navLinks } from '../constants/products'
 import { BsBag, BsSearch } from "react-icons/bs";
 import { IoPersonOutline } from "react-icons/io5";
 import { CiMenuBurger } from "react-icons/ci";
+import { IoMdClose } from "react-icons/io";
 import { TfiHeart } from "react-icons/tfi";
 import { Link } from 'react-router-dom'
 import { useState } from 'react';
 import HomeModal from './HomeModal'
+import Search from './Search';
 import { motion, AnimatePresence } from 'framer-motion'
 
 const Navbar = () => {
 
   const [ isSideBarOpen, setIsSideBarOpen ] = useState(false)
+  const [ isSearchOpen, setIsSearchOpen ] = useState(false)
 
   return (
     <>
@@ -34,7 +37,12 @@ const Navbar = () => {
           <Link to='/profile'>
             <IoPersonOutline className='hidden lg:block text-[1.3rem]'/>
           </Link>
-          <BsSearch className='hidden lg:block'/>
+
+          {isSearchOpen 
+            ? <IoMdClose onClick={()=> setIsSearchOpen(false)} className='hidden lg:block cursor-pointer'/> 
+            :  <BsSearch onClick={()=> setIsSearchOpen(true)} className='hidden lg:block cursor-pointer'/> 
+          }
+          
           <Link to='/favorites'>
             <div className='relative hidden lg:block'>
               <TfiHeart />
@@ -65,6 +73,18 @@ const Navbar = () => {
             style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }} // Adjust opacity here
           >
             <HomeModal onClose={() => setIsSideBarOpen(false)} />
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <AnimatePresence>
+        {isSearchOpen && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.3 }}
+          >
+            <Search onClose={() => setIsSearchOpen(false)} />
           </motion.div>
         )}
       </AnimatePresence>

@@ -4221,12 +4221,6 @@ export const menuLinks = [
         url: '/shop'
     },
     {
-        id:2,
-        name: 'Search',
-        img: BsSearch,
-        url: '/search'
-    },
-    {
         id:3,
         name: 'Wishlist',
         img: TfiHeart,
