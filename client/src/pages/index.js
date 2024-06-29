@@ -9,6 +9,8 @@ import Search from './Search'
 import Shop from './Shop'
 import NotFound from './NotFound'
 import About from './About';
+import Privacy from './Privacy';
+import Returns from './Returns';
 
 export {
     Auth,
@@ -21,5 +23,7 @@ export {
     Search,
     Shop,
     NotFound,
-    About
+    About,
+    Privacy,
+    Returns
 }

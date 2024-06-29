@@ -22,7 +22,7 @@ const About = () => {
               Quisque elementum tortor risus. Suspendisse nibh nisl, dignissim pellentesque mi eget, porta rhoncus quam. Curabitur gravida nibh sed purus efficitur, at pretium neque vulputate. Duis euismod aliquam tellus, in accumsan metus viverra finibus. Mauris sodales est nibh, quis bibendum eros aliquam sed. Etiam dolor ipsum, consectetur et tempor nec, mollis at felis. Quisque non tellus mauris. Duis venenatis posuere semper.
             </p>
           </div>
-          <div className='flex-1 w-full p-4 w-full lg:absolute lg:right-0 max-w-[300px] lg:top-20'>
+          <div className='flex-1 w-full p-4 lg:absolute lg:right-0 max-w-[300px] lg:top-20'>
             <div className='flex items-center py-3 gap-4 mb-2'>
               <IoStorefrontOutline className='text-[1.5rem] text-red-500'/>
               <span className='font-medium'>Clotya Store</span>
