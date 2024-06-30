@@ -44,11 +44,11 @@ const userSlice = createSlice({
     }
 })
 
-export const { logoutuser, setRefreshInProges } = userSlice.actions;
-export const selectUserData = (state) => state.userData.data;
-export const selectLoading = (state) => state.userData.loading;
-export const selectError = (state) => state.userData.error;
-export const selectSession = (state) => state.userData.userDataValid;
+export const { logoutuser } = userSlice.actions;
+export const selectUserData = (state) => state.userData?.data;
+export const selectLoading = (state) => state.userData?.loading;
+export const selectError = (state) => state.userData?.error;
+export const selectSession = (state) => state.userData?.userDataValid;
 
 
 export default userSlice.reducer;

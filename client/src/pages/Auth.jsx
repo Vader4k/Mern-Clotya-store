@@ -5,8 +5,10 @@ import { makePostRequest, setCookie, errorMsg, successMsg } from '../hooks'
 import { useNavigate } from 'react-router-dom'
 import { FiLoader } from "react-icons/fi";
 
+
 const Auth = () => {
   const navigate = useNavigate()
+
   const [tab, setTab] = useState('login')
   const [loading, setLoading] = useState(false)
   const [credentials, setCredentials] = useState({
