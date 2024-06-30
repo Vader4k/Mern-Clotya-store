@@ -4,7 +4,6 @@ import Cart from './Cart';
 import Favorites from './Favorites';
 import Home from './Home';
 import ProductDetail from './ProductDetails';
-import Profile from './Profile';
 import Shop from './Shop'
 import NotFound from './NotFound'
 import About from './About';
@@ -20,7 +19,6 @@ export {
     Favorites,
     Home,
     ProductDetail,
-    Profile,
     Shop,
     NotFound,
     About,

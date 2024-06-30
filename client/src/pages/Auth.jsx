@@ -93,7 +93,7 @@ const Auth = () => {
                   type='submit'
                   className='w-full text-center bg-red-500 px-3 py-2 text-white'
                 >
-                  { loading ? <FiLoader className='text-white'/> : 'Log in'}
+                  { loading ? <FiLoader className='text-white text-center'/> : 'Log in'}
                 </button>
               </form>
               <Link to='/reset'>

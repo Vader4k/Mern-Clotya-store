@@ -6,7 +6,6 @@ import {
     Cart,
     Favorites,
     ProductDetail,
-    Profile,
     Shop,
     NotFound,
     About,

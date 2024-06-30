@@ -3,7 +3,7 @@ import Jwt from 'jsonwebtoken';
 export const verification = async (req, res, next) => {
     const token = req.headers['authorization']?.split(' ')[1]
     if(!token){
-        return res.status(401).json({success:false, message: "No token provided"})
+        return res.status(400).json({success:false, message: "No token provided"})
     }
 
     try {
@@ -14,6 +14,6 @@ export const verification = async (req, res, next) => {
         if (error.name === "TokenExpiredError"){
           return res.status(401).json({success:false, message:"token expired"})
       }
-      return res.status(401).json({success:false, message:"invalid token"})
+      return res.status(500).json({success:false, message:"invalid token"})
       }
 }
