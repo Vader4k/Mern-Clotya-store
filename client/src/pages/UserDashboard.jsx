@@ -1,78 +1,57 @@
-import { Headtags } from "../components"
-import { useSelector } from 'react-redux'
-import {
-  selectError,
-  selectUserData,
-  selectLoading,
-} from '../app/userSlice'
-//create a loader page
-//create a error page
-import { useEffect } from "react"
-import { fetchUserData } from "../app/userThunks"
-import { useDispatch } from "react-redux"
-import { useUserContext } from '../context/UserContext'
-import { removeCookie } from "../hooks"
-import { useNavigate } from "react-router-dom"
+import { Headtags } from "../components";
+import { BiLoaderAlt } from "react-icons/bi";
+import { useEffect, useState } from "react";
+import { fetchUserData } from "../app/userThunks";
+import { useDispatch, useSelector } from "react-redux";
+import { getCookie } from "../hooks";
+import { useNavigate } from "react-router-dom";
+import { selectUserData, selectLoading, selectError } from "../app/userSlice";
 
 const UserDashboard = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const userApiData = useSelector(selectUserData);
+  const isUserDataLoading = useSelector(selectLoading);
+  const error = useSelector(selectError);
+  const token = getCookie("auth_token");
 
-  const { setUserContext } = useUserContext()
-  const userApiData = useSelector(selectUserData)?.data?.data
-  const isUserDataLoading = useSelector(selectLoading)
-  const error = useSelector(selectError)
-
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
-
-  //fetching the user data in redux after getting acess token from cookie
   useEffect(() => {
-    dispatch(fetchUserData())
-  }, [dispatch])
-
-  //if there is an error or loading state, display the error message or loader
-  const handleError =() => {
-    if(error.status == 400) {
-      removeCookie("access_token");
-      window.location.href = '/profile'
+    if (token) {
+      dispatch(fetchUserData());
+    } else {
+      // Redirect to login
+      navigate('/auth');
     }
-    return <div>{error}</div>
-  }
-
-  //checks if userData is successfully fetched from the fetchUserData function in redux and then set the data in the userContext api
-  useEffect(() => {
-    if(userApiData){
-      setUserContext(userApiData)
-    }
-  },[userApiData, setUserContext])
+  }, [dispatch, token, navigate]);
 
   useEffect(() => {
-    const handleRedirect = () => {
-      if(userApiData && userApiData.role === 'admin') {
-        navigate('/admin')
-        return null
+    if (error) {
+      if (error.status === 400) {
+        navigate('/login');
       }
     }
-    handleRedirect()
-  },[userApiData])
+  }, [error, navigate]);
 
-  if(isUserDataLoading) return <div>Loading...</div>
-  if(error) return handleError()
+  if (isUserDataLoading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
 
   return (
     <section className="w-full max-w-[1300px] mx-auto px-3 py-20">
       <Headtags pageTitle="My Account" />
-      {/* User dashboard content */}
       <div className="w-full flex items-start gap-5">
-        <div className="flex-1 w-full">
-
+        <div className="flex-1 flex flex-col w-full px-4 py-2">
+          <div className="flex items-center">
+            <div>
+              HELLO {userApiData?.data.data.username}
+            </div>
+          </div>
         </div>
-        {/* dashboard components */}
         <div className="flex-[3] w-full">
-
+          {/* dashboard components */}
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default UserDashboard
+export default UserDashboard;

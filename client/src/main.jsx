@@ -9,12 +9,11 @@ import { Provider } from 'react-redux'
 import store from './app/store.js'
 import { BrowserRouter } from 'react-router-dom'
 import ShopContextProvider from './context/ShopContext.jsx'
-import UserContextProvider from './context/UserContext.jsx'
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ShopContextProvider>
-      <UserContextProvider>
         <BrowserRouter>
           <Provider store={store}>
             <HelmetProvider>
@@ -23,7 +22,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <ToastContainer />
           </Provider>
         </BrowserRouter>
-      </UserContextProvider>
     </ShopContextProvider>
   </React.StrictMode>,
 )
