@@ -1,8 +1,8 @@
 import axios from 'axios'
-import Cookies from "js-cookies"
+import Cookies from "js-cookie"
 import { toast, Bounce } from 'react-toastify'
 
-export const API_BASEURL = "https://backend/v1"
+export const API_BASEURL = "http://localhost:5000/backend/v1"
 
 export const setCookie = (cookie_name, cookie_value) => {
     Cookies.set(cookie_name, cookie_value, {
@@ -13,7 +13,7 @@ export const setCookie = (cookie_name, cookie_value) => {
 }
 
 export const removeCookie = (cookie_name) => {
-    Cookies.remove(cookie_name);
+    return Cookies.remove(cookie_name);
 }
 
 export const getCookie = (cookie_name) => {

@@ -1,10 +1,47 @@
 import { Headtags } from '../components'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { makePostRequest, setCookie, errorMsg, successMsg } from '../hooks'
+import { useNavigate } from 'react-router-dom'
+import { FiLoader } from "react-icons/fi";
 
 const Auth = () => {
-
+  const navigate = useNavigate()
   const [tab, setTab] = useState('login')
+  const [loading, setLoading] = useState(false)
+  const [credentials, setCredentials] = useState({
+    username: '',
+    email: '',
+    password: '',
+  })
+
+  const handleInputChange = (e) => {
+    setCredentials({...credentials, [e.target.name]: e.target.value })
+  }
+
+  const handleLogin = async(e) => {
+    e.preventDefault()
+    setLoading(true)
+    try {
+      const response = await makePostRequest('/login', {
+        email: credentials.email, 
+        password: credentials.password
+      })
+
+      if(response.error){
+        errorMsg(response.error.message)
+        setLoading(false)
+      }
+
+      console.log("setting cookie...")
+      setCookie("auth_token", response.data.token)
+      successMsg(response.data.message)
+      navigate('/dashboard')
+
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   return (
     <section className="w-full my-20 max-w-[550px] h-full min-h-[600px] mx-auto p-8 border rounded-sm">
@@ -31,7 +68,8 @@ const Auth = () => {
               <form className='flex flex-col gap-10 mb-8'>
                 <div className='flex flex-col gap-2'>
                   <label className='text-[0.8rem]' htmlFor="email">Enter Your Email</label>
-                  <input 
+                  <input
+                    onChange={handleInputChange} 
                     type="email" 
                     id="email" 
                     name='email' 
@@ -40,18 +78,20 @@ const Auth = () => {
                 </div>
                 <div className='flex flex-col gap-2'>
                   <label className='text-[0.8rem]' htmlFor="password">Enter Password</label>
-                  <input 
+                  <input
+                    onChange={handleInputChange} 
                     type="password" 
                     id="password" 
                     name='password' 
                     className="w-full px-4 py-2 text-gray-500 outline-none border"
                   />
                 </div>
-                <button 
+                <button
+                  onClick={handleLogin} 
                   type='submit'
-                  className='w-full bg-red-500 px-3 py-2 text-white'
+                  className='w-full text-center bg-red-500 px-3 py-2 text-white'
                 >
-                  Log in
+                  { loading ? <FiLoader className='text-white'/> : 'Log in'}
                 </button>
               </form>
               <Link to='/reset'>
@@ -64,7 +104,8 @@ const Auth = () => {
               <form className='flex flex-col gap-6 mb-8'>
               <div className='flex flex-col gap-2'>
                   <label className='text-[0.8rem]' htmlFor="username">Enter Your Username</label>
-                  <input 
+                  <input
+                    onChange={handleInputChange} 
                     type="text" 
                     id="username" 
                     name='username' 
@@ -73,7 +114,8 @@ const Auth = () => {
                 </div>
                 <div className='flex flex-col gap-2'>
                   <label className='text-[0.8rem]' htmlFor="email">Enter Your Email</label>
-                  <input 
+                  <input
+                    onChange={handleInputChange} 
                     type="email" 
                     id="email" 
                     name='email' 
@@ -82,7 +124,8 @@ const Auth = () => {
                 </div>
                 <div className='flex flex-col gap-2'>
                   <label className='text-[0.8rem]' htmlFor="password">Enter Password</label>
-                  <input 
+                  <input
+                    onChange={handleInputChange} 
                     type="password" 
                     id="password" 
                     name='password' 

@@ -12,8 +12,10 @@ import {
     About,
     Privacy,
     Returns,
-    Reset
+    Reset,
+    UserDashboard
 } from '../pages'
+import ProtectedRoutes from './ProtectedRoutes'
 
 import { ScrollToTop } from '../components'
 
@@ -38,6 +40,9 @@ const Router = () => {
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/returns" element={<Returns />} /> 
             <Route path="/reset" element={<Reset />} />
+            <Route element={<ProtectedRoutes />}>
+              <Route path="/dashboard" element={<UserDashboard />} />
+            </Route>
         </Routes>
     </>
   )

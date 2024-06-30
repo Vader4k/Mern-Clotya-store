@@ -9,12 +9,12 @@ import { Provider } from 'react-redux'
 import store from './app/store.js'
 import { BrowserRouter } from 'react-router-dom'
 import ShopContextProvider from './context/ShopContext.jsx'
-import { userContextProvider } from './context/userContext.jsx'
+import UserContextProvider from './context/UserContext.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ShopContextProvider>
-      <userContextProvider>
+      <UserContextProvider>
         <BrowserRouter>
           <Provider store={store}>
             <HelmetProvider>
@@ -23,7 +23,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <ToastContainer />
           </Provider>
         </BrowserRouter>
-      </userContextProvider>
+      </UserContextProvider>
     </ShopContextProvider>
   </React.StrictMode>,
 )

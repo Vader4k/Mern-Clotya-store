@@ -3,7 +3,7 @@ import {all_products} from '../constants/products'
 
 export const ShopContext = createContext(null)
 
-const shopContextProvider = (props) => {
+const ShopContextProvider = (props) => {
     const [allProducts, setAllProducts] = useState(all_products)
 
     return (
@@ -14,4 +14,4 @@ const shopContextProvider = (props) => {
     
 }
 
-export default shopContextProvider
+export default ShopContextProvider

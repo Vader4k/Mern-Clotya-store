@@ -4230,7 +4230,7 @@ export const menuLinks = [
         id:4,
         name: 'Account',
         img: IoPersonOutline,
-        url: '/profile'
+        url: '/dashboard'
     },
 ]
 

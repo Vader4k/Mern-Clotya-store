@@ -34,7 +34,7 @@ const Navbar = () => {
           </Link>
         </figure>
         <div className='flex items-center gap-4 text-[1.2rem] text-gray-700'>
-          <Link to='/profile'>
+          <Link to='/dashboard'>
             <IoPersonOutline className='hidden lg:block text-[1.3rem]'/>
           </Link>
 

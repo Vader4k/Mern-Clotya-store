@@ -11,6 +11,7 @@ import About from './About';
 import Privacy from './Privacy';
 import Returns from './Returns';
 import Reset from './Reset';
+import UserDashboard from './UserDashboard';
 
 export {
     Auth,
@@ -25,5 +26,6 @@ export {
     About,
     Privacy,
     Returns,
-    Reset
+    Reset,
+    UserDashboard
 }

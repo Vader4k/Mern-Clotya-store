@@ -1,13 +1,16 @@
-import { getCookie, removeCookie } from "../hooks"
-import { Outlet, Navigate } from 'react-router-dom'
+import { getCookie, removeCookie } from "../hooks";
+import { Outlet, Navigate } from 'react-router-dom';
 
 const ProtectedRoutes = () => {
-  let auth = {access_token: getCookie("access_token")}
-  if (!auth.access_token) {
-    removeCookie("access_token");
-    console.log("unsetting cookie...")
+  const access_token = getCookie("auth_token");
+  
+  if (!access_token) {
+    removeCookie("auth_token");
+    console.log("unsetting cookie...");
+    return <Navigate to="/auth" />;
   }
 
-  return auth.access_token ? <Outlet /> : <Navigate to='/login'/>
+  return <Outlet />;
+};
 
-export default ProtectedRoutes
+export default ProtectedRoutes;
