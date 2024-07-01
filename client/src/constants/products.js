@@ -4352,7 +4352,7 @@ export const footerItems = [
             {
                 id: 1,
                 text: 'Dashboard',
-                url: '/profile'
+                url: '/dashboard'
             },
             {
                 id: 2,

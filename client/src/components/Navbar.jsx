@@ -9,9 +9,12 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react';
 import HomeModal from './HomeModal'
 import Search from './Search';
+import { getCookie } from '../hooks';
 import { motion, AnimatePresence } from 'framer-motion'
 
 const Navbar = () => {
+
+  const token = getCookie("auth_token");
 
   const [ isSideBarOpen, setIsSideBarOpen ] = useState(false)
   const [ isSearchOpen, setIsSearchOpen ] = useState(false)
@@ -34,7 +37,7 @@ const Navbar = () => {
           </Link>
         </figure>
         <div className='flex items-center gap-4 text-[1.2rem] text-gray-700'>
-          <Link to='/dashboard'>
+          <Link to={token ? '/dashboard' : '/login'}>
             <IoPersonOutline className='hidden lg:block text-[1.3rem]'/>
           </Link>
 

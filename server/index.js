@@ -5,7 +5,7 @@ import cookieParser from 'cookie-parser'
 import multer from 'multer'
 import path from 'path'
 import mongoose from 'mongoose'
-import userRoute from './routes/userRoutes.js'
+import authRoute from './routes/authRoutes.js'
 
 dotenv.config()
 const app = express()
@@ -38,7 +38,7 @@ app.use(express.json())
 
 
 // routes
-app.use('/backend/v1', userRoute)
+app.use('/backend/v1', authRoute)
 
 app.listen(port, () => {
     connectDB()
