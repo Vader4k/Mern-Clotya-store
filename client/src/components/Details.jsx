@@ -62,13 +62,15 @@ const Details = ({ props }) => {
           <p className="text-[0.85rem]">{props.info}</p>
           <div className="flex flex-col gap-3">
             <span>Size: {}</span>
-            <div className="flex gap-4 flex-wrap items-center max-w-[600px]">
-              {props.size.map((val, i) => (
-                <button className="w-[80px] text-[0.9rem] h-[40px] border uppercase flex items-center justify-center" key={i}>
-                  {val.name}
-                </button>
-              ))}
-            </div>
+            { props?.size && (
+              <div className="flex gap-4 flex-wrap items-center max-w-[600px]">
+                {props.size.map((val, i) => (
+                  <button className="w-[80px] text-[0.9rem] h-[40px] border uppercase flex items-center justify-center" key={i}>
+                    {val.name}
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
           <div>
             {isSizeSelected && (

@@ -2,7 +2,7 @@ import { IoMdClose } from "react-icons/io";
 import { BsSearch, BsShop } from "react-icons/bs";
 import { TfiHeart } from "react-icons/tfi";
 import { Link } from 'react-router-dom'
-import { IoHomeOutline, IoFilterOutline, IoHeartOutline, IoPersonOutline } from "react-icons/io5";
+import { IoHomeOutline, IoHeartOutline, IoPersonOutline } from "react-icons/io5";
 import { useLocation } from 'react-router-dom';
 import Search from './Search';
 import { useState } from 'react';
@@ -40,7 +40,7 @@ const Menubar = () => {
               </div>
             </Link>
 
-            <Link to='/profile'
+            <Link to='/login'
             >
               <div className='flex text-gray-400 justify-center items-center flex-col gap-2'>
                 <IoPersonOutline className='text-[1.2rem]'/>
@@ -68,7 +68,7 @@ const Menubar = () => {
               <p className='text-[0.65rem] font-medium uppercase'>WISHLIST</p>
             </div>
           </Link>
-          <Link to='/profile'>
+          <Link to='/login'>
             <div className='flex text-gray-400 justify-center items-center flex-col gap-2'>
               <IoPersonOutline className='text-[1.2rem]' />
               <p className='text-[0.65rem] font-medium uppercase'>ACCOUNT</p>

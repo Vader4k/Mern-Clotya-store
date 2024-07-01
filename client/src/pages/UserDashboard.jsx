@@ -58,6 +58,10 @@ const UserDashboard = () => {
     navigate('/'); // Redirect to login after logout
   }
 
+  const addAddress = () => {
+    
+  }
+
   return (
     <section className="w-full max-w-[1300px] mx-auto px-3 py-10">
       <Headtags pageTitle="My Account" />

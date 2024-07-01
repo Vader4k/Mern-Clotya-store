@@ -1,11 +1,17 @@
 import express from 'express';
-import { verify }from '../auth/verify.js'
+import { verification }from '../auth/verify.js'
 import { 
     addAddress,
     addToCart,
     addToWishlist,
     removeFromCart,
-    removeFromWishlist 
+    removeFromWishlist,
+    getUser 
 } from '../controllers/userController.js';
 
 const router = express.Router();
+
+router.get('/user', verification, getUser)
+router.put('/add-address', verification, addAddress)
+
+export default router;

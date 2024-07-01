@@ -6,6 +6,7 @@ import multer from 'multer'
 import path from 'path'
 import mongoose from 'mongoose'
 import authRoute from './routes/authRoutes.js'
+import userRoute from './routes/userRoutes.js'
 
 dotenv.config()
 const app = express()
@@ -39,6 +40,7 @@ app.use(express.json())
 
 // routes
 app.use('/backend/v1', authRoute)
+app.use('/backend/v1', userRoute)
 
 app.listen(port, () => {
     connectDB()

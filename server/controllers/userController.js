@@ -1,4 +1,15 @@
-import userModel from "../Models/userModel";
+import userModel from "../Models/userModel.js";
+
+export const getUser = async (req, res) => {
+    try {
+      const user = await userModel.findById(req.user.id).select('-password')
+      return res.status(200).json({success:true, message: "user found", data: user })
+    } catch (error) {
+      res.status(500).json({ success: false, message: error.message })
+    }
+  }
+  
+  
 
 export const addToCart = async(req, res) => {
     try {
@@ -55,6 +66,7 @@ export const addAddress = async (req, res) => {
        await user.save()
        return res.status(200).json({ success:true, message: "address added"})
     } catch(err) {
-        res.status(500).json({ success: false, message: err: "interval server error" })
+        res.status(500).json({ success: false, message: "server error" })
     }
 }
+
