@@ -73,6 +73,34 @@ export const makeGetRequest = async (url, bearerToken = null) => {
     }
 }
 
+export const makePutRequest = async (url, data = null , bearerToken = null) => {
+    try {
+        const config = { //creates an object that hold the authorization token
+            headers: {}
+        }
+        //checks if the api passes a bearer token and then includes the authorization
+        if (bearerToken) {
+            config.headers.Authorization = `Bearer ${bearerToken}`
+        }
+
+        const response = await axios.put(API_BASEURL + url, data, config)
+        return {
+            data:response.data,
+            status: response.status
+        }
+    }   catch (error) {
+        let errorMsg = null
+        if(error.response) {
+            errorMsg = error.response.data.message;
+        }
+        return {
+            data: null,
+            status: error.response? error.response.status : error.request? 400 : 500,
+            errorMsg: errorMsg ?? "unknown error occured, please check connection"
+        }
+    }
+}
+
 export const successMsg = (msg) => {
     return toast.success(msg, {
         position: "top-center",
