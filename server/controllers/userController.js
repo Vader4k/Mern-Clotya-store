@@ -36,8 +36,12 @@ export const removeFromCart = async(req, res) => {
 export const addToWishlist = async(req, res) => {
     try {
         const userData = await userModel.findOne({_id: req.user.id})
-        userData.wishlist[req.body.id] +=1
+        if(userData.wishlist.includes(req.body.id)) {
+            return res.status(400).json({success: false, message: "Item already in wishlist"})
+        }
+        userData.wishlist.push(req.body.id)
         await userModel.findOneAndUpdate({_id: req.user.id}, {wishlist: userData.wishlist})
+        res.status(200).json({success: true, message: "Item added to wishlist"})
     } catch (error) {
         res.status(500).json({success: false, message: error.message})
     }

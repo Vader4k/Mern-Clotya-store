@@ -19,17 +19,13 @@ export const register = async (req, res) => {
         cart[i] = 0
     }
 
-    let wishlist = {}
-    for (let i = 0; i< 300; i++){
-        wishlist[i] = 0
-    }
 
     user = new userModel({
         username,
         email,
         password: hasPassword,
         cart,
-        wishlist
+        wishlist : []
     })
     
     await user.save()

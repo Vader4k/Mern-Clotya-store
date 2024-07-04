@@ -57,8 +57,8 @@ const userSchema = new mongoose.Schema({
         default: Date.now()
     },
     wishlist: {
-        type: Object,
-        default:{}
+        type: [String],
+        default: []
     },
     resetPasswordToken: { 
         type: String 
