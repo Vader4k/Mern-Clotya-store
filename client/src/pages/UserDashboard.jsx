@@ -10,6 +10,8 @@ import Orders from '../components/UserDashboard/Orders'
 import Address from '../components/UserDashboard/Address'
 import Wishlist from '../components/UserDashboard/Wishlist'
 import Details from "../components/UserDashboard/Details";
+import Billing from '../components/UserDashboard/Billing'
+
 
 const UserDashboard = () => {
   const navigate = useNavigate();
@@ -89,7 +91,7 @@ const UserDashboard = () => {
           </div>
           <div
             onClick={()=> setTab("address")} 
-            className={`${tab === 'address' ? 'bg-red-500 text-white border-none' : 'bg-white text-black border'} w-full cursor-pointer p-3`}>
+            className={`${tab === 'address' || 'billing' ? 'bg-red-500 text-white border-none' : 'bg-white text-black border'} w-full cursor-pointer p-3`}>
             Addresses
           </div>
           <div
@@ -128,6 +130,28 @@ const UserDashboard = () => {
             <div>
               <Address
                 userData={userApiData} 
+                setBilling={()=> setTab('billing')}
+              />
+            </div>
+          )}
+          {tab === 'details' && (
+            <div>
+              <Details
+                userData={userApiData} 
+              />
+            </div>
+          )}
+          {tab === 'wishlist' && (
+            <div>
+              <Wishlist
+                userData={userApiData} 
+              />
+            </div>
+          )}
+          {tab === 'billing' && (
+            <div>
+              <Billing
+                userData={userApiData}
               />
             </div>
           )}
