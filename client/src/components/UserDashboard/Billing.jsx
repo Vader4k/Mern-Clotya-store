@@ -40,7 +40,6 @@ const Billing = ({ userData }) => {
           errorMsg(response.error.message)
         }
         successMsg(response.data.message)
-        console.log(response.data)
     } catch (error) {
       console.error(error)
       errorMsg("Failed to update billing info")
@@ -52,7 +51,7 @@ const Billing = ({ userData }) => {
       <h1 className='font-medium'>Billing address</h1>
       <form onSubmit={handleSubmit} className='flex flex-col gap-3 my-3 text-[0.9rem] items-start'>
         <div className='flex flex-col w-full gap-3'>
-          <label htmlFor="name">First name</label>
+          <label htmlFor="firstName">First name</label>
           <input 
             type="text" 
             id="firstName" 
@@ -64,7 +63,7 @@ const Billing = ({ userData }) => {
           />
         </div>
         <div className='flex flex-col w-full gap-3'>
-          <label htmlFor="name">last name</label>
+          <label htmlFor="lastName">last name</label>
           <input 
             type="text" 
             id="lastName" 
@@ -76,7 +75,7 @@ const Billing = ({ userData }) => {
           />
         </div>
         <div className='flex flex-col w-full gap-3'>
-          <label htmlFor="name">Street address</label>
+          <label htmlFor="street">Street address</label>
           <input 
             type="text" 
             id="street" 
@@ -88,7 +87,7 @@ const Billing = ({ userData }) => {
           />
         </div>
         <div className='flex flex-col w-full gap-3'>
-          <label htmlFor="name">Town / City</label>
+          <label htmlFor="city">Town / City</label>
           <input 
             type="text" 
             id="city" 
@@ -99,7 +98,7 @@ const Billing = ({ userData }) => {
           />
         </div>
         <div className='flex flex-col w-full gap-3'>
-          <label htmlFor="name">State</label>
+          <label htmlFor="state">State</label>
           <input 
             type="text" 
             id="state" 
@@ -110,7 +109,7 @@ const Billing = ({ userData }) => {
           />
         </div>
         <div className='flex flex-col w-full gap-3'>
-          <label htmlFor="name">Zip Code</label>
+          <label htmlFor="zip">Zip Code</label>
           <input 
             type="text" 
             id="zip" 
@@ -121,7 +120,7 @@ const Billing = ({ userData }) => {
           />
         </div>
         <div className='flex flex-col w-full gap-3'>
-          <label htmlFor="name">phone</label>
+          <label htmlFor="phone">phone</label>
           <input 
             type="text" 
             id="phone" 

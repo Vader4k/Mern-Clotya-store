@@ -6,12 +6,14 @@ import {
     removeFromCart,
     removeFromWishlist,
     getUser, 
-    addBillingInfo
+    addBillingInfo,
+    changePassword
 } from '../controllers/userController.js';
 
 const router = express.Router();
 
 router.get('/user', verification, getUser)
 router.put('/billingInfo', verification, addBillingInfo)
+router.put('/changePassword', verification, changePassword)
 
 export default router;

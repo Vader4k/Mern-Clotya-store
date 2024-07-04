@@ -40,7 +40,7 @@ const UserDashboard = () => {
 
   const handleError = () => {
     if(error.status === 401) {
-      removeCookie("access_token");
+      removeCookie("auth_token");
       navigate('/login'); // Redirect to login after token expired
       return null
     }
@@ -56,13 +56,10 @@ const UserDashboard = () => {
   }
 
   const handleLogOut = () => {
-    removeCookie("access_token");
+    removeCookie("auth_token");
     navigate('/'); // Redirect to login after logout
   }
 
-  const addAddress = () => {
-    
-  }
 
   return (
     <section className="w-full max-w-[1300px] mx-auto px-3 py-10">

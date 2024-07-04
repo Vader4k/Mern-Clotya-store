@@ -1,4 +1,5 @@
 import userModel from "../Models/userModel.js";
+import bcrypt from 'bcrypt'
 
 export const getUser = async (req, res) => {
     try {
@@ -80,3 +81,24 @@ export const addBillingInfo = async (req, res) => {
     }
 }
 
+
+export const changePassword = async (req, res) => {
+    const { password, newPassword } = req.body
+    const userId = req.user.id;
+    try {
+        const user =  await userModel.findById(userId);
+        if (!user) {
+            return res.status(404).json({ success: false, message: "No user found" });
+        }
+
+        const isMatch = await bcrypt.compare(password, user.password);
+        if(!isMatch){
+            return res.status(400).json({ success: false, message: "Incorrect password" });
+        }
+        user.password = await bcrypt.hash(newPassword, 10);
+        await user.save();
+        return res.status(200).json({ success: true, message: "Password updated" });
+    } catch (error) {
+        
+    }
+}
