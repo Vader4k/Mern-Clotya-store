@@ -91,7 +91,7 @@ const UserDashboard = () => {
           </div>
           <div
             onClick={()=> setTab("address")} 
-            className={`${tab === 'address' || 'billing' ? 'bg-red-500 text-white border-none' : 'bg-white text-black border'} w-full cursor-pointer p-3`}>
+            className={`${tab === 'address' || tab === 'billing' ? 'bg-red-500 text-white border-none' : 'bg-white text-black border'} w-full cursor-pointer p-3`}>
             Addresses
           </div>
           <div

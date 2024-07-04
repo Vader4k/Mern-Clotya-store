@@ -52,21 +52,31 @@ export const removeFromWishlist = async(req, res) => {
     }
 }
 
-export const addAddress = async (req, res) => {
+export const addBillingInfo = async (req, res) => {
     try {
-       const userId = req.user.id
-       const { street, city, state, zip } = req.body
-       const user = await userModel.findOne({_id: userId}) 
+        const userId = req.user.id;
+        const { street, city, state, zip, firstName, lastName, phone } = req.body;
 
-       if(!user) {
-        return res.status(404).json({ success: false, message: "no user found" })
-       }
+        const user = await userModel.findById(userId);
 
-       user.address = { street, city, state, zip }
-       await user.save()
-       return res.status(200).json({ success:true, message: "address added"})
-    } catch(err) {
-        res.status(500).json({ success: false, message: "server error" })
+        if (!user) {
+            return res.status(404).json({ success: false, message: "No user found" });
+        }
+
+        if (street || city || state || zip) {
+            user.address = { ...user.address, street, city, state, zip };
+        }
+        if (phone) user.phone = phone;
+        if (firstName) user.firstName = firstName;
+        if (lastName) user.lastName = lastName;
+        user.updatedAt = Date.now();
+
+        await user.save();
+
+        return res.status(200).json({ success: true, message: "Update successful", data: user });
+    } catch (err) {
+        console.error('Error:', err); // Log the error for debugging
+        return res.status(500).json({ success: false, message: "Server error" });
     }
 }
 
