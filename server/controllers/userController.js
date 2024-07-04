@@ -23,15 +23,34 @@ export const addToCart = async(req, res) => {
     }
 }
 
-export const removeFromCart = async(req, res) => {
+export const removeFromCart = async (req, res) => {
     try {
-        const userData = await userModel.findOne({_id: req.user.id})
-        userData.cart[req.body.id] -=1
-        await userModel.findOneAndUpdate({_id: req.user.id}, {cart: userData.cart})
+        const userData = await userModel.findOne({_id: req.user.id});
+
+        if (!userData) {
+            return res.status(404).json({ success: false, message: "User not found" });
+        }
+
+        const itemId = req.body.id;
+
+        if (!userData.cart[itemId]) {
+            return res.status(400).json({ success: false, message: "Item not found in cart" });
+        }
+
+        userData.cart[itemId] -= 1;
+
+        if (userData.cart[itemId] <= 0) {
+            delete userData.cart[itemId];
+        }
+
+        await userModel.findOneAndUpdate({_id: req.user.id}, { cart: userData.cart });
+
+        return res.status(200).json({ success: true, message: "Item removed from cart" });
     } catch (error) {
-        res.status(500).json({success: false, message: error.message})
+        return res.status(500).json({ success: false, message: error.message });
     }
-}
+};
+
 
 export const addToWishlist = async(req, res) => {
     try {
@@ -47,15 +66,31 @@ export const addToWishlist = async(req, res) => {
     }
 }
 
-export const removeFromWishlist = async(req, res) => {
+export const removeFromWishlist = async (req, res) => {
     try {
-        const userData = await userModel.findOne({_id: req.user.id})
-        userData.wishlist[req.body.id] -=1
-        await userModel.findOneAndUpdate({_id: req.user.id}, {cart: userData.wishlist})
+        const userData = await userModel.findOne({ _id: req.user.id });
+
+        if (!userData) {
+            return res.status(404).json({ success: false, message: "User not found" });
+        }
+
+        const itemId = req.body.id;
+        const wishlistIndex = userData.wishlist.indexOf(itemId);
+
+        if (wishlistIndex === -1) {
+            return res.status(400).json({ success: false, message: "Item not found in wishlist" });
+        }
+
+        userData.wishlist.splice(wishlistIndex, 1);
+
+        await userModel.findOneAndUpdate({ _id: req.user.id }, { wishlist: userData.wishlist });
+
+        return res.status(200).json({ success: true, message: "Item removed from wishlist" });
     } catch (error) {
-        res.status(500).json({success: false, message: error.message})
+        return res.status(500).json({ success: false, message: error.message });
     }
-}
+};
+
 
 export const addBillingInfo = async (req, res) => {
     try {

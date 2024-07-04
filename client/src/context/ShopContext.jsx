@@ -61,25 +61,48 @@ const ShopContextProvider = (props) => {
             const response = await makePostRequest('/add-to-wishlist', { id: itemId}, token)
             if(response.data.success === false){
                 console.log(response.data.message)
+                errorMsg(response.data.message)
             }
             
             setWishList((prev) => {
                 if(!prev.includes(itemId)){
                     return [...prev, itemId]
                 }
-                errorMsg("item already exists")
+                errorMsg(response.data.message)
                 return prev
             })
-            successMsg("Added to wishlist")
+            successMsg(response.data.message)
         } catch (error) {
             console.log(error)
             errorMsg("Failed to add product to wishlist")
         }
     }
 
+    //remove product from cart
+    const removeFromCart = async (itemId) => {
+        if(!token) {
+            return errorMsg("you must be logged in")
+        }
+        try {
+            const res = await makePostRequest('/remove-from-cart', {id: itemId}, token)
+            if(res.data.success === false){
+                console.log(res.data.message)
+                return errorMsg(res.data.message)
+            }
+            setCartItems((prev) => {
+                const updatedCart = {...prev}
+                delete updatedCart[itemId]
+                return updatedCart
+            })
+            successMsg(res.data.message)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
 
     return (
-        <ShopContext.Provider value={{allProducts, cartItems, wishList}}>
+        <ShopContext.Provider value={{allProducts, cartItems, wishList, addToCart, addToWishlist}}>
             {props.children}
         </ShopContext.Provider>
     )
