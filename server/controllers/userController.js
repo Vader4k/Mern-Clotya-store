@@ -13,7 +13,7 @@ export const getUser = async (req, res) => {
   
 
   export const addToCart = async (req, res) => {
-    const { color, size, itemId, quantity = 1 } = req.body;
+    const { color, size, itemId, quantity } = req.body;
     try {
         const user = await userModel.findOne({ _id: req.user.id });
         if (!user) {

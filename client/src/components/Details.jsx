@@ -5,32 +5,44 @@ import { GoHeart } from "react-icons/go";
 import { CiShare1 } from "react-icons/ci";
 import { ShopContext } from "../context/ShopContext";
 
-
 const Details = ({ props }) => {
   const [activeImage, setActiveImage] = useState(props.img1);
-  const [isSizeSelected, setisSizeSelected] = useState(false)
-  const {addToCart} = useContext(ShopContext)
+  const [isSizeSelected, setIsSizeSelected] = useState(false);
+  const [isColorSelected, setIsColorSelected] = useState(false);
+  const [selectedSize, setSelectedSize] = useState('');
+  const [selectedColor, setSelectedColor] = useState('');
+  const [amount, setAmount] = useState(1);
+
+  const { addToCart, addToWishlist } = useContext(ShopContext);
 
   const images = [props.img1, props.img2, props.img3, props.img4].filter(Boolean);
 
-  const [amount, setamount] = useState(1)
-
   const add = () => {
-    setamount(prev => prev + 1)
-  }
+    setAmount((prev) => prev + 1);
+  };
 
   const subtract = () => {
-    setamount( amount === 0 ? 0 : amount - 1 )
-  }
+    setAmount((prev) => (prev === 1 ? 1 : prev - 1));
+  };
 
   useEffect(() => {
     setActiveImage(props.img1);
   }, [props]);
 
+  const handleAddToCart = () => {
+    if (!isSizeSelected || !isColorSelected) {
+      alert('Please select a size and color');
+      return;
+    }
+    addToCart(props.id, selectedSize, selectedColor, amount);
+    selectedColor('')
+    selectedSize('')
+  };
+
   return (
     <div className="w-full">
       <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8">
-        <div className="flex flex-col gap-4"> 
+        <div className="flex flex-col gap-4">
           <div>
             <img className="h-[700px] object-cover w-[500px]" src={activeImage} alt={props.name} />
           </div>
@@ -62,12 +74,36 @@ const Details = ({ props }) => {
             <span className="font-medium text-[1.3rem]">${props.new_price}</span>
           </div>
           <p className="text-[0.85rem]">{props.info}</p>
+          <div className="flex flex-col gap-3 my-2">
+            <span>Color: {selectedColor}</span>
+            {props?.colors && (
+              <div className="flex gap-3 flex-wrap items-center max-w-[600px]">
+                {props.colors.map((val, i) => (
+                  <button
+                    onClick={() => {
+                      setIsColorSelected(true);
+                      setSelectedColor(val.name);
+                    }} 
+                    className={`w-[35px] text-[0.9rem] h-[35px] rounded-full border uppercase flex items-center justify-center ${selectedColor === val.name ? 'border-black border-2' : ''}`}
+                    style={{ backgroundColor: `${val.name}` }} 
+                    key={i}
+                  />
+                ))}
+              </div>
+            )}
+          </div>
           <div className="flex flex-col gap-3">
-            <span>Size: {}</span>
-            { props?.size && (
-              <div className="flex gap-4 flex-wrap items-center max-w-[600px]">
+            <span>Size: {selectedSize}</span>
+            {props?.size && (
+              <div className="flex gap-2 flex-wrap items-center max-w-[600px]">
                 {props.size.map((val, i) => (
-                  <button className="w-[80px] text-[0.9rem] h-[40px] border uppercase flex items-center justify-center" key={i}>
+                  <button 
+                    onClick={() => {
+                      setIsSizeSelected(true);
+                      setSelectedSize(val.name);
+                    }} 
+                    className={`w-[65px] text-[0.9rem] h-[30px] border uppercase flex items-center justify-center ${selectedSize === val.name ? 'bg-red-500 text-white' : ''}`} 
+                    key={i}>
                     {val.name}
                   </button>
                 ))}
@@ -75,22 +111,33 @@ const Details = ({ props }) => {
             )}
           </div>
           <div>
-            {isSizeSelected && (
+            {(isSizeSelected || isColorSelected) && (
               <div className="flex flex-col gap-2 items-start">
-                <button><span className="font-medium text-[1rem]">X</span> Clear</button>
+                <button
+                  onClick={() => {
+                    setIsSizeSelected(false);
+                    setIsColorSelected(false);
+                    setSelectedSize('');
+                    setSelectedColor('');
+                  }}
+                >
+                  <span className="font-medium text-[1rem]">X</span> Clear
+                </button>
                 <div className="bg-green-200 px-4 p-1 max-w-[90px] font-medium text-green-600">
-                  in Stock
+                  In Stock
                 </div>
               </div>
             )}
           </div>
           <div className="flex items-center gap-2">
             <div className="flex w-full max-w-[110px] items-center gap-6 border p-3">
-              <button onClick={subtract} className="font-medium">---</button>
+              <button onClick={subtract} className="font-medium">-</button>
               <span>{amount}</span>
               <button onClick={add} className="font-medium">+</button>
             </div>
-            <button className="w-full bg-black text-white font-medium p-3">
+            <button
+              onClick={handleAddToCart}
+              className="w-full bg-black text-white font-medium p-3 hover:bg-gray-500 text-center">
               Add to cart
             </button>
           </div>
@@ -99,7 +146,9 @@ const Details = ({ props }) => {
               <TfiWorld className="text-[1.1rem] text-gray-400"/>
               <span>Size Guide</span>
             </button>
-            <button className="flex items-center gap-1 text-[0.9rem]">
+            <button
+              onClick={()=> addToWishlist(props.id)} 
+              className="flex items-center gap-1 text-[0.9rem]">
               <GoHeart className="text-[1.1rem] text-gray-400"/>
               <span>Add to Wishlist</span>
             </button>
@@ -111,8 +160,8 @@ const Details = ({ props }) => {
           <div className="uppercase text-[0.9rem]"><span className="text-gray-400">SKU: </span>{props.SKU}</div>
           <div className="flex items-center gap-1 text-[0.9rem]">
             <span className="text-gray-400">Categories: </span>
-              {props.category.map((cat) => (
-                <span className="text-[0.8rem] font-medium uppercase flex gap-2" key={cat.id}>{cat.name},</span>
+            {props.category.map((cat) => (
+              <span className="text-[0.8rem] font-medium uppercase flex gap-2" key={cat.id}>{cat.name},</span>
             ))}
           </div>
         </div>

@@ -17,6 +17,7 @@ const ShopContextProvider = (props) => {
     const [allProducts, setAllProducts] = useState(all_products)
     const [cartItems, setCartItems] = useState([])
     const [wishList, setWishList] = useState([])
+    const [user, setUser] = useState(null)
 
 
     //fetching cartData from backend and set cartItems to users cart table
@@ -27,6 +28,7 @@ const ShopContextProvider = (props) => {
                 if(response.error){
                     console.log(response.error.message)
                 }
+                setUser(response?.data?.data)
                 setCartItems(response.data?.data?.cart)
                 setWishList(response.data?.data?.wishlist)
             } catch (error) {
@@ -37,7 +39,7 @@ const ShopContextProvider = (props) => {
     },[])
 
     //add product to cart
-    const addToCart = async (itemId, size, color) => {
+    const addToCart = async (itemId, size, color, quantity) => {
         const token = getCookie('auth_token');
     
         if (!token) {
@@ -45,11 +47,11 @@ const ShopContextProvider = (props) => {
         }
     
         try {
-            const response = await makePostRequest('/add-to-cart', { productId: itemId, size, color }, token);
+            const response = await makePostRequest('/add-to-cart', { itemId, size, color, quantity }, token);
     
-            if (response.error) {
-                console.log(response.error.message);
-                return errorMsg(response.error.message);
+            if (response.data.success === false) {
+                console.log(response.data.message);
+                return errorMsg(response.data.message);
             }
     
             setCartItems((prev) => {
@@ -58,11 +60,11 @@ const ShopContextProvider = (props) => {
                 if (existingItemIndex !== -1) {
                     // Update the quantity of the existing item
                     const updatedCart = [...prev];
-                    updatedCart[existingItemIndex].quantity += 1;
+                    updatedCart[existingItemIndex].quantity += quantity;
                     return updatedCart;
                 } else {
                     // Add the new item to the cart
-                    return [...prev, { productId: itemId, size, color, quantity: 1 }];
+                    return [...prev, { productId: itemId, size, color, quantity}];
                 }
             });
     
@@ -110,7 +112,7 @@ const ShopContextProvider = (props) => {
         try {
             const res = await makeDeleteRequest('/remove-from-cart', { itemId, size, color }, token);
     
-            if (!res.data.success) {
+            if (!res.data.success === true) {
                 console.log(res.data.message);
                 return errorMsg(res.data.message);
             }
@@ -147,9 +149,24 @@ const ShopContextProvider = (props) => {
         }
     }
 
+    //get sub total of cart item
+    const subtotal = cartItems.reduce((acc, item) => {
+        const product = allProducts.find(product => product.id.toString() === item.itemId);
+        if (product) {
+          const totalCost = parseFloat(product.new_price) * item.quantity;
+          return acc + totalCost;
+        }
+        return acc;
+      }, 0);
+
+    //GETTING the total amount of items in the cart
+    const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+
+    //Getting total amount of items in the wishlist
+    const totalWishlistItems = wishList.length
 
     return (
-        <ShopContext.Provider value={{allProducts, cartItems, wishList, addToCart, addToWishlist, removeFromCart, removeFromWishlist}}>
+        <ShopContext.Provider value={{allProducts, cartItems, wishList, addToCart, addToWishlist, removeFromCart, removeFromWishlist, user, setUser, subtotal, totalItems, totalWishlistItems}}>
             {props.children}
         </ShopContext.Provider>
     )

@@ -6,16 +6,17 @@ import { CiMenuBurger } from "react-icons/ci";
 import { IoMdClose } from "react-icons/io";
 import { TfiHeart } from "react-icons/tfi";
 import { Link } from 'react-router-dom'
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import HomeModal from './HomeModal'
 import Search from './Search';
 import { getCookie } from '../hooks';
 import { motion, AnimatePresence } from 'framer-motion'
+import { ShopContext } from '../context/ShopContext';
 
 const Navbar = () => {
 
   const token = getCookie("auth_token");
-
+  const { subtotal, totalItems, totalWishlistItems, user } = useContext(ShopContext)
   const [ isSideBarOpen, setIsSideBarOpen ] = useState(false)
   const [ isSearchOpen, setIsSearchOpen ] = useState(false)
 
@@ -49,14 +50,14 @@ const Navbar = () => {
           <Link to='/favorites'>
             <div className='relative hidden lg:block'>
               <TfiHeart />
-              <div className='absolute top-[-8px] right-[-10px] p-1 bg-red-600 h-[15px] w-[15px] text-white flex items-center justify-center rounded-full text-[0.7rem]'>0</div>
+              <div className='absolute top-[-8px] right-[-10px] p-1 bg-red-600 h-[15px] w-[15px] text-white flex items-center justify-center rounded-full text-[0.7rem]'>{user ? totalWishlistItems : 0 }</div>
             </div>
           </Link>
-          <span className='text-[0.85rem]'>$0.00</span>
+          <span className='text-[0.85rem]'>${user? subtotal : 0}</span>
           <Link to='/cart'>
             <div className='relative'>
               <BsBag />
-              <div className='absolute top-[-8px] right-[-10px] p-1 bg-red-600 h-[15px] w-[15px] text-white flex items-center justify-center rounded-full text-[0.7rem]'>0</div>
+              <div className='absolute top-[-8px] right-[-10px] p-1 bg-red-600 h-[15px] w-[15px] text-white flex items-center justify-center rounded-full text-[0.7rem]'>{ user ? totalItems : 0}</div>
             </div>
           </Link>
         </div>

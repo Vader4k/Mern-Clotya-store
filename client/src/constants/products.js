@@ -3132,6 +3132,18 @@ export const all_products = [
         img3: boots3,
         img4: boots4,
         tag: '29%',
+        colors: [
+            {
+                id:1,
+                name:'black'
+            }
+        ],
+        size: [
+            {
+                id:1,
+                name: 'XXS'
+            }
+        ],
         category: [{
                 id: 1,
                 name: 'shoe'
