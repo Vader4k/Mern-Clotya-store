@@ -1,5 +1,25 @@
 import mongoose from "mongoose";
 
+const itemSchema = new mongoose.Schema({
+    itemId: {
+        type: String,
+        required: true
+    },
+    color: {
+        type: String,
+        required: true
+    },
+    size: {
+        type: String,
+        required: true
+    },
+    quantity: {
+        type: Number,
+        required: true,
+        default: 1
+    }
+});
+
 const userSchema = new mongoose.Schema({
     email: { 
         type: String, 
@@ -45,8 +65,8 @@ const userSchema = new mongoose.Schema({
         default: 'customer'
     },
     cart: {
-        type: Object,
-        default: {}
+        type: [itemSchema],
+        default: []
     },
     createdAt: {
         type: Date,

@@ -12,45 +12,62 @@ export const getUser = async (req, res) => {
   
   
 
-export const addToCart = async(req, res) => {
+  export const addToCart = async (req, res) => {
+    const { color, size, itemId, quantity = 1 } = req.body;
     try {
-        const userData = await userModel.findOne({_id: req.user.id})
-        userData.cart[req.body.id] +=1 
-        await userModel.findOneAndUpdate({_id: req.user.id}, {cart: userData.cart})
-        res.status(200).json({success: true, message: "Item added to cart"})
-    } catch (error) {
-        res.status(500).json({success: false, message: error.message})
-    }
-}
-
-export const removeFromCart = async (req, res) => {
-    try {
-        const userData = await userModel.findOne({_id: req.user.id});
-
-        if (!userData) {
+        const user = await userModel.findOne({ _id: req.user.id });
+        if (!user) {
             return res.status(404).json({ success: false, message: "User not found" });
         }
-
-        const itemId = req.body.id;
-
-        if (!userData.cart[itemId]) {
-            return res.status(400).json({ success: false, message: "Item not found in cart" });
+        const existingItemIndex = user.cart.findIndex(item => 
+            item.itemId === itemId && 
+            item.color === color && 
+            item.size === size
+        );
+        if (existingItemIndex >= 0) {
+            // Item exists, update quantity
+            user.cart[existingItemIndex].quantity += quantity;
+        } else {
+            // Item does not exist, add new item
+            user.cart.push({ itemId, color, size, quantity });
         }
-
-        userData.cart[itemId] -= 1;
-
-        if (userData.cart[itemId] <= 0) {
-            delete userData.cart[itemId];
-        }
-
-        await userModel.findOneAndUpdate({_id: req.user.id}, { cart: userData.cart });
-
-        return res.status(200).json({ success: true, message: "Item removed from cart" });
+        await user.save();
+        res.status(200).json({ success: true, message: "Item added to cart", cart: user.cart });
     } catch (error) {
-        return res.status(500).json({ success: false, message: error.message });
+        res.status(500).json({ success: false, message: error.message });
     }
 };
 
+export const removeFromCart = async (req, res) => {
+    const { color, size, itemId, quantity = 1 } = req.body;
+    try {
+        const user = await userModel.findOne({ _id: req.user.id });
+        if (!user) {
+            return res.status(404).json({ success: false, message: "User not found" });
+        }
+        const existingItemIndex = user.cart.findIndex(item => 
+            item.itemId === itemId && 
+            item.color === color && 
+            item.size === size
+        );
+        if (existingItemIndex >= 0) {
+            // Item exists
+            if (user.cart[existingItemIndex].quantity > quantity) {
+                // Reduce quantity if greater than specified quantity
+                user.cart[existingItemIndex].quantity -= quantity;
+            } else {
+                // Remove item if quantity is less than or equal to specified quantity
+                user.cart.splice(existingItemIndex, 1);
+            }
+        } else {
+            return res.status(404).json({ success: false, message: "Item not found in cart" });
+        }
+        await user.save();
+        res.status(200).json({ success: true, message: "Item removed from cart", cart: user.cart });
+    } catch (error) {
+        res.status(500).json({ success: false, message: error.message });
+    }
+};
 
 export const addToWishlist = async(req, res) => {
     try {

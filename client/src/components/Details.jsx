@@ -1,13 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { IoStar } from "react-icons/io5";
 import { TfiWorld } from "react-icons/tfi";
 import { GoHeart } from "react-icons/go";
 import { CiShare1 } from "react-icons/ci";
+import { ShopContext } from "../context/ShopContext";
 
 
 const Details = ({ props }) => {
   const [activeImage, setActiveImage] = useState(props.img1);
   const [isSizeSelected, setisSizeSelected] = useState(false)
+  const {addToCart} = useContext(ShopContext)
 
   const images = [props.img1, props.img2, props.img3, props.img4].filter(Boolean);
 

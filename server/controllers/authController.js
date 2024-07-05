@@ -14,17 +14,12 @@ export const register = async (req, res) => {
         return res.status(400).json({success:false, message: "User already exists"})
     } 
     const hasPassword = await bcrypt.hash(password,(10))
-    let cart = {}
-    for (let i = 0; i< 300; i++){
-        cart[i] = 0
-    }
-
 
     user = new userModel({
         username,
         email,
         password: hasPassword,
-        cart,
+        cart: [],
         wishlist : []
     })
     
