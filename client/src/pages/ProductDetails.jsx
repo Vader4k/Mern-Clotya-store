@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useContext, useState, useEffect } from 'react';
 import { ShopContext } from '../context/ShopContext';
-import { 
+import {
   Breadcrums, 
   Headtags, 
   Description, 

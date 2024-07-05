@@ -101,6 +101,34 @@ export const makePutRequest = async (url, data = null , bearerToken = null) => {
     }
 }
 
+export const makeDeleteRequest = async (url, data = null, bearerToken = null) => {
+    try {
+        const config = {
+            headers: {},
+            data: data
+        }
+        if (bearerToken) {
+            config.headers.Authorization = `Bearer ${bearerToken}`
+        }
+        const response = await axios.delete(API_BASEURL + url, config)
+        return {
+            data: response.data,
+            status: response.status
+        }
+    } catch (error) {
+        let errorMsg = null
+        if(error.response) {
+            errorMsg = error.response.data.message;
+        }
+        return {
+            data: null,
+            status: error.response? error.response.status : error.request? 400 : 500,
+            errorMsg: errorMsg?? "unknown error occured, please check connection"
+        }
+    }
+}
+    
+
 export const successMsg = (msg) => {
     return toast.success(msg, {
         position: "top-center",

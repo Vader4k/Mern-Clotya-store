@@ -1,7 +1,13 @@
 import { createContext, useState, useEffect } from "react";
 import {all_products} from '../constants/products'
-import { getCookie, makePostRequest, makeGetRequest, errorMsg, successMsg } from '../hooks'
-
+import { 
+    getCookie, 
+    makePostRequest,
+    makeGetRequest,
+    errorMsg, 
+    successMsg,
+    makeDeleteRequest 
+} from '../hooks'
 
 export const ShopContext = createContext(null)
 
@@ -97,14 +103,12 @@ const ShopContextProvider = (props) => {
 
     //remove product from cart
     const removeFromCart = async (itemId, size, color) => {
-        const token = getCookie('auth_token');
-    
         if (!token) {
             return errorMsg('You must be logged in');
         }
     
         try {
-            const res = await makePostRequest('/remove-from-cart', { productId: itemId, size, color }, token);
+            const res = await makeDeleteRequest('/remove-from-cart', { itemId, size, color }, token);
     
             if (!res.data.success) {
                 console.log(res.data.message);
@@ -119,7 +123,7 @@ const ShopContextProvider = (props) => {
     
             successMsg(res.data.message);
         } catch (error) {
-            console.error('Error removing item from cart:', error);
+            console.error(error);
             errorMsg('There was an error removing the item from the cart');
         }
     };
@@ -131,7 +135,7 @@ const ShopContextProvider = (props) => {
             return errorMsg("you must be logged in")
         }
         try {
-            const res = await makePostRequest('/remove-from-wishlist', {id: itemId}, token)
+            const res = await makeDeleteRequest('/remove-from-wishlist', {id: itemId}, token)
             if(res.data.success === false){
                 console.log(res.data.message)
                 return errorMsg(res.data.message)
