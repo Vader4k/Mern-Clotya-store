@@ -64,7 +64,7 @@ const Cart = () => {
               return null
             })}
           </div>
-          <div className="w-full flex-1 max-w-[300px] p-6 border shadow-lg">
+          <div className="w-full flex-1 p-6 border shadow-lg">
             <div className="flex flex-col items-start gap-4">
               <h1 className="pb-2 border-b w-full py-2">Cart totals</h1>
               <div className="w-full flex py-2 items-center justify-between text-[0.9rem] pb-2 border-b">
