@@ -2,6 +2,7 @@ import { useContext } from "react"
 import {ShopContext} from '../context/ShopContext'
 import { Link } from 'react-router-dom'
 import { ImBin2 } from "react-icons/im";
+import { Headtags } from '../components'
 
 
 const Cart = () => {
@@ -12,13 +13,14 @@ const Cart = () => {
     console.log(user)
   return (
     <div className="w-full max-w-[1300px] px-3 mx-auto my-10">
+      <Headtags pageTitle="Cart" />
       <div>
       {cartItems?.length > 0 ? (
-        <div className="w-full flex items-start gap-10">
+        <div className="w-full flex flex-col lg:flex-row items-center lg:items-start gap-10 lg:gap-20">
           <div className="flex-[2.5] flex flex-col w-full mt-5">
-            <div className="w-full text-gray-400 font-medium text-[0.9rem] mb-2 flex items-center gap-16 px-10">
+            <div className="w-full text-gray-400 font-medium text-[0.9rem] mb-2 flex items-center gap-16">
               <h1 className="w-full">Product</h1>
-              <h1>Price</h1>
+              <h1 className="hidden md:block">Price</h1>
               <h1>Quantity</h1>
               <h1>Subtotal</h1>
             </div>
@@ -32,9 +34,9 @@ const Cart = () => {
                     className="w-full"
                   >
                     <div className="w-full">
-                      <div className="w-full flex gap-10 px-10 justify-between items-center border-t border-b py-3">
-                        <div className="flex items-start gap-6 w-full flex-[0.75]">
-                          <div className="relative h-[45px] w-[45px]">
+                      <div className="w-full flex justify-between items-center border-t border-b py-3 px-6 lg:px-0">
+                        <div className="flex items-start gap-6 w-full max-w-[40%] lg:max-w-[55%]">
+                          <div className="relative h-[1px] w-[1px]  md:h-[45px] md:w-[45px]">
                             <ImBin2 
                               className="absolute left-[-10px] top-[-8px] text-red-500 cursor-pointer"
                               onClick={() => removeFromCart(item.itemId, item.size, item.color)}
@@ -43,14 +45,17 @@ const Cart = () => {
                           </div>
                           <div className="">
                             <Link to={`/product/${item.itemId}`}>
-                              <h1 className="text-[0.9rem] font-medium">{product?.name} - {item.color}</h1>
+                              <h1 className="md:font-medium">{product?.name} - {item.color}</h1>
                               <p className="text-[0.8rem] text-gray-600">Size: {item?.size}</p>
                             </Link>
                           </div>
                         </div>
-                        <p>${product?.new_price}</p>
-                        <p>{item.quantity}</p>
-                        <p>${totalCost.toFixed(2)}</p>
+                        <div>
+
+                        </div>
+                        <p className="text-[0.89rem] hidden md:block">${product?.new_price}</p>
+                        <p className="text-[0.89rem]">{item.quantity}</p>
+                        <p className="text-[0.89rem]">${totalCost.toFixed(2)}</p>
                       </div>
                     </div>
                   </div>
@@ -66,10 +71,12 @@ const Cart = () => {
                 <p>Subtotal</p>
                 <span>${subtotal}</span>
               </div>
-              {user && <div className="flex flex-col gap-5 pb-2 items-end border-b w-full py-2">
-                <p className="text-[0.8rem]">Flat rate <span className="text-[1rem]">$15.00</span></p>
-                <p className="text-[0.9rem]">Shipping to {user.address.street}, {user.address.state}</p>
-              </div>}
+              {user && 
+                <div className="flex flex-col gap-5 pb-2 border-b w-full py-2">
+                  <p className="text-[0.8rem]">Flat rate <span className="text-[1rem]">$15.00</span></p>
+                  <p className="text-[0.9rem]">Shipping to {user.address.street},{user.address.state}</p>
+                </div>
+              }
               <div className="flex items-center justify-between w-full pb-3 py-2">
                 <span>Total</span>
                 <span className="font-medium text-[1.5rem]">${total}</span>

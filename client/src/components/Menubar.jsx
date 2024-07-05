@@ -7,11 +7,13 @@ import { useLocation } from 'react-router-dom';
 import Search from './Search';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion'
+import { getCookie } from "../hooks";
 
 const Menubar = () => {
 
   const [ isSearchOpen, setIsSearchOpen ] = useState(false)
   const location = useLocation()
+  const token = getCookie("auth_token")
 
   return (
     <>
@@ -40,7 +42,7 @@ const Menubar = () => {
               </div>
             </Link>
 
-            <Link to='/login'
+            <Link to={token ? '/dashboard': '/login'}
             >
               <div className='flex text-gray-400 justify-center items-center flex-col gap-2'>
                 <IoPersonOutline className='text-[1.2rem]'/>
