@@ -29,7 +29,6 @@ export const getUser = async (req, res) => {
             String(item.color) === String(color) && 
             String(item.size) === String(size)
         );
-        console.log(existingItemIndex)
         if (existingItemIndex >= 0) {
             // Item exists, update quantity
             user.cart[existingItemIndex].quantity += quantity;

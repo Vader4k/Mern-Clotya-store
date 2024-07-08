@@ -10,6 +10,7 @@ import Orders from '../components/UserDashboard/Orders'
 import Address from '../components/UserDashboard/Address'
 import Details from "../components/UserDashboard/Details";
 import Billing from '../components/UserDashboard/Billing'
+import View from '../components/UserDashboard/View'
 import { Link } from "react-router-dom";
 
 
@@ -21,6 +22,9 @@ const UserDashboard = () => {
   const error = useSelector(selectError);
   const token = getCookie("auth_token");
   const [tab, setTab] = useState("dashboard")
+  const [id, setId] = useState('')
+  const [order, setOrder] = useState({})
+
 
   useEffect(() => {
     if (token) {
@@ -65,7 +69,7 @@ const UserDashboard = () => {
   return (
     <section className="w-full max-w-[1300px] mx-auto px-3 py-10">
       <Headtags pageTitle="My Account" />
-      <div className="w-full flex items-start gap-5">
+      <div className="w-full flex flex-col-reverse md:flex-row items-start gap-10 md:gap-5">
         <div className="flex-1 flex flex-col w-full py-2 border border-gray-300 shadow-md">
           <div className="flex items-center gap-4 w-full px-4 mb-3">
             <div className="w-[40px] h-[40px] flex items-center justify-center bg-gray-200">
@@ -84,7 +88,7 @@ const UserDashboard = () => {
           </div>
           <div
             onClick={()=> setTab("orders")} 
-            className={`${tab === 'orders' ? 'bg-red-500 text-white border-none' : 'bg-white text-black border'} w-full cursor-pointer p-3`}>
+            className={`${tab === 'orders' || tab === 'view' ? 'bg-red-500 text-white border-none' : 'bg-white text-black border'} w-full cursor-pointer p-3`}>
             Orders
           </div>
           <div
@@ -121,7 +125,10 @@ const UserDashboard = () => {
           {tab === 'orders' && (
             <div>
               <Orders
-                userData={userApiData} 
+                userData={userApiData}
+                setTab={setTab}
+                setId={setId}
+                setOrder={setOrder}  
               />
             </div>
           )}
@@ -144,6 +151,15 @@ const UserDashboard = () => {
             <div>
               <Billing
                 userData={userApiData}
+              />
+            </div>
+          )}
+          {tab === 'view' && (
+            <div>
+              <View
+                userData={userApiData}
+                id={id}
+                order={order}
               />
             </div>
           )}
