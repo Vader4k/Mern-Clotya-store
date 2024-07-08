@@ -84,6 +84,7 @@ export const addToWishlist = async(req, res) => {
 }
 
 export const removeFromWishlist = async (req, res) => {
+        const { itemId } = req.body
     try {
         const userData = await userModel.findOne({ _id: req.user.id });
 
@@ -91,8 +92,8 @@ export const removeFromWishlist = async (req, res) => {
             return res.status(404).json({ success: false, message: "User not found" });
         }
 
-        const itemId = req.body.id;
         const wishlistIndex = userData.wishlist.indexOf(itemId);
+        console.log(wishlistIndex)
 
         if (wishlistIndex === -1) {
             return res.status(400).json({ success: false, message: "Item not found in wishlist" });

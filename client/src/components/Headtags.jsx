@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
  const AppHeadTag = ({ pageTitle }) => {
     return (
       <Helmet>
-        <title>{pageTitle} | Clotya</title>
+        <title>{pageTitle} | Clotya -- Fashion Store</title>
         <meta
           name="description"
           content="one shop for all the clothing you need"
