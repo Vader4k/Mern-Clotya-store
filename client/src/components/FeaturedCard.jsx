@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { IoStar } from "react-icons/io5";
 import { CiHeart } from "react-icons/ci";
 import { MdOutlineZoomInMap } from "react-icons/md";
 import { PiSwapLight } from "react-icons/pi";
 import { IoBagOutline } from "react-icons/io5";
+import { ShopContext } from "../context/ShopContext";
 
 const FeaturedCard = ({props}) => {
+    const { addToCart, addToWishlist } = useContext(ShopContext)
     const [activeImageIndices, setActiveImageIndices] = useState({});
 
     const handleHover = (id, event) => {
@@ -57,7 +59,9 @@ const FeaturedCard = ({props}) => {
       }
       <div className="absolute top-2 right-2 md:hidden activities">
         <div className="flex flex-col gap-3 md:text-[1.2rem] text-gray-600">
-          <div className="p-2 rounded-full bg-white hover:bg-red-400 hover:text-white transition-all">
+          <div
+            onClick={()=> addToWishlist(props.id)} 
+            className="p-2 rounded-full bg-white hover:bg-red-400 hover:text-white transition-all">
             <CiHeart />
           </div>
           <div className="p-2 rounded-full bg-white hover:bg-red-400 hover:text-white transition-all">
@@ -66,7 +70,9 @@ const FeaturedCard = ({props}) => {
           <div className="p-2 rounded-full bg-white hover:bg-red-400 hover:text-white transition-all">
             <PiSwapLight />
           </div>
-          <div className="p-2 rounded-full bg-white hover:bg-red-400 hover:text-white transition-all">
+          <div
+            onClick={()=> addToCart(props.id, 'XL', 'black', '1')} 
+            className="p-2 rounded-full bg-white hover:bg-red-400 hover:text-white transition-all">
             <IoBagOutline />
           </div>
         </div>
