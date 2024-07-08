@@ -3,14 +3,15 @@ import {ShopContext} from '../context/ShopContext'
 import { Link } from 'react-router-dom'
 import { ImBin2 } from "react-icons/im";
 import { Headtags } from '../components'
+import PayButton from "../components/PayButton";
 
 
 const Cart = () => {
 
   const { cartItems, allProducts, removeFromCart, user, subtotal } = useContext(ShopContext); // handles cart items fetching
 
-    const total = parseFloat(subtotal) + 15
-    console.log(user)
+  const total = parseFloat(subtotal) + 15
+
   return (
     <div className="w-full max-w-[1300px] px-3 mx-auto my-10">
       <Headtags pageTitle="Cart" />
@@ -55,7 +56,7 @@ const Cart = () => {
                         </div>
                         <p className="text-[0.89rem] hidden md:block">${product?.new_price}</p>
                         <p className="text-[0.89rem]">{item.quantity}</p>
-                        <p className="text-[0.89rem]">${totalCost.toFixed(2)}</p>
+                        <p className="text-[0.89rem]">${parseFloat(item.quantity * product.new_price).toFixed(2)}</p>
                       </div>
                     </div>
                   </div>
@@ -79,11 +80,9 @@ const Cart = () => {
               }
               <div className="flex items-center justify-between w-full pb-3 py-2">
                 <span>Total</span>
-                <span className="font-medium text-[1.5rem]">${total}</span>
+                <span className="font-medium text-[1.5rem]">${total.toFixed(2)}</span>
               </div>
-              <button className="w-full bg-red-500 text-white p-2 my-5">
-                Proceede to checkout
-              </button>
+              <PayButton subtotal={subtotal} user={user}/>
             </div>
           </div>
       </div>

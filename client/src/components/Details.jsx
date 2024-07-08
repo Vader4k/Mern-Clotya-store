@@ -35,8 +35,10 @@ const Details = ({ props }) => {
       return;
     }
     addToCart(props.id, selectedSize, selectedColor, amount);
-    selectedColor('')
-    selectedSize('')
+    setSelectedColor('')
+    setSelectedSize('')
+    setIsColorSelected(false)
+    setIsSizeSelected(false)
   };
 
   return (

@@ -154,7 +154,8 @@ const ShopContextProvider = (props) => {
             setUser, 
             subtotal, 
             totalItems, 
-            totalWishlistItems
+            totalWishlistItems,
+            fetchUserData
         }}>
             {props.children}
         </ShopContext.Provider>

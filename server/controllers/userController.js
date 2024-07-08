@@ -166,42 +166,54 @@ export const changePassword = async (req, res) => {
 }
 
 export const verifyPayment = async (req, res) => {
-    const { reference } = req.body
+    const { reference, subtotal } = req.body;
     const userId = req.user.id;
 
     try {
-        const res = await axios.get(`https://api.paystack.co/transaction/verify/${reference}`,{
+        const response = await axios.get(`https://api.paystack.co/transaction/verify/${reference}`, {
             headers: {
                 Authorization: `Bearer ${process.env.PAYSTACK_SECRET_KEY}`
             }
-        })
+        });
 
-        const {status, data} = res.data
+        console.log('Paystack response:', response.data); // Log the full response
 
-        if(status === 'success'){
+        const { status, data } = response.data;
+
+        if (data.status === 'success') {
             const user = await userModel.findById(userId);
 
-            const orderNumber = uuidv4().slice(0,4);// generates a random 4-number Id
-            const orderData = new Date();
+            if (!user) {
+                return res.status(404).json({ success: false, message: "User not found" });
+            }
+
+            const orderNumber = uuidv4().slice(0, 4); // generates a random 4-number Id
+            const orderDate = new Date();
             const orderStatus = 'on hold';
-            const totalPrice = data.amount / 100; //convert from kobo to naira
-            const totalQuantity = user.cart.reduce((acc, item) => acc + item.quantity, 0)
-            //add order to user orders array
+            const totalPrice = subtotal;
+            const totalQuantity = user.cart.reduce((acc, item) => acc + item.quantity, 0);
+
+            // add order to user orders array
             const newOrder = {
                 orderNumber,
-                orderData,
+                orderDate,
                 orderStatus,
                 totalPrice,
                 totalQuantity,
                 items: user.cart
-            }
+            };
+
             user.orderHistory.push(newOrder);
-            user.cart = []
+            user.cart = [];
             await user.save();
-            return res.status(200).json({ success: true, message: "Payment successful"});
+
+            return res.status(200).json({ success: true, message: "Payment successful" });
         }
-        return res.status(400).json({success:false, message: 'payment verification failed.'})
+
+        console.log('Payment verification status:', status);
+        return res.status(400).json({ success: false, message: 'Payment verification failed.' });
     } catch (error) {
-        res.status(500).json({status: false, message: "Internal server error"})
+        console.error('Error verifying payment:', error);
+        return res.status(500).json({ success: false, message: "Internal server error" });
     }
-}
+};
