@@ -27,7 +27,8 @@ export const getUser = async (req, res) => {
         const existingItemIndex = user.cart.findIndex(item => 
             item.itemId === itemId && 
             item.color === color && 
-            item.size === size
+            item.size === size &&
+            item.quantity === quantity
         );
         if (existingItemIndex >= 0) {
             // Item exists, update quantity
