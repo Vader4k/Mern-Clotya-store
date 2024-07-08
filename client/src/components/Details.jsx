@@ -11,18 +11,18 @@ const Details = ({ props }) => {
   const [isColorSelected, setIsColorSelected] = useState(false);
   const [selectedSize, setSelectedSize] = useState('');
   const [selectedColor, setSelectedColor] = useState('');
-  const [amount, setAmount] = useState(1);
+  const [quantity, setQuantity] = useState(1);
 
   const { addToCart, addToWishlist } = useContext(ShopContext);
 
   const images = [props.img1, props.img2, props.img3, props.img4].filter(Boolean);
 
   const add = () => {
-    setAmount((prev) => prev + 1);
+    setQuantity((prev) => prev + 1);
   };
 
   const subtract = () => {
-    setAmount((prev) => (prev === 1 ? 1 : prev - 1));
+    setQuantity((prev) => (prev === 1 ? 1 : prev - 1));
   };
 
   useEffect(() => {
@@ -34,7 +34,7 @@ const Details = ({ props }) => {
       alert('Please select a size and color');
       return;
     }
-    addToCart(props.id, selectedSize, selectedColor, amount);
+    addToCart(props.id, selectedSize, selectedColor, quantity);
     setSelectedColor('')
     setSelectedSize('')
     setIsColorSelected(false)
@@ -134,7 +134,7 @@ const Details = ({ props }) => {
           <div className="flex items-center gap-2">
             <div className="flex w-full max-w-[110px] items-center gap-6 border p-3">
               <button onClick={subtract} className="font-medium">-</button>
-              <span>{amount}</span>
+              <span>{quantity}</span>
               <button onClick={add} className="font-medium">+</button>
             </div>
             <button

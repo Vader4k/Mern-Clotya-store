@@ -25,11 +25,11 @@ export const getUser = async (req, res) => {
             return res.status(404).json({ success: false, message: "User not found" });
         }
         const existingItemIndex = user.cart.findIndex(item => 
-            item.itemId === itemId && 
-            item.color === color && 
-            item.size === size &&
-            item.quantity === quantity
+            String(item.itemId) === String(itemId )&& 
+            String(item.color) === String(color) && 
+            String(item.size) === String(size)
         );
+        console.log(existingItemIndex)
         if (existingItemIndex >= 0) {
             // Item exists, update quantity
             user.cart[existingItemIndex].quantity += quantity;
