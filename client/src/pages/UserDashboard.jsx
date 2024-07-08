@@ -57,6 +57,7 @@ const UserDashboard = () => {
 
   const handleLogOut = () => {
     removeCookie("auth_token");
+    dispatch(fetchUserData())
     navigate('/'); // Redirect to login after logout
   }
 
