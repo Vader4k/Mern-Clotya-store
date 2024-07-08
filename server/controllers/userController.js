@@ -1,5 +1,10 @@
 import userModel from "../Models/userModel.js";
 import bcrypt from 'bcrypt'
+import { v4 as uuidv4} from 'uuid'
+import axios from 'axios'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 export const getUser = async (req, res) => {
     try {
@@ -157,5 +162,46 @@ export const changePassword = async (req, res) => {
         return res.status(200).json({ success: true, message: "Password updated" });
     } catch (error) {
         
+    }
+}
+
+export const verifyPayment = async (req, res) => {
+    const { reference } = req.body
+    const userId = req.user.id;
+
+    try {
+        const res = await axios.get(`https://api.paystack.co/transaction/verify/${reference}`,{
+            headers: {
+                Authorization: `Bearer ${process.env.PAYSTACK_SECRET_KEY}`
+            }
+        })
+
+        const {status, data} = res.data
+
+        if(status === 'success'){
+            const user = await userModel.findById(userId);
+
+            const orderNumber = uuidv4().slice(0,4);// generates a random 4-number Id
+            const orderData = new Date();
+            const orderStatus = 'on hold';
+            const totalPrice = data.amount / 100; //convert from kobo to naira
+            const totalQuantity = user.cart.reduce((acc, item) => acc + item.quantity, 0)
+            //add order to user orders array
+            const newOrder = {
+                orderNumber,
+                orderData,
+                orderStatus,
+                totalPrice,
+                totalQuantity,
+                items: user.cart
+            }
+            user.orderHistory.push(newOrder);
+            user.cart = []
+            await user.save();
+            return res.status(200).json({ success: true, message: "Payment successful"});
+        }
+        return res.status(400).json({success:false, message: 'payment verification failed.'})
+    } catch (error) {
+        res.status(500).json({status: false, message: "Internal server error"})
     }
 }

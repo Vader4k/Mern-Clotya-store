@@ -8,9 +8,9 @@ import { selectUserData, selectRefresh, selectError } from "../app/userSlice";
 import Dashboard from '../components/UserDashboard/Dashboard'
 import Orders from '../components/UserDashboard/Orders'
 import Address from '../components/UserDashboard/Address'
-import Wishlist from '../components/UserDashboard/Wishlist'
 import Details from "../components/UserDashboard/Details";
 import Billing from '../components/UserDashboard/Billing'
+import { Link } from "react-router-dom";
 
 
 const UserDashboard = () => {
@@ -97,11 +97,12 @@ const UserDashboard = () => {
             className={`${tab === 'details' ? 'bg-red-500 text-white border-none' : 'bg-white text-black border'} w-full cursor-pointer p-3`}>
             Account details
           </div>
-          <div
-            onClick={()=> setTab("wishlist")} 
-            className={`${tab === 'wishlist' ? 'bg-red-500 text-white border-none' : 'bg-white text-black border'} w-full cursor-pointer p-3`}>
-            Wishlist
-          </div>
+          <Link to='/favorites'>
+            <div
+              className="w-full border cursor-pointer p-3">
+              Wishlist
+            </div>
+          </Link>
           <div onClick={handleLogOut} className="w-full cursor-pointer p-3">
             Log out
           </div>
@@ -135,13 +136,6 @@ const UserDashboard = () => {
           {tab === 'details' && (
             <div>
               <Details
-                userData={userApiData} 
-              />
-            </div>
-          )}
-          {tab === 'wishlist' && (
-            <div>
-              <Wishlist
                 userData={userApiData} 
               />
             </div>

@@ -7,7 +7,8 @@ import {
     removeFromWishlist,
     getUser, 
     addBillingInfo,
-    changePassword
+    changePassword,
+    verifyPayment
 } from '../controllers/userController.js';
 
 const router = express.Router();
@@ -19,5 +20,6 @@ router.post('/add-to-cart', verification, addToCart)
 router.post('/add-to-wishlist', verification, addToWishlist)
 router.delete('/remove-from-cart', verification, removeFromCart)
 router.delete('/remove-from-wishlist', verification, removeFromWishlist)
+router.post('/verify-payment', verification, verifyPayment)
 
 export default router;

@@ -20,6 +20,32 @@ const itemSchema = new mongoose.Schema({
     }
 });
 
+const orderSchema = new mongoose.Schema({
+    orderNumber: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    orderDate: {
+        type: Date,
+        default: Date.now()
+    },
+    orderStatus: {
+        type: String,
+        enum: ['on hold', 'on delivery', 'delivered'],
+        default: 'on hold'
+    },
+    totalPrice: {
+        type: Number,
+        required: true
+    },
+    totalQuantity: {
+        type: Number,
+        required: true
+    },
+    items: [itemSchema]
+});
+
 const userSchema = new mongoose.Schema({
     email: { 
         type: String, 
@@ -71,6 +97,10 @@ const userSchema = new mongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now()
+    },
+    orderHistory: {
+        type: [orderSchema],
+        default: []
     },
     updatedAt: {
         type: Date,
