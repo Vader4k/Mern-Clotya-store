@@ -2,7 +2,6 @@ import userModel from "../Models/userModel.js";
 import bcrypt from 'bcrypt'
 import Jwt  from "jsonwebtoken";
 import nodemailer from 'nodemailer'
-import crypto from 'crypto'
 import dotenv from 'dotenv'
 import fs from 'fs'
 import path from 'path'
@@ -85,7 +84,8 @@ const transporter = nodemailer.createTransport({
       if (!user) {
         return res.status(400).json({ success: false, message: 'User does not exist' });
       }
-  
+      
+      console.log(process.env.EMAIL , process.env.EMAIL_PASSWORD)
       const token = Math.floor(10000 + Math.random() * 90000).toString();
       user.resetPasswordToken = token;
       user.resetPasswordExpires = Date.now() + 3600000; // 1 hour from now
