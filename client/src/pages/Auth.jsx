@@ -52,12 +52,12 @@ const Auth = () => {
     try {
       const response = await makePostRequest('/register', credentials)
       
-      if(response.status === 400){
-        errorMsg(response.errorMsg)
+      if(response.data.status === 400){
+        errorMsg(response.data.errorMsg)
         setLoading(false)
       }
-      if(response.success === false){
-        errorMsg(response.message)
+      if(response.data.success === false){
+        errorMsg(response.data.message)
         setLoading(false)
       }
       setLoading(false)
@@ -67,7 +67,7 @@ const Auth = () => {
       navigate('/dashboard')
     } catch (error) {
       setLoading(false)
-      console.log(error.message)
+      console.log(error)
     }
   }
 

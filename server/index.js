@@ -7,6 +7,7 @@ import path from 'path'
 import mongoose from 'mongoose'
 import authRoute from './routes/authRoutes.js'
 import userRoute from './routes/userRoutes.js'
+import userModel from './Models/userModel.js'
 
 dotenv.config()
 const app = express()
@@ -31,6 +32,32 @@ const connectDB = async () => {
         console.log(error)
     }
 }
+
+const cleanUpDuplicates = async () => {
+    try {
+        await mongoose.connect(process.env.MONGO_URL);
+
+        const users = await userModel.find({
+            'orderHistory.orderNumber': { $type: 'null' },
+        });
+
+        for (const user of users) {
+            user.orderHistory.forEach((order) => {
+                if (!order.orderNumber) {
+                    order.orderNumber = uuidv4().slice(0, 8);
+                }
+            });
+            await user.save();
+        }
+
+        console.log('Duplicate order numbers cleaned up successfully');
+        await mongoose.disconnect();
+    } catch (error) {
+        console.error('Error cleaning up duplicates:', error);
+    }
+};
+
+cleanUpDuplicates();
 
 
 //middlewares

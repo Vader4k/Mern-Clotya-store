@@ -25,6 +25,7 @@ const orderSchema = new mongoose.Schema({
     orderNumber: {
         type: String,
         required: true,
+        unique: true,
         sparse: true,
         default: () => uuidv4().slice(0, 4) // Ensure a unique order number by default
     },
