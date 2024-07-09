@@ -122,12 +122,14 @@ const Billing = ({ userData }) => {
         <div className='flex flex-col w-full gap-3'>
           <label htmlFor="phone">phone</label>
           <input 
-            type="text" 
+            type="number" 
             id="phone" 
             name="phone"
             className='outline-none border p-2' 
             value={billingInfo.phone}
             onChange={handleInputChange}
+            min={11}
+            max={11}
           />
           <p>please enter a valid 11 digit number</p>
         </div>
