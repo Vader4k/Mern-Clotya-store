@@ -13,11 +13,14 @@ const Address = ({ userData, setBilling }) => {
           >
             {userData?.address ? 'Edit' : 'Add'}
           </button>
-          <div>
+          
+          {userData?.address && 
+            (<div>
             <p>{userData?.firstName} {userData?.lastName}</p>
             <p>{userData?.address?.street}</p>
             <p>{userData?.address?.state}, {userData?.address?.zip}</p>
-          </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

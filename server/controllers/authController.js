@@ -89,7 +89,7 @@ const transporter = nodemailer.createTransport({
       user.resetPasswordExpires = Date.now() + 3600000; // 1 hour from now
       await user.save();
   
-      const resetUrl = `https://${req.headers.host}/reset-password/${token}`;
+      const resetUrl = `https://clotya-mern.onrender.com/reset-password/${token}`;
   
       const templatePath = path.join(__dirname, '../templates/ResetPassword.html');
       fs.readFile(templatePath, 'utf8', (err, data) => {
