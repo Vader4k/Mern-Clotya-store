@@ -13,6 +13,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 dotenv.config()
+
 export const register = async (req, res) => {
    const { username, email, password } = req.body
    try {

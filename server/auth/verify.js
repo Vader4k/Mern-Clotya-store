@@ -7,7 +7,7 @@ export const verification = async (req, res, next) => {
     }
 
     try {
-        const data = Jwt.verify(token, process.env.JWT_SECRET_kEY)
+        const data = Jwt.verify(token, process.env.JWT_SECRET_KEY)
         req.user = data.user
         next()
     } catch (error) {

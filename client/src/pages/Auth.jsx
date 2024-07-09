@@ -29,10 +29,10 @@ const Auth = () => {
         email: credentials.email, 
         password: credentials.password
       })
-
-      if(response.error){
+      console.log(response)
+      if(response.status === 400){
         setLoading(false)
-        errorMsg(response.error.message)
+        errorMsg(response.errorMsg)
       }
       setLoading(false)
       console.log("setting cookie...")
