@@ -6,7 +6,8 @@ import {
     makeGetRequest,
     errorMsg, 
     successMsg,
-    makeDeleteRequest 
+    makeDeleteRequest,
+    removeCookie 
 } from '../hooks';
 
 export const ShopContext = createContext(null);
@@ -135,6 +136,13 @@ const ShopContextProvider = (props) => {
     // get total number of items in the wishlist
     const totalWishlistItems = wishList?.length;
 
+    const handleLogOut = () => {
+        removeCookie("auth_token"),
+        setUser(null);
+        fetchUserData();
+        navigate('/'); // Redirect to login after logout
+    }
+
     return (
         <ShopContext.Provider value={{
             allProducts,
@@ -149,7 +157,8 @@ const ShopContextProvider = (props) => {
             subtotal,
             totalItems,
             totalWishlistItems,
-            fetchUserData
+            fetchUserData,
+            handleLogOut
         }}>
             {props.children}
         </ShopContext.Provider>
