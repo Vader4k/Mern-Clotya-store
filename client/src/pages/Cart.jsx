@@ -72,11 +72,13 @@ const Cart = () => {
                 <p>Subtotal</p>
                 <span>${subtotal}</span>
               </div>
-              {user && 
-                <div className="flex flex-col gap-5 pb-2 border-b w-full py-2">
+              {user?.address ? 
+                (<div className="flex flex-col gap-5 pb-2 border-b w-full py-2">
                   <p className="text-[0.8rem]">Flat rate <span className="text-[1rem]">$15.00</span></p>
                   <p className="text-[0.9rem]">Shipping to {user?.address?.street},{user?.address?.state}</p>
-                </div>
+                </div>) : (
+                  <p>Go to dashboard and set your shipping address before checking out</p>
+                )
               }
               <div className="flex items-center justify-between w-full pb-3 py-2">
                 <span>Total</span>
