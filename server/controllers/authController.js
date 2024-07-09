@@ -84,12 +84,10 @@ const transporter = nodemailer.createTransport({
         return res.status(400).json({ success: false, message: 'User does not exist' });
       }
   
-      const token = crypto.randomBytes(32).toString('hex');
+      const token = Math.floor(10000 + Math.random() * 90000).toString();
       user.resetPasswordToken = token;
       user.resetPasswordExpires = Date.now() + 3600000; // 1 hour from now
       await user.save();
-  
-      const resetUrl = `https://clotya-mern.onrender.com/reset-password/${token}`;
   
       const templatePath = path.join(__dirname, '../templates/ResetPassword.html');
       fs.readFile(templatePath, 'utf8', (err, data) => {
@@ -98,7 +96,7 @@ const transporter = nodemailer.createTransport({
           return res.status(500).json({ success: false, message: 'Error reading template file' });
         }
   
-        const htmlContent = data.replace('{{resetUrl}}', resetUrl);
+        const htmlContent = data.replace('{{resetToken}}', token);
   
         const mailOptions = {
           from: process.env.EMAIL,
@@ -130,6 +128,10 @@ export const resetPassword = async (req, res) => {
 
     if (!user){
         res.status(400).json({success:false, message: "Password reset token is invalid or has expired"})
+    }
+
+    if (user.password === newPassword){
+      return res.status(400).json({success: false, message: "New password cannot be the same as the old one"})
     }
 
     const hashedPassword = await bcrypt.hash(newPassword, (10))
