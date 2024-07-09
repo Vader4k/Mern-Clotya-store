@@ -25,10 +25,10 @@ const Cart = () => {
               <h1>Quantity</h1>
               <h1>Subtotal</h1>
             </div>
-            {cartItems.map((item, index) => {
-              const product = allProducts.find(product => product.id.toString() === item.itemId)
+            {cartItems?.map((item, index) => {
+              const product = allProducts.find(product => product?.id.toString() === item?.itemId)
               if(product){
-                const totalCost = parseFloat(product.new_price) * item.quantity;
+                const totalCost = parseFloat(product?.new_price) * item?.quantity;
                 return (
                   <div 
                     key={index}
@@ -40,13 +40,13 @@ const Cart = () => {
                           <div className="relative h-[1px] w-[1px]  md:h-[45px] md:w-[45px]">
                             <ImBin2 
                               className="absolute left-[-10px] top-[-8px] text-red-500 cursor-pointer"
-                              onClick={() => removeFromCart(item.itemId, item.size, item.color)}
+                              onClick={() => removeFromCart(item?.itemId, item?.size, item?.color)}
                             />
-                            <img className="w-full h-full object-cover" src={product?.img1} alt={product.name} />
+                            <img className="w-full h-full object-cover" src={product?.img1} alt={product?.name} />
                           </div>
                           <div className="">
-                            <Link to={`/product/${item.itemId}`}>
-                              <h1 className="md:font-medium">{product?.name} - {item.color}</h1>
+                            <Link to={`/product/${item?.itemId}`}>
+                              <h1 className="md:font-medium">{product?.name} - {item?.color}</h1>
                               <p className="text-[0.8rem] text-gray-600">Size: {item?.size}</p>
                             </Link>
                           </div>
@@ -55,8 +55,8 @@ const Cart = () => {
 
                         </div>
                         <p className="text-[0.89rem] hidden md:block">${product?.new_price}</p>
-                        <p className="text-[0.89rem]">{item.quantity}</p>
-                        <p className="text-[0.89rem]">${parseFloat(item.quantity * product.new_price).toFixed(2)}</p>
+                        <p className="text-[0.89rem]">{item?.quantity}</p>
+                        <p className="text-[0.89rem]">${parseFloat(item?.quantity * product?.new_price).toFixed(2)}</p>
                       </div>
                     </div>
                   </div>
@@ -75,12 +75,12 @@ const Cart = () => {
               {user && 
                 <div className="flex flex-col gap-5 pb-2 border-b w-full py-2">
                   <p className="text-[0.8rem]">Flat rate <span className="text-[1rem]">$15.00</span></p>
-                  <p className="text-[0.9rem]">Shipping to {user.address.street},{user.address.state}</p>
+                  <p className="text-[0.9rem]">Shipping to {user?.address?.street},{user?.address?.state}</p>
                 </div>
               }
               <div className="flex items-center justify-between w-full pb-3 py-2">
                 <span>Total</span>
-                <span className="font-medium text-[1.5rem]">${total.toFixed(2)}</span>
+                <span className="font-medium text-[1.5rem]">${total?.toFixed(2)}</span>
               </div>
               <PayButton subtotal={subtotal} user={user}/>
             </div>
