@@ -56,6 +56,10 @@ const Auth = () => {
         errorMsg(response.errorMsg)
         setLoading(false)
       }
+      if(response.success === false){
+        errorMsg(response.message)
+        setLoading(false)
+      }
       setLoading(false)
       console.log("setting cookie...")
       setCookie("auth_token", response.data.token)
@@ -168,7 +172,7 @@ const Auth = () => {
                   type='submit'
                   className='w-full bg-red-500 px-3 py-2 text-white'
                 >
-                  Register
+                  { loading ? <FiLoader className='text-white text-center'/> : 'Register'}
                 </button>
               </form>
             </div>
