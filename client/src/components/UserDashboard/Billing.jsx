@@ -94,6 +94,7 @@ const Billing = ({ userData }) => {
             name="city"
             className='outline-none border p-2'
             value={billingInfo.city}
+            required
             onChange={handleInputChange}
           />
         </div>
@@ -105,6 +106,7 @@ const Billing = ({ userData }) => {
             name="state"
             className='outline-none border p-2'
             value={billingInfo.state} 
+            required
             onChange={handleInputChange}
           />
         </div>
@@ -116,6 +118,7 @@ const Billing = ({ userData }) => {
             name="zip"
             className='outline-none border p-2' 
             value={billingInfo.zip}
+            required
             onChange={handleInputChange}
           />
         </div>
@@ -128,6 +131,7 @@ const Billing = ({ userData }) => {
             className='outline-none border p-2' 
             value={billingInfo.phone}
             onChange={handleInputChange}
+            required
             min={11}
             max={11}
           />
