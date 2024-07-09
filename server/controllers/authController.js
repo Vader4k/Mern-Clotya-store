@@ -72,8 +72,8 @@ const transporter = nodemailer.createTransport({
   port: 587,
   secure: false, // Use TLS
   auth: {
-    user: bigkingkush295@outlook.com,
-    pass: Konohagakure1,
+    user: "bigkingkush295@outlook.com",
+    pass: "Konohagakure1",
   },
   tls: {
     ciphers: 'SSLv3',
@@ -106,7 +106,7 @@ const transporter = nodemailer.createTransport({
         const htmlContent = data.replace('{{resetToken}}', token);
   
         const mailOptions = {
-          from: bigkingkush295@outlook.com,
+          from: "bigkingkush295@outlook.com",
           to: user.email,
           subject: 'Password Reset',
           html: htmlContent,
