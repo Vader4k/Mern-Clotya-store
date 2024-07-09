@@ -31,16 +31,17 @@ const Auth = () => {
       })
 
       if(response.error){
-        errorMsg(response.error.message)
         setLoading(false)
+        errorMsg(response.error.message)
       }
-
+      setLoading(false)
       console.log("setting cookie...")
       setCookie("auth_token", response.data.token)
       successMsg(response.data.message)
       navigate('/dashboard')
 
     } catch (error) {
+      setLoading(false)
       console.log(error)
     }
   }
@@ -55,11 +56,13 @@ const Auth = () => {
         errorMsg(response.data.message)
         setLoading(false)
       }
+      setLoading(false)
       console.log("setting cookie...")
       setCookie("auth_token", response.data.token)
       successMsg(response.data.message)
       navigate('/dashboard')
     } catch (error) {
+      setLoading(false)
       console.log(error.message)
     }
   }
@@ -95,7 +98,8 @@ const Auth = () => {
                     onChange={handleInputChange} 
                     type="email" 
                     id="email" 
-                    name='email' 
+                    name='email'
+                    disabled={loading}
                     className="w-full py-2 px-4 text-gray-500 outline-none border"
                   />
                 </div>
@@ -105,6 +109,7 @@ const Auth = () => {
                     onChange={handleInputChange} 
                     type="password" 
                     id="password" 
+                    disabled={loading}
                     name='password' 
                     className="w-full px-4 py-2 text-gray-500 outline-none border"
                   />

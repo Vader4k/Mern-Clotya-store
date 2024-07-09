@@ -2,7 +2,7 @@ import axios from 'axios'
 import Cookies from "js-cookie"
 import { toast, Bounce } from 'react-toastify'
 
-export const API_BASEURL = "http://localhost:5000/backend/v1"
+export const API_BASEURL = "https://clotya-mern.onrender.com/backend/v1"
 
 export const setCookie = (cookie_name, cookie_value) => {
     Cookies.set(cookie_name, cookie_value, {
