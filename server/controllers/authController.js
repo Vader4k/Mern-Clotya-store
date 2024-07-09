@@ -36,7 +36,7 @@ export const register = async (req, res) => {
         user: {id: user._id}
     }
 
-    const token = Jwt.sign(data, process.env.JWT_SECRET_kEY)
+    const token = Jwt.sign(data, process.env.JWT_SECRET_KEY)
 
     return res.status(200).json({ success:true, message: "registration successful", token })
 
@@ -47,7 +47,7 @@ export const register = async (req, res) => {
 
 export const login = async (req, res) => {
     const { email, password } = req.body
-    // try {
+    try {
         let user = await userModel.findOne({email})
         if(!user){
           return res.status(400).json({success:false, message: "User does not exist"})
@@ -59,12 +59,11 @@ export const login = async (req, res) => {
         const data = {
             user: {id: user._id}
         }
-        console.log('JWT_SECRET_KEY:', process.env.JWT_SECRET_KEY);
-        const token = Jwt.sign(data, process.env.JWT_SECRET_kEY)
+        const token = Jwt.sign(data, process.env.JWT_SECRET_KEY)
         return res.status(200).json({success:true, message: "login successful", token})
-    // } catch (error) {
-    //     res.status(400).json({success:false, message:error.message})
-    // }
+    } catch (error) {
+        res.status(400).json({success:false, message:error.message})
+    }
 }
 
 const transporter = nodemailer.createTransport({
