@@ -1,5 +1,5 @@
 import { Error, Headtags, Refresher } from "../components";
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import { fetchUserData } from "../app/userThunks";
 import { useDispatch, useSelector } from "react-redux";
 import { getCookie, removeCookie } from "../hooks";
@@ -12,7 +12,7 @@ import Details from "../components/UserDashboard/Details";
 import Billing from '../components/UserDashboard/Billing'
 import View from '../components/UserDashboard/View'
 import { Link } from "react-router-dom";
-import { ShopContext } from "../context/ShopContext";
+
 
 
 const UserDashboard = () => {
@@ -25,7 +25,6 @@ const UserDashboard = () => {
   const [tab, setTab] = useState("dashboard")
   const [id, setId] = useState('')
   const [order, setOrder] = useState({})
-  const {handleLogOut} = useContext(ShopContext)
 
 
   useEffect(() => {
@@ -61,7 +60,11 @@ const UserDashboard = () => {
     return handleError()
   }
 
-
+  const handleLogOut = () => {
+    removeCookie("auth_token");
+    dispatch(fetchUserData()); // Refresh user data after logout
+    navigate('/login'); // Redirect to login after logout
+  }
 
 
   return (

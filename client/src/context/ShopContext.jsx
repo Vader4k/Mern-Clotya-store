@@ -136,12 +136,6 @@ const ShopContextProvider = (props) => {
     // get total number of items in the wishlist
     const totalWishlistItems = wishList?.length;
 
-    const handleLogOut = () => {
-        removeCookie("auth_token"),
-        setUser(null);
-        fetchUserData();
-        navigate('/'); // Redirect to login after logout
-    }
 
     return (
         <ShopContext.Provider value={{
@@ -157,8 +151,7 @@ const ShopContextProvider = (props) => {
             subtotal,
             totalItems,
             totalWishlistItems,
-            fetchUserData,
-            handleLogOut
+            fetchUserData
         }}>
             {props.children}
         </ShopContext.Provider>

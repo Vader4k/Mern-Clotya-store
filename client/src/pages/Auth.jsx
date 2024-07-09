@@ -51,9 +51,12 @@ const Auth = () => {
     setLoading(true)
     try {
       const response = await makePostRequest('/register', credentials)
-      if(response.success === false){
-        errorMsg(response.message)
+      console.log(response.data, 'data')
+      console.log(response.errorMsg, 'error')
+
+      if(response.status === 400){
         setLoading(false)
+        errorMsg(response.errorMsg)
       }
       setLoading(false)
       console.log("setting cookie...")
