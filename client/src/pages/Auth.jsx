@@ -51,13 +51,8 @@ const Auth = () => {
     setLoading(true)
     try {
       const response = await makePostRequest('/register', credentials)
-      
-      if(response.data.status === 400){
-        errorMsg(response.data.errorMsg)
-        setLoading(false)
-      }
-      if(response.data.success === false){
-        errorMsg(response.data.message)
+      if(response.success === false){
+        errorMsg(response.message)
         setLoading(false)
       }
       setLoading(false)
