@@ -13,12 +13,11 @@ const Reset = () => {
         setLoading(true)
         try {
             const response = await makePostRequest('/requestReset', {email})
-            console.log(response)
-            if(response.data.success === false){
-                errorMsg(response.data.message)
+            if(response?.errorMsg){
+                errorMsg(response?.errorMsg)
             }
             setLoading(false)
-            successMsg(response.data.message)
+            successMsg(response?.data?.message)
             setTab('success')
             setEmail('')
         } catch (error) {
