@@ -91,7 +91,7 @@ const Auth = () => {
                 <button
                   onClick={handleLogin} 
                   type='submit'
-                  className='w-full text-center bg-red-500 px-3 py-2 text-white'
+                  className='w-full text-center flex items-center justify-center bg-red-500 px-3 py-2 text-white'
                 >
                   { loading ? <FiLoader className='text-white text-center'/> : 'Log in'}
                 </button>

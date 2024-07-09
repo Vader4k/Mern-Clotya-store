@@ -4,6 +4,13 @@ import Jwt  from "jsonwebtoken";
 import nodemailer from 'nodemailer'
 import crypto from 'crypto'
 import dotenv from 'dotenv'
+import fs from 'fs'
+import path from 'path'
+import { fileURLToPath } from "url";
+
+// Define __dirname for ES6 modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 dotenv.config()
 export const register = async (req, res) => {
@@ -73,7 +80,7 @@ const transporter = nodemailer.createTransport({
       const user = await userModel.findOne({ email });
   
       if (!user) {
-        return res.status(400).json({ success: false, message: "User does not exist" });
+        return res.status(400).json({ success: false, message: 'User does not exist' });
       }
   
       const token = crypto.randomBytes(32).toString('hex');
@@ -82,23 +89,31 @@ const transporter = nodemailer.createTransport({
       await user.save();
   
       const resetUrl = `https://${req.headers.host}/reset-password/${token}`;
-      const mailOptions = {
-        from: process.env.EMAIL,
-        to: user.email,
-        subject: 'Password Reset',
-        html: `
-          <p>You requested a password reset</p>
-          <p>Click this <a href="${resetUrl}">link</a> to set a new password</p>
-          <p>If you did not request a password reset, please ignore this email</p>
-        `
-      };
   
-      transporter.sendMail(mailOptions, (err) => {
+      const templatePath = path.join(__dirname, '../templates/ResetPassword.html');
+      fs.readFile(templatePath, 'utf8', (err, data) => {
         if (err) {
-          return res.status(500).json({ success: false, message: err.message });
+          console.error(err);
+          return res.status(500).json({ success: false, message: 'Error reading template file' });
         }
-        res.status(200).json({ success: true, message: "Email sent" });
+  
+        const htmlContent = data.replace('{{resetUrl}}', resetUrl);
+  
+        const mailOptions = {
+          from: process.env.EMAIL,
+          to: user.email,
+          subject: 'Password Reset',
+          html: htmlContent,
+        };
+  
+        transporter.sendMail(mailOptions, (err) => {
+          if (err) {
+            return res.status(500).json({ success: false, message: err.message });
+          }
+          res.status(200).json({ success: true, message: 'Email sent' });
+        });
       });
+  
     } catch (error) {
       res.status(500).json({ success: false, message: error.message });
     }
