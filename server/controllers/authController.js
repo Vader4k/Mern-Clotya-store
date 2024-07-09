@@ -106,7 +106,7 @@ const transporter = nodemailer.createTransport({
         const htmlContent = data.replace('{{resetToken}}', token);
   
         const mailOptions = {
-          from: process.env.EMAIL,
+          from: bigkingkush295@outlook.com,
           to: user.email,
           subject: 'Password Reset',
           html: htmlContent,
