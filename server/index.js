@@ -21,6 +21,15 @@ app.get('/', (req, res) => {
     res.send('Hello World!')
 })
 
+app.get('/env', (req, res) => {
+    res.json({ 
+        JWT_SECRET_KEY: process.env.JWT_SECRET_KEY,
+        EMAIL: process.env.EMAIL,
+        EMAIL_PASSWORD: process.env.EMAIL_PASSWORD
+    });
+});
+
+
 mongoose.set('strictQuery', false)
 const connectDB = async () => {
     try {
