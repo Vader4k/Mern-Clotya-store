@@ -68,12 +68,19 @@ export const login = async (req, res) => {
 }
 
 const transporter = nodemailer.createTransport({
-    service: 'outlook',
-    auth: {
-      user: process.env.EMAIL,
-      pass: process.env.EMAIL_PASSWORD
-    }
-  });
+  host: 'smtp-mail.outlook.com', // Outlook SMTP server
+  port: 587,
+  secure: false, // Use TLS
+  auth: {
+    user: process.env.EMAIL,
+    pass: process.env.EMAIL_PASSWORD,
+  },
+  tls: {
+    ciphers: 'SSLv3',
+    rejectUnauthorized: false,
+  },
+});
+
   
   export const requestPasswordReset = async (req, res) => {
     const { email } = req.body;
@@ -141,4 +148,3 @@ export const resetPassword = async (req, res) => {
     await user.save()
     res.status(200).json({success:true, message: "Password reset successful"})
 }
-
