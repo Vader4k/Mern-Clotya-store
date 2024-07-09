@@ -170,7 +170,7 @@ const Auth = () => {
                 </p>
                 <button 
                   type='submit'
-                  className='w-full bg-red-500 px-3 py-2 text-white'
+                  className='w-full bg-red-500 px-3 py-2 text-white text-center flex items-center justify-center'
                 >
                   { loading ? <FiLoader className='text-white text-center'/> : 'Register'}
                 </button>
