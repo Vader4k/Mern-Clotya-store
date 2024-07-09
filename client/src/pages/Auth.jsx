@@ -45,6 +45,25 @@ const Auth = () => {
     }
   }
 
+  const handleRegister = async (e) => {
+    e.preventDefault()
+    setLoading(true)
+    try {
+      const response = await makePostRequest('/register', credentials)
+      
+      if(response.data.success === false){
+        errorMsg(response.data.message)
+        setLoading(false)
+      }
+      console.log("setting cookie...")
+      setCookie("auth_token", response.data.token)
+      successMsg(response.data.message)
+      navigate('/dashboard')
+    } catch (error) {
+      console.log(error.message)
+    }
+  }
+
   return (
     <section className="w-full my-20 max-w-[550px] h-full min-h-[600px] mx-auto p-8 border rounded-sm">
       <Headtags pageTitle="My Account"/>
@@ -67,7 +86,9 @@ const Auth = () => {
         <div className='mt-8'>
           {tab === 'login' && 
             <div className='w-full'>
-              <form className='flex flex-col gap-10 mb-8'>
+              <form
+              onSubmit={handleLogin} 
+              className='flex flex-col gap-10 mb-8'>
                 <div className='flex flex-col gap-2'>
                   <label className='text-[0.8rem]' htmlFor="email">Enter Your Email</label>
                   <input
@@ -88,8 +109,7 @@ const Auth = () => {
                     className="w-full px-4 py-2 text-gray-500 outline-none border"
                   />
                 </div>
-                <button
-                  onClick={handleLogin} 
+                <button 
                   type='submit'
                   className='w-full text-center flex items-center justify-center bg-red-500 px-3 py-2 text-white'
                 >
@@ -103,7 +123,9 @@ const Auth = () => {
           }
           {tab === 'register' && (
             <div className='w-full'>
-              <form className='flex flex-col gap-6 mb-8'>
+              <form
+                onSubmit={handleRegister} 
+                className='flex flex-col gap-6 mb-8'>
               <div className='flex flex-col gap-2'>
                   <label className='text-[0.8rem]' htmlFor="username">Enter Your Username</label>
                   <input

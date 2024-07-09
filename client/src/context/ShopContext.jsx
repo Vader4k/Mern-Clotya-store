@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect, useCallback } from "react";
+import { createContext, useState, useEffect } from "react";
 import {all_products} from '../constants/products'
 import { 
     getCookie, 
@@ -21,7 +21,7 @@ const ShopContextProvider = (props) => {
 
 
     //fetching cartData from backend and set cartItems to users cart table
-    const fetchUserData = useCallback(async () => {
+    const fetchUserData = async () => {
         try {
             const response = await makeGetRequest('/user', token);
             if(response.error){
@@ -34,7 +34,7 @@ const ShopContextProvider = (props) => {
         } catch (error) {
             console.log(error);
         }
-    }, [token]);
+    }
 
     useEffect(() => {
         if (token) {

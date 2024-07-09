@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { v4 as uuidv4 } from 'uuid'
 
 const itemSchema = new mongoose.Schema({
     itemId: {
@@ -24,7 +25,8 @@ const orderSchema = new mongoose.Schema({
     orderNumber: {
         type: String,
         required: true,
-        unique: true
+        unique: true,
+        default: () => uuidv4().slice(0, 4) // Ensure a unique order number by default
     },
     orderDate: {
         type: Date,
