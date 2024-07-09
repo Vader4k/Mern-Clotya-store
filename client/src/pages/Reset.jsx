@@ -13,13 +13,15 @@ const Reset = () => {
         setLoading(true)
         try {
             const response = await makePostRequest('/requestReset', {email})
-            if(response?.errorMsg){
-                errorMsg(response?.errorMsg)
+            if(response?.data?.success === true){
+                setLoading(false)
+                successMsg(response?.data?.message)
+                setTab('success')
+                setEmail('')
             }
+            errorMsg(response?.errorMsg)
+            errorMsg(response.message)
             setLoading(false)
-            successMsg(response?.data?.message)
-            setTab('success')
-            setEmail('')
         } catch (error) {
             setLoading(false)
             console.log(error)
@@ -40,6 +42,7 @@ const Reset = () => {
                             onChange={(e)=> setEmail(e.target.value)} 
                             type='email' 
                             id='email' 
+                            disabled={loading}
                             className='w-full px-3 py-2 text-gray-700 border border-gray-300 outline-none focus:outline-none focus:border-blue-600' 
                         />
                     </div>

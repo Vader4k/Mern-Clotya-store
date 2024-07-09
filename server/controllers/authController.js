@@ -55,7 +55,7 @@ export const login = async (req, res) => {
         }
         const isMatch = await bcrypt.compare(password, user.password)
         if(!isMatch){
-            res.status(400).json({success:false, message: "Incorrect password"})
+          return res.status(400).json({success:false, message: "Incorrect password"})
         }
         const data = {
             user: {id: user._id}
@@ -63,22 +63,16 @@ export const login = async (req, res) => {
         const token = Jwt.sign(data, process.env.JWT_SECRET_KEY)
         return res.status(200).json({success:true, message: "login successful", token})
     } catch (error) {
-        res.status(400).json({success:false, message:error.message})
+      res.status(400).json({success:false, message:error.message})
     }
 }
 
 const transporter = nodemailer.createTransport({
-  host: 'smtp-mail.outlook.com', // Outlook SMTP server
-  port: 587,
-  secure: false, // Use TLS
+  service: 'outlook',
   auth: {
-    user: "bigkingkush295@outlook.com",
-    pass: "Konohagakure1",
-  },
-  tls: {
-    ciphers: 'SSLv3',
-    rejectUnauthorized: false,
-  },
+    user: process.env.EMAIL,
+    pass: process.env.EMAIL_PASSWORD
+  }
 });
 
   
@@ -106,7 +100,7 @@ const transporter = nodemailer.createTransport({
         const htmlContent = data.replace('{{resetToken}}', token);
   
         const mailOptions = {
-          from: "bigkingkush295@outlook.com",
+          from: process.env.EMAIL,
           to: user.email,
           subject: 'Password Reset',
           html: htmlContent,
