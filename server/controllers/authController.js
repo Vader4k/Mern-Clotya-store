@@ -46,26 +46,27 @@ export const register = async (req, res) => {
    }
 }
 
+
 export const login = async (req, res) => {
-    const { email, password } = req.body
-    try {
-        let user = await userModel.findOne({email})
-        if(!user){
-          return res.status(400).json({success:false, message: "User does not exist"})
-        }
-        const isMatch = await bcrypt.compare(password, user.password)
-        if(!isMatch){
-          return res.status(400).json({success:false, message: "Incorrect password"})
-        }
-        const data = {
-            user: {id: user._id}
-        }
-        const token = Jwt.sign(data, process.env.JWT_SECRET_KEY)
-        return res.status(200).json({success:true, message: "login successful", token})
-    } catch (error) {
-      res.status(400).json({success:false, message:error.message})
-    }
-}
+  const { email, password } = req.body;
+  try {
+      let user = await userModel.findOne({ email });
+      if (!user) {
+          return res.status(400).json({ success: false, message: "User does not exist" });
+      }
+      const isMatch = await bcrypt.compare(password, user.password);
+      if (!isMatch) {
+          return res.status(400).json({ success: false, message: "Incorrect password" });
+      }
+      const data = {
+          user: { id: user._id }
+      };
+      const token = Jwt.sign(data, process.env.JWT_SECRET_KEY);
+      return res.status(200).json({ success: true, message: "login successful", token });
+  } catch (error) {
+      return res.status(400).json({ success: false, message: error.message });
+  }
+};
 
 const transporter = nodemailer.createTransport({
   service: 'outlook',
