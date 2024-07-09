@@ -129,6 +129,7 @@ const Billing = ({ userData }) => {
             value={billingInfo.phone}
             onChange={handleInputChange}
           />
+          <p>please enter a valid 11 digit number</p>
         </div>
         <button 
           type="submit"
