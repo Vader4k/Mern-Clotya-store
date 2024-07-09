@@ -15,7 +15,7 @@ const Favorites = () => {
       <div className="py-10 md:py-20">
         <h1 className="text-[1.5rem] md:text-[2rem]">Default Wishlist</h1>
         <div className="hidden md:block">
-          { wishList.length > 0 ? (
+          { wishList?.length > 0 ? (
             <div className="mt-5">
               <table className="w-full">
                 <thead>
@@ -31,8 +31,8 @@ const Favorites = () => {
                 </thead>
                 <tbody>
                   {/** Display favorite products here */}
-                  {wishList.map((item, i) => {
-                    const product = allProducts.find((p) => p.id.toString() === item)
+                  {wishList?.map((item, i) => {
+                    const product = allProducts?.find((p) => p.id.toString() === item)
                     if(!product){
                       return null
                     }
@@ -49,15 +49,15 @@ const Favorites = () => {
                         <td className="px-5 py-3 text-center border">
                           <img
                             className="object-cover w-24 h-24"
-                            src={product.img1}
-                            alt={product.name}
+                            src={product?.img1}
+                            alt={product?.name}
                           />
                         </td>
-                        <td className="px-5 py-3 text-left border">{product.name}</td>
+                        <td className="px-5 py-3 text-left border">{product?.name}</td>
                         <td className="px-5 py-3 text-left border text-[0.9rem]">
-                          {product.old_price && (
-                              <span className="line-through text-gray-500 mr-3">${product.old_price}</span>
-                            )}<span>${product.new_price}</span>
+                          {product?.old_price && (
+                              <span className="line-through text-gray-500 mr-3">${product?.old_price}</span>
+                            )}<span>${product?.new_price}</span>
                         </td>
                         <td className="px-5 py-3 text-left border text-[0.9rem]">july 5, 2024</td>
                         <td className="px-5 py-3 text-left border text-[0.9rem] font-medium text-green-500">In Stock</td>
@@ -88,7 +88,7 @@ const Favorites = () => {
             product
           </div>
           <div className="w-full">
-            {wishList.length > 0 ? (
+            {wishList?.length > 0 ? (
                   <div className="w-full flex flex-col items-center justify-center">
                     {wishList.map((item, i) => {
                       const product = allProducts.find((p) => p.id.toString() === item)
