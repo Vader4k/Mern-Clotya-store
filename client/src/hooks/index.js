@@ -4,13 +4,17 @@ import { toast, Bounce } from 'react-toastify'
 
 export const API_BASEURL = "https://clotya-mern.onrender.com/backend/v1"
 
-export const setCookie = (cookie_name, cookie_value) => {
+export const isLocalhost = () => {
+    return window.location.host.includes("localhost");
+  };
+  
+  export const setCookie = (cookie_name, cookie_value) => {
     Cookies.set(cookie_name, cookie_value, {
-         expires: 7,
-         htttpOnly: false,
-         secure: false 
+      expires: 7,
+      secure: isLocalhost() ? false : true, // Call the function here
+      sameSite: 'strict'
     });
-}
+  };
 
 export const removeCookie = (cookie_name) => {
     return Cookies.remove(cookie_name);
