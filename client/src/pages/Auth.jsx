@@ -70,9 +70,9 @@ const Auth = () => {
   }
 
   return (
-    <section className="w-full my-20 max-w-[550px] h-full min-h-[600px] mx-auto p-8 border rounded-sm">
+    <section className="w-full my-20 max-w-[550px] h-full min-h-[500px] mx-auto p-8 border rounded-sm">
       <Headtags pageTitle="My Account"/>
-      <div className='w-full p-8'>
+      <div className='w-full p-6'>
         <div className='flex justify-center items-center w-full gap-5 text-[1.2rem] font-medium'>
           <button
             onClick={()=> setTab("login")}
