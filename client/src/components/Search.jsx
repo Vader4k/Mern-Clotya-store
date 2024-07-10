@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import { IoMdClose } from "react-icons/io";
 import { BsSearch } from "react-icons/bs";
 import { ShopContext } from "../context/ShopContext";
@@ -23,8 +23,8 @@ const Search = ({ onClose }) => {
 
 
   return (
-    <div className="w-full max-w-[1300px] z-1 mx-auto px-6 min-h-screen py-10">
-      <div className="flex items-center justify-between text-[0.95rem]">
+    <div className="w-full fixed top-0 bg-white max-w-[1300px] z-[99] mx-auto px-6 h-full min-h-screen py-10">
+      <div className="flex items-center justify-between text-[0.95rem] mt-10">
         <h1>What are you looking for?</h1>
         <IoMdClose className="text-[1rem] font-bold cursor-pointer" onClick={onClose} />
       </div>
