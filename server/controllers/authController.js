@@ -68,11 +68,13 @@ export const login = async (req, res) => {
 };
 
 const transporter = nodemailer.createTransport({
-  service: 'outlook',
+  host: "smtp.zoho.com",
+  secure: true,
+  port: 465,
   auth: {
     user: process.env.EMAIL,
-    pass: process.env.EMAIL_PASSWORD
-  }
+    pass: process.env.EMAIL_PASSWORD,
+  },
 });
 
   
