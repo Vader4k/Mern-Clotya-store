@@ -11,7 +11,7 @@ const About = () => {
       <Headtags pageTitle="About Us"/>
       <img src={banner} alt="banner" className='w-full md:h-[350px] object-cover'/>
       <div className='w-full max-w-[1300px] px-3 mx-auto'>
-        <div className='flex flex-col lg:flex-row justify-between w-full relative pb-10'>
+        <div className='relative flex flex-col justify-between w-full pb-10 lg:flex-row'>
           <div className='flex flex-col gap-3 px-0 xl:px-14 py-10 lg:py-20 flex-[2] w-full lg:absolute bg-white lg:top-[-170px] xl:max-w-[900px]'>
             <h3 className='text-red-500'>About Clotya Fashion</h3>
             <h1 className='text-[1.5rem] md:text-[2.3rem] font-medium'>
@@ -23,7 +23,7 @@ const About = () => {
             </p>
           </div>
           <div className='flex-1 w-full p-4 lg:absolute lg:right-0 max-w-[300px] lg:top-20'>
-            <div className='flex items-center py-3 gap-4 mb-2'>
+            <div className='flex items-center gap-4 py-3 mb-2'>
               <IoStorefrontOutline className='text-[1.5rem] text-red-500'/>
               <span className='font-medium'>Clotya Store</span>
             </div>
@@ -35,8 +35,8 @@ const About = () => {
         </div>
         <hr className='border border-gray-200 xl:mt-80'/>
         <div className='w-full py-10'>
-          <div className='flex flex-col gap-5 lg:gap-0 lg:flex-row items-center justify-between w-full'>
-            <div className='flex flex-1 flex-col md:flex-row items-start gap-20 w-full'>
+          <div className='flex flex-col items-center justify-between w-full gap-5 lg:gap-0 lg:flex-row'>
+            <div className='flex flex-col items-start flex-1 w-full gap-20 md:flex-row'>
               <h1 className='text-[2rem]'>.01</h1>
               <div className='flex flex-col gap-3'>
                 <h3 className='text-[0.8rem] font-medium text-gray-500'>ABOUT FOR CLOTYA FASHION</h3>
@@ -55,7 +55,7 @@ const About = () => {
               <p>
                 In hac habitasse platea dictumst. Pellentesque viverra sem nec orci lacinia, in bibendum urna mollis. Quisque nunc lacus, varius vel leo a, pretium lobortis metus. Vivamus consectetur consequat justo. Sed interdum nunc ut tristique congue. Quisque maximus mauris et dui sagittis scelerisque
               </p>
-              <ul className='py-8 list-disc px-10'>
+              <ul className='px-10 py-8 list-disc'>
                 <li>Integer ullamcorper lorem ultrices orci faucibus consequat. Sed ut ultricies dolor, vel consectetur ex. In rutrum quam felis, feugiat ultricies magna fermentum sed.</li>
                 <li>
                 Nam in imperdiet lorem. Nulla condimentum, arcu nec aliquam ullamcorper, massa risus posuere enim, quis lacinia enim neque faucibus mi
@@ -74,8 +74,8 @@ const About = () => {
         </div>
 
         <div className='w-full py-10'>
-          <div className='flex flex-col lg:flex-row gap-5 lg:gap-0 items-center justify-between w-full'>
-            <div className='flex flex-1 flex-col md:flex-row items-start gap-20 w-full'>
+          <div className='flex flex-col items-center justify-between w-full gap-5 lg:flex-row lg:gap-0'>
+            <div className='flex flex-col items-start flex-1 w-full gap-20 md:flex-row'>
               <h1 className='text-[2rem]'>.02</h1>
               <div className='flex flex-col gap-3'>
                 <h3 className='text-[0.8rem] font-medium text-gray-500'>ABOUT FOR CLOTYA FASHION</h3>
@@ -94,7 +94,7 @@ const About = () => {
               <p>
                 In hac habitasse platea dictumst. Pellentesque viverra sem nec orci lacinia, in bibendum urna mollis. Quisque nunc lacus, varius vel leo a, pretium lobortis metus. Vivamus consectetur consequat justo. Sed interdum nunc ut tristique congue. Quisque maximus mauris et dui sagittis scelerisque
               </p>
-              <ul className='py-8 list-disc px-10'>
+              <ul className='px-10 py-8 list-disc'>
                 <li>Integer ullamcorper lorem ultrices orci faucibus consequat. Sed ut ultricies dolor, vel consectetur ex. In rutrum quam felis, feugiat ultricies magna fermentum sed.</li>
                 <li>
                 Nam in imperdiet lorem. Nulla condimentum, arcu nec aliquam ullamcorper, massa risus posuere enim, quis lacinia enim neque faucibus mi

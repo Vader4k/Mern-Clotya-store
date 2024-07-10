@@ -102,7 +102,7 @@ const Auth = () => {
                     id="email" 
                     name='email'
                     disabled={loading}
-                    className="w-full py-2 px-4 text-gray-500 outline-none border"
+                    className="w-full px-4 py-2 text-gray-500 border outline-none"
                   />
                 </div>
                 <div className='flex flex-col gap-2'>
@@ -113,14 +113,14 @@ const Auth = () => {
                     id="password" 
                     disabled={loading}
                     name='password' 
-                    className="w-full px-4 py-2 text-gray-500 outline-none border"
+                    className="w-full px-4 py-2 text-gray-500 border outline-none"
                   />
                 </div>
                 <button 
                   type='submit'
-                  className='w-full text-center flex items-center justify-center bg-red-500 px-3 py-2 text-white'
+                  className='flex items-center justify-center w-full px-3 py-2 text-center text-white bg-red-500'
                 >
-                  { loading ? <FiLoader className='text-white text-center'/> : 'Log in'}
+                  { loading ? <FiLoader className='text-center text-white'/> : 'Log in'}
                 </button>
               </form>
               <Link to='/reset'>
@@ -140,7 +140,7 @@ const Auth = () => {
                     type="text" 
                     id="username" 
                     name='username' 
-                    className="w-full border py-2 px-4 text-gray-500 outline-none"
+                    className="w-full px-4 py-2 text-gray-500 border outline-none"
                   />
                 </div>
                 <div className='flex flex-col gap-2'>
@@ -150,7 +150,7 @@ const Auth = () => {
                     type="email" 
                     id="email" 
                     name='email' 
-                    className="w-full py-2 border px-4 text-gray-500 outline-none"
+                    className="w-full px-4 py-2 text-gray-500 border outline-none"
                   />
                 </div>
                 <div className='flex flex-col gap-2'>
@@ -160,7 +160,7 @@ const Auth = () => {
                     type="password" 
                     id="password" 
                     name='password' 
-                    className="w-full px-4 py-2 text-gray-500 outline-none border"
+                    className="w-full px-4 py-2 text-gray-500 border outline-none"
                   />
                 </div>
                 <p className='text-[0.85rem]'>
@@ -168,9 +168,9 @@ const Auth = () => {
                 </p>
                 <button 
                   type='submit'
-                  className='w-full bg-red-500 px-3 py-2 text-white text-center flex items-center justify-center'
+                  className='flex items-center justify-center w-full px-3 py-2 text-center text-white bg-red-500'
                 >
-                  { loading ? <FiLoader className='text-white text-center'/> : 'Register'}
+                  { loading ? <FiLoader className='text-center text-white'/> : 'Register'}
                 </button>
               </form>
             </div>

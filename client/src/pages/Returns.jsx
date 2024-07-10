@@ -11,7 +11,7 @@ const Returns = () => {
         <p>To be eligible for a return, your item must be unused and in the same condition that you received it. It must also be in the original packaging.</p>
         <p>Several types of goods are exempt from being returned. Perishable goods such as food, flowers, newspapers or magazines cannot be returned. We also do not accept products that are intimate or sanitary goods, hazardous materials, or flammable liquids or gases.</p>
         <p>Additional non-returnable items:</p>
-        <ul className='list-disc px-6'>
+        <ul className='px-6 list-disc'>
           <li>Gift cards</li>
           <li>Downloadable software products</li>
           <li>some health and personal care items</li>
@@ -19,7 +19,7 @@ const Returns = () => {
         <p>To complete your return, we require a receipt or proof of purchase.</p>
         <p>Please do not send your purchase back to the manufacturer.</p>
         <p>There are certain situations where only partial refunds are granted:</p>
-        <ul className='list-disc px-6'>
+        <ul className='px-6 list-disc'>
           <li>Book with obvious signs of use</li>
           <li>CD, DVD, VHS tape, software, video game, cassette tape, or vinyl record that has been opened.</li>
           <li>Any item not in its original condition, is damaged or missing parts for reasons not due to our error.</li>

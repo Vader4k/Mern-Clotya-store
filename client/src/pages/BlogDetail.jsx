@@ -42,10 +42,10 @@ const BlogDetail = () => {
   return (
     <section className='w-full max-w-[1300px] mx-auto my-20 px-3 md:px-20 lg:px-3 '>
       <Headtags pageTitle={`Blog - ${blogDetails.name}`}/>
-      <div className='w-full flex flex-col lg:flex-row items-start relative gap-8'>
+      <div className='relative flex flex-col items-start w-full gap-8 lg:flex-row'>
         { activeTab === 'blog' && (
           <div className='flex-[3]'>
-            <div className='flex flex-col gap-3 w-full border-b pb-20'>
+            <div className='flex flex-col w-full gap-3 pb-20 border-b'>
               <img className='w-full' src={blogDetails.image} alt={blogDetails.name} />
               <div className='flex items-center gap-2'>
                 <span className='font-medium text-gray-500 text-[0.8rem]'>{blogDetails.tag} --</span>
@@ -56,7 +56,7 @@ const BlogDetail = () => {
               <div className='text-[0.95rem] text-gray-500 flex flex-col gap-5'>
                 <p>{blogDetails.paragraph1}</p>
                 <p>{blogDetails.paragraph2}</p>
-                <p className='p-5 border-r-4 border-l-4 border-gray-400'>{blogDetails.paragraph3}</p>
+                <p className='p-5 border-l-4 border-r-4 border-gray-400'>{blogDetails.paragraph3}</p>
                 <p>{blogDetails.paragraph4}</p>
                 <p>{blogDetails.paragraph5}</p>
                 <p>{blogDetails.paragraph6}</p>
@@ -68,7 +68,7 @@ const BlogDetail = () => {
               <div className='mt-6'>
                 <div className='flex flex-col gap-5'>
                   {blogComments.map((comment) => (
-                    <div className='flex gap-5 items-start' key={comment.id}>
+                    <div className='flex items-start gap-5' key={comment.id}>
                       <RxAvatar className='text-[8rem] text-gray-500'/>
                       <div className='flex flex-col'>
                         <div className='flex items-center gap-4'>
@@ -86,9 +86,9 @@ const BlogDetail = () => {
         )}
         {activeTab === 'search' && <div className='flex-[3] flex flex-col gap-3 w-full'><SearchResults /></div>}
         {/* stickly side actions */}
-        <div className='sticky top-1 flex-1 w-full'>
+        <div className='sticky flex-1 w-full top-1'>
           <div className='w-full'>
-            <div className=' mb-4'>
+            <div className='mb-4 '>
               <form className='relative w-full'>
                 <input 
                   type="text"
@@ -115,7 +115,7 @@ const BlogDetail = () => {
               ))}
             </div>
             <h1 className='py-3 font-medium border-b'>Categories</h1>
-            <div className='py-6 flex flex-col gap-3'>
+            <div className='flex flex-col gap-3 py-6'>
               {collections.map((items) => (
                 <Link to={items.url} key={items.id}>
                   <div className='flex items-center gap-2'>
@@ -126,7 +126,7 @@ const BlogDetail = () => {
               ))}
             </div>
             <h1 className='pb-3 font-medium border-b'>Tags</h1>
-            <div className='py-3 flex flex-wrap gap-1'>
+            <div className='flex flex-wrap gap-1 py-3'>
               {tags.map((items) => (
                 <ul key={items.id} className='px-4 py-2 text-[0.88rem] border'>
                   <li>{items.name}</li>

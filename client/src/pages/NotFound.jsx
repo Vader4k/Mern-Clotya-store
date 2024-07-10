@@ -11,7 +11,7 @@ const NotFound = () => {
         <h1 className="text-[1.5rem] md:text-[3rem]">Page Not Found</h1>
         <p className="text-[0.9rem]">It looks like nothing was found at this location. Maybe try to search for what you are looking for?</p>
         <Link to='/'>
-          <button className="mt-5 bg-red-500 text-white p-3">Go To Homepage</button>
+          <button className="p-3 mt-5 text-white bg-red-500">Go To Homepage</button>
         </Link>
       </div>
     </section>

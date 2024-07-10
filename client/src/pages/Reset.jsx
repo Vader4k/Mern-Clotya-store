@@ -71,7 +71,7 @@ const Reset = () => {
                     </div>
                     <button
                     type='submit'
-                    className='bg-red-500 px-3 py-2 text-center flex items-center justify-center text-white'
+                    className='flex items-center justify-center px-3 py-2 text-center text-white bg-red-500'
                     >
                         {loading ? <FiLoader/> : 'Reset password'}
                     </button>
@@ -79,7 +79,7 @@ const Reset = () => {
             </div>
         }
         {tab === 'success' && 
-            <div className='flex flex-col gap-5 w-full'>
+            <div className='flex flex-col w-full gap-5'>
                 <div className='border p-3 text-[0.9rem]'>password reset token email has been sent</div>
                 <form
                     className='flex flex-col items-start gap-5'
@@ -105,7 +105,7 @@ const Reset = () => {
                     </div>
                     <button
                         type='submit'
-                        className='bg-red-500 px-3 py-2 text-center flex items-center justify-center text-white'
+                        className='flex items-center justify-center px-3 py-2 text-center text-white bg-red-500'
                     >
                         {loading ? <FiLoader/> : 'Change'}
                     </button>
