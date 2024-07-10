@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { FiLoader } from "react-icons/fi";
 import { makePostRequest, errorMsg, successMsg } from '../hooks';
 import { useNavigate } from 'react-router-dom';
+import { Headtags } from '../components';
 
 const Reset = () => {
     const navigate = useNavigate()
@@ -51,6 +52,7 @@ const Reset = () => {
     }
   return (
     <section className='w-full px-3 max-w-[1300px] md:my-20 my-10 mx-auto'>
+        <Headtags pageTitle="Reset Password"/>
         {tab === 'initializeReset' && 
             <div>
                 <h1>Lost your password? Please enter your email address. You will receive a token to create a new password via email.</h1>
