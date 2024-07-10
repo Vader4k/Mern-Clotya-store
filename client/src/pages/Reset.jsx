@@ -82,6 +82,7 @@ const Reset = () => {
             <div className='flex flex-col gap-5 w-full'>
                 <div className='border p-3 text-[0.9rem]'>password reset token email has been sent</div>
                 <form
+                    className='flex flex-col items-start gap-5'
                     onSubmit={handleChangePassword}
                 >
                     <div>
