@@ -31,7 +31,7 @@ const ListView = ({ props }) => {
 
   return (
     <section className="w-full">
-        <div className="relative gap-8 flex items-start w-full border-b pb-4 my-4 card">
+        <div className="relative flex items-start w-full gap-8 pb-4 my-4 border-b card">
             <Link to={`/product/${props.id}`}>
                 <img
                 onMouseOver={(event) => handleHover(props.id, event)}
@@ -40,18 +40,18 @@ const ListView = ({ props }) => {
                 alt={`product-${props.name}`} 
                 />
             </Link>
-            <div className="w-full flex flex-col gap-4 items-start">
+            <div className="flex flex-col items-start w-full gap-4">
                 <div className="flex items-center gap-1">
                     <MdOutlineStarPurple500 className="text-yellow-400"/>
                     <span className="text-[0.9rem]">{props.reviews} reviews</span>
                 </div>
                 <h1 className="text-[1.3rem] capitalize">{props.name}</h1>
                 <div className="text-[0.9rem] md:text-[1rem] flex items-center gap-2">
-                    { props.old_price && <span className="line-through text-gray-400">${props.old_price}</span>}
+                    { props.old_price && <span className="text-gray-400 line-through">${props.old_price}</span>}
                     <span>${props.new_price}</span>
                 </div>
                 <p className="text-gray-500 text-[0.95rem]">{props.info}</p>
-                <hr className="w-full border my-3"/>
+                <hr className="w-full my-3 border"/>
                 <Link to={`/product/${props.id}`}>
                     <button className="px-8 text-white py-3 font-medium text-[0.9rem] bg-red-500">Select options</button>
                 </Link>
@@ -67,16 +67,16 @@ const ListView = ({ props }) => {
             </div>
             <div className="absolute top-2 left-2 md:hidden activities">
                 <div className="flex flex-col gap-3 md:text-[1.2rem] text-gray-600">
-                <div className="p-2 rounded-full bg-white hover:bg-red-400 hover:text-white transition-all">
+                <div className="p-2 transition-all bg-white rounded-full hover:bg-red-400 hover:text-white">
                     <CiHeart />
                 </div>
-                <div className="p-2 rounded-full bg-white hover:bg-red-400 hover:text-white transition-all">
+                <div className="p-2 transition-all bg-white rounded-full hover:bg-red-400 hover:text-white">
                     <MdOutlineZoomInMap />
                 </div>
-                <div className="p-2 rounded-full bg-white hover:bg-red-400 hover:text-white transition-all">
+                <div className="p-2 transition-all bg-white rounded-full hover:bg-red-400 hover:text-white">
                     <PiSwapLight />
                 </div>
-                <div className="p-2 rounded-full bg-white hover:bg-red-400 hover:text-white transition-all">
+                <div className="p-2 transition-all bg-white rounded-full hover:bg-red-400 hover:text-white">
                     <IoBagOutline />
                 </div>
                 </div>
